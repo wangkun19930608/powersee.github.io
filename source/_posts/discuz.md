@@ -1,5 +1,5 @@
 ---
-title: 搭建一个论坛————discuz
+title: 搭建一个论坛——discuz
 date: 2018-06-19 18:21:39
 tags:
 ---

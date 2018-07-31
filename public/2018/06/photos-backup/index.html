@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="由于之前小米所提供的5G云空间提示我说不够了，要充钱买更大的空间。这怎么可能，想让我花钱去买空间，呵呵。 于是我寻找备份相册的方案。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="我的相册备份方案">
+<meta property="og:url" content="http://yoursite.com/2018/06/photos-backup/index.html">
+<meta property="og:site_name" content="Powersee">
+<meta property="og:description" content="由于之前小米所提供的5G云空间提示我说不够了，要充钱买更大的空间。这怎么可能，想让我花钱去买空间，呵呵。 于是我寻找备份相册的方案。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-07-31T03:21:50.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="我的相册备份方案">
+<meta name="twitter:description" content="由于之前小米所提供的5G云空间提示我说不够了，要充钱买更大的空间。这怎么可能，想让我花钱去买空间，呵呵。 于是我寻找备份相册的方案。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/photos-backup/"/>
+
+
+
+
+
+  <title>我的相册备份方案 | Powersee</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Powersee</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/photos-backup/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ver">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Powersee">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">我的相册备份方案</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-08T12:35:23+08:00">
+                2018-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/手机/" itemprop="url" rel="index">
+                    <span itemprop="name">手机</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>由于之前小米所提供的5G云空间提示我说不够了，要充钱买更大的空间。这怎么可能，想让我花钱去买空间，呵呵。 于是我寻找备份相册的方案。<br><a id="more"></a></p>
+<h2 id="1-百度云"><a href="#1-百度云" class="headerlink" title="1  百度云"></a>1  百度云</h2><p>因为空间不足，那么想到的就是百度云2T的大空间。（至于说隐私问题，觉得百度云不安全之类的，我一直觉得很奇怪，难道你们相册里面都是一堆自己的裸照？反正我的话涉及隐私也就自拍的照片而已，也没什么见不得人的。） 用手机APP里面就有图片备份功能，设置要备份的相册文件夹就行了。在有WIFI的环境下就会备份到网盘。 <strong>缺点</strong>：只能自动备份，无法自动恢复，比如我换了新手机，它无法自动将相片恢复到新的手机。 还有，备份后是在网盘根目录有一个 来自:MI MAX2 这里就是我这台小米max2备份的数据了，不能自定义路径。。。所以我的解决方法是，把这个文件夹重命名，在前面加个符号，如逗号，然后就可以把这个文件夹移动到隐藏空间。保险一点。</p>
+<h2 id="2-谷歌相册"><a href="#2-谷歌相册" class="headerlink" title="2  谷歌相册"></a>2  谷歌相册</h2><p>以高质量的方式备份照片和视频可以无限空间。在手机上基本看不出压缩前后的差别。通过此我把相册都备份到Google，即使把本地照片删除了还可以通过这APP来查看，点击时会通过联网加载图片。 那如果我换新手机了，想把照片都下载到新手机里面，这个就有点复杂，首先得在Google photos里面开启 Google 云端硬盘 ，这样备份的图片才会显示在Google drive里面，然后可以在Google drive的网页或者客户端把图片下载下来，再传入手机，还是挺麻烦的。 当然啦，这一切都建立在能科学上网的基础之上。所以我仅是把它当多一份备份而已。</p>
+<h2 id="3-Handshaker"><a href="#3-Handshaker" class="headerlink" title="3  Handshaker"></a>3  Handshaker</h2><p>锤子开发的一款电脑端管理安卓手机的工具，平时我也用它在电脑与手机间传输文件，还是挺方便的。在它的设置里，可以设置自动同步，这样每次连接后就会自动同步所有照片到电脑，如果换新手机，可以在这个软件把电脑里的照片复制到新手机。比较不错。 缺点：同步到电脑的相册无法选择，所有的照片都会同步。（不过电脑复制到手机就可以选择哪些相册要哪些不要） mac版的无法像win版那样选择文件存储路劲，所以我只用win版来备份。</p>
+<h2 id="4-Syncthing"><a href="#4-Syncthing" class="headerlink" title="4  Syncthing"></a>4  Syncthing</h2><p>这关联到我之前的  <a href="https://jungui.tk/?p=194" target="_blank" rel="noopener">搭建个人网盘——syncthing</a>  这篇文章。通过此把要备份的相册文件夹备份到其它设备，可以是电脑、另一台手机、电脑上的虚拟机、远程vps，这些都可以，只要两台设备同时在线就能自动备份。那么我vps的  syncthing  一直开着，这样当我需要备份时就打开手机的APP，扫描一下就能同步。 假如我手机丢了，那么此时我的vps或者电脑里还有保存这些，我可以在新手机也安装syncthing来把vps或者电脑里的照片同步到新手机里面。</p>
+<h2 id="5-小米云服务"><a href="#5-小米云服务" class="headerlink" title="5  小米云服务"></a>5  小米云服务</h2><p>其实我发现我手机里的照片加视频也就2G而已，小米提供的5G我是够用的，之前说空间不足是因为它默认开启了桌面云备份，会把我手机的app都备份上传云端，用了接近1G，所以把它删了，还是可以放很多照片的。然后如果换手机了，依然是MIUI的话直接登录小米账号同步相册就行。如果是其它手机，可以电脑下载小米云服务，把照片下载到本地，在传入新手机。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>平时的话我同步功能都是关闭的，不想随便截张图，保存张照片就自动同步到云端，我会每隔一段时间就清理相册，清理完成再打开同步，同步完就又关闭。感觉现在照片空间还不算多，用小米云优先。但毕竟这段时间研究了挺久这个相片备份问题的，就记录一下吧。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/syncthing/" rel="next" title="搭建个人网盘——syncthing">
+                <i class="fa fa-chevron-left"></i> 搭建个人网盘——syncthing
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/discuz/" rel="prev" title="搭建一个论坛——discuz">
+                搭建一个论坛——discuz <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">ver</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-百度云"><span class="nav-number">1.</span> <span class="nav-text">1  百度云</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-谷歌相册"><span class="nav-number">2.</span> <span class="nav-text">2  谷歌相册</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Handshaker"><span class="nav-number">3.</span> <span class="nav-text">3  Handshaker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Syncthing"><span class="nav-number">4.</span> <span class="nav-text">4  Syncthing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-小米云服务"><span class="nav-number">5.</span> <span class="nav-text">5  小米云服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ver</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
