@@ -76,9 +76,15 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+# Extensions
+## Plugins: http://hexo.io/plugins/
+plugins: hexo-generate-feed
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/powersee/powersee.github.io.git
+  repository:
+    coding: https://git.coding.net/powersee/powersee.coding.me.git
+    GitHub: https://github.com/powersee/powersee.github.io.git
   branch: master
