@@ -11,40 +11,40 @@ tags:
 下面的视频是用这样的代码的。
 
 ```html
-<iframe height=315 width=560 src='http://player.youku.com/embed/视频的ID在这里替换==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/视频的ID在这里替换==' frameborder=0 allowfullscreen></iframe>
 ```
 
 
 ### 01
 
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk4MjgyMDk3Mg==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk4MjgyMDk3Mg==' frameborder=0 allowfullscreen></iframe>
 
 
 ### 02
 
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk4Mjg1MDM4NA==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk4Mjg1MDM4NA==' frameborder=0 allowfullscreen></iframe>
 
 ### 03
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk4NjMxOTc4NA==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk4NjMxOTc4NA==' frameborder=0 allowfullscreen></iframe>
 
 ### 04
 
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk4NjQ1NTAwNA==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk4NjQ1NTAwNA==' frameborder=0 allowfullscreen></iframe>
 
 ### 05
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk4Nzk4NjU3Mg==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk4Nzk4NjU3Mg==' frameborder=0 allowfullscreen></iframe>
 
 ### 06
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk4OTI5MzY3Ng==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk4OTI5MzY3Ng==' frameborder=0 allowfullscreen></iframe>
 
 ### 07
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk4OTU4NDgxMg==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk4OTU4NDgxMg==' frameborder=0 allowfullscreen></iframe>
 
 ### 08
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk5Mjc4ODgyOA==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk5Mjc4ODgyOA==' frameborder=0 allowfullscreen></iframe>
 
 ### 09
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk5NDgwMjQzMg==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk5NDgwMjQzMg==' frameborder=0 allowfullscreen></iframe>
 
 ### 10
-<iframe height=315 width=560 src='http://player.youku.com/embed/XMjk5ODgyMTMxMg==' frameborder=0 allowfullscreen></iframe>
+<iframe height=315 width=560 src='https://player.youku.com/embed/XMjk5ODgyMTMxMg==' frameborder=0 allowfullscreen></iframe>
