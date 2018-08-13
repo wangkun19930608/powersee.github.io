@@ -154,6 +154,27 @@
   </entry>
   
   <entry>
+    <title>申请教育邮箱–芝加哥城市学院</title>
+    <link href="http://yoursite.com/2018/07/edu-email-Chicago/"/>
+    <id>http://yoursite.com/2018/07/edu-email-Chicago/</id>
+    <published>2018-07-08T10:56:47.000Z</published>
+    <updated>2018-08-13T07:43:06.191Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天看到别的博主更新文章，然后就去试试，最后成功申请到了。</p><p>这个填的资料比较少，而且申请通过速度非常快。还是挺不错的。</p><a id="more"></a><p>申请地址:<a href="https://applycredit.ccc.edu/" target="_blank" rel="noopener">https://applycredit.ccc.edu/</a></p><p>美国人信息自动生成地址:<a href="http://www.haoweichi.com" target="_blank" rel="noopener">http://www.haoweichi.com</a></p><p>我申请不到一个小时就通过了，但是通过后账号还不能立即使用，再等一个多小时回来就可以用了。</p><p>可以使用 office365 ，然后 OneDrive 有 1T 的空间。</p><p>具体操作做个视频吧。</p><p>视频地址：<a href="https://www.bilibili.com/video/av27063977" target="_blank" rel="noopener">B 站传送</a></p><p>参考文章：<a href="https://www.xzymoe.com/city-colleges-of-chicago-edu-email/" target="_blank" rel="noopener">xzymoe 的博客</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天看到别的博主更新文章，然后就去试试，最后成功申请到了。&lt;/p&gt;
+&lt;p&gt;这个填的资料比较少，而且申请通过速度非常快。还是挺不错的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>利用lnmp搭建wordpress</title>
     <link href="http://yoursite.com/2018/06/wordpress/"/>
     <id>http://yoursite.com/2018/06/wordpress/</id>
@@ -193,6 +214,108 @@
   </entry>
   
   <entry>
+    <title>希望博客能坚持下去</title>
+    <link href="http://yoursite.com/2018/06/about-blog/"/>
+    <id>http://yoursite.com/2018/06/about-blog/</id>
+    <published>2018-06-18T11:44:10.000Z</published>
+    <updated>2018-08-13T07:47:08.595Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天是 18 号了，上个月的 20 号是我第一次在 vps 成功建立了 WordPress。现在已经有二十多篇文章了。<a id="more"></a>（虽然有些只是我做的一些简单的笔记而已）。因为我在网站添加了个日历小工具，只有当天有写文章，那天在日历上才会点亮，所以有时就不得不找些来写了。这篇也许也算吧。</p><p>这段时间确实耗费了非常多非常多的时间在这上面，没想到这东西还能玩上瘾。想想当初买 vps 主要是用来搭梯子的。这个很容易，接着就去了解 Linux，逐渐地了解了一些常用的命令的多种用法，以及其这样命名的缘由。还记得前不久好像是在知乎上看到有人推荐一本 Linux 的书《 Linux 入门很简单》，于是我在图书馆的公众号查了一下，发现居然有，就去借来看。由于其写得很通俗易懂，看得挺投入的，几天就看完了。从中学到了很多，非常感谢这本书。</p><p>之后我还去研究 Python，毕竟这是现在最热门的语言，而且都已经加入高考了，想想以后后辈们都多少会点 Python，自己一点都不了解怎么行。再之后又去研究 Android 开发，想想自己能做一个 APP，这是一件多么值得吹的事。但，终究还是因为它们太难了……然后就没有然后了。</p><p>于是我又回来折腾 Linux 了，毕竟有两台 vps 了，而且前阵子还看到 vultr 有活动，搞了一个帐号，现在一般情况下至少有三台运行着。于是我必须找着事来折腾。一开始就对 WordPress 展开研究，备份、迁移、优化、加证书等等，还有插件、主题这些，也就耗费了挺多时间。</p><p>之后就来研究 vps 可以干哪些有趣的事。</p><ul><li>用来搭建多个网站，只用一台 vps</li><li>用来作为同步盘，同步手机文件和电脑文件</li><li>用来搭建网盘，可以放文件，也可以分享给别人，不限速</li><li>用来搭建一个论坛，人人都可以注册，可以发帖讨论</li><li>用来当下载工具，一些用迅雷下载不动的资源，放在 vps 可以下载得动</li><li>用来搭建一个聊天工具，使用与他人不同的聊天方式</li></ul><p>因为老是研究这些，通过搜索我发现了很多博客网站，好的我都添加到书签和 rss 订阅了。很多个网站我都把他们的全部文章都过一篇了，也收获了很多。然后发现他们喜欢的一些东西，我希望自己不要像他们那样。比如喜欢老是折腾网站的速度，快了那么零点几秒就很高兴，这点我很不能理解，我自己的网页我两三秒能打开就行了。还有折腾 SEO 的，看那么多的文章写到这，我也有点想去搞搞，最后还是算了。我还是少折腾这些吧，不去重视这些，这样我域名被墙了，那就换一个呗，vps 都被墙了，那就在电脑的虚拟机里运行呗。不在乎这些，省点心思做些有意义的事好。</p><p>接下来的想法是有些视频里需要的文章，我可以把它放 Github 的博客里，然后双份链接，保险。域名、流量、被搜索引擎收录这些，现在真心不想去搞，希望以后也不去搞，就单纯的因为想做这些事而去做就好。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天是 18 号了，上个月的 20 号是我第一次在 vps 成功建立了 WordPress。现在已经有二十多篇文章了。
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://yoursite.com/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://yoursite.com/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>路由器的端口映射和内网穿透</title>
+    <link href="http://yoursite.com/2018/06/about-router/"/>
+    <id>http://yoursite.com/2018/06/about-router/</id>
+    <published>2018-06-15T05:54:15.000Z</published>
+    <updated>2018-08-13T07:31:25.652Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果我的路由器的管理地址为 <code>192.168.1.1</code> 如果我开放外网访问，当在外网输入我的公网IP，那么默认是访问 公网IP:80 然后进入路由器的管理界面 192.168.1.1</p><a id="more"></a><p><strong>端口映射</strong></p><p>端口映射，可以设置不同的端口来访问路由器内不同的设备。例如我的电脑连接路由器，然后分配的IP是192.168.1.2，此时我可以通过设置一个端口（8888）来映射到电脑，设置完成后输入公网IP:8888 访问的就是电脑了而不是路由器。通过这种方法,可以让电脑开启web服务，然后从外网访问。此处必须输入外网ip来访问，通过内网像 192.168.1.1:8888 这样是没用的。</p><p><strong>内网穿透</strong></p><p>当然上面的那样明显只适合有公网IP的情况，像我的话就没有公网IP。所以外网访问内网就需要内网穿透了，这里使用 ngrok 和<code>老毛子固件</code>。</p><p>我使用的路由器固件为恩山的hiboyhiboy大神的固件，路由器为斐讯K2。</p><p>打开路由器的ngrok穿透界面，去 Server.ngrok.cc 注册帐号，然后得到一个 token 码，复制它，之后开通隧道，可以选择免费的。设置域名前缀，如123，那么最后你的域名就是 <span style="background-color: #ffff00;">123.free.ngrok.cc</span></p><p>之后设置一个端口，用默认的4443也可以。</p><p>开通隧道完成后，再回到路由器这里，然后把信息填进去，</p><p><a href="/img/2018/ngrok.png"><img src="/img/2018/ngrok.png" alt=""></a></p><p>之后再把启动 【ngrok 内网穿透】的的开关打开，再应用本页面设置，此时通过访问域名</p><p>如上面的<span style="background-color: #ffff00;">123.free.ngrok.cc</span></p><p>应该就可以进入路由器管理界面了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果我的路由器的管理地址为 &lt;code&gt;192.168.1.1&lt;/code&gt; 如果我开放外网访问，当在外网输入我的公网IP，那么默认是访问 公网IP:80 然后进入路由器的管理界面 192.168.1.1&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>搭油管镜像</title>
+    <link href="http://yoursite.com/2018/06/you2php/"/>
+    <id>http://yoursite.com/2018/06/you2php/</id>
+    <published>2018-06-13T04:59:29.000Z</published>
+    <updated>2018-08-13T07:13:48.078Z</updated>
+    
+    <content type="html"><![CDATA[<p>可以零成本观看油管视频，免费，但只能电脑网页看。<br><a id="more"></a><br>项目：<a href="https://github.com/You2php/you2php" target="_blank" rel="noopener">https://github.com/You2php/you2php</a></p><p>利用一台免费的虚拟主机来搭建私人镜像，然后在国内通过访问这台虚拟主机来观看油管的视频。</p><h3 id="一-注册一台虚拟主机"><a href="#一-注册一台虚拟主机" class="headerlink" title="一  注册一台虚拟主机"></a>一  注册一台虚拟主机</h3><p><a href="https://www.000webhost.com/free-website-sign-up" target="_blank" rel="noopener">https://www.000webhost.com/free-website-sign-up</a></p><p>当然得使用国外的，进去后填邮箱、密码、域名前缀就行，之后在邮箱里打开收到的邮件，确认邮箱即可。</p><h3 id="二-YouTube-API"><a href="#二-YouTube-API" class="headerlink" title="二  YouTube API"></a>二  YouTube API</h3><p><a href="https://console.developers.google.com/" target="_blank" rel="noopener">https://console.developers.google.com/</a></p><p>当然得有谷歌账号才行的，进去后右上角，创建项目，然后默认，再点击刚才创建的项目，启用 API 和服务，YouTube Data API v3，启用，创建凭据，之后选下面这个</p><ol><li><ol><li><p><strong>您使用的是哪个 API？</strong></p><p>YouTube Data API v3</p></li><li><p><strong>您从哪里调用 API？</strong></p><p>网页服务器（例如 node.js、Tomcat）</p></li><li><p><strong>您要访问那些数据？</strong></p><p>公开数据</p></li></ol></li></ol><p>再点  <strong>我需要哪些凭据？</strong></p><p>此时就会出现API秘钥，复制保存好，然后点完成。</p><h3 id="三-安装"><a href="#三-安装" class="headerlink" title="三  安装"></a>三  安装</h3><p>可以去开发者的GitHub下载 <a href="https://github.com/You2php/you2php/archive/v1.2.zip" target="_blank" rel="noopener">https://github.com/You2php/you2php/archive/v1.2.zip</a></p><p>也可以在我这本地下载 [download id=&#8221;240&#8243;]</p><p></p><p>下载后是一个zip压缩包，解压后上传到刚才创建的虚拟主机里面。</p><p>在账号登录的情况下，打开<a href="https://files.000webhost.com/" target="_blank" rel="noopener">https://files.000webhost.com/</a></p><p>应该可以进入上传文件界面吧，然后把压缩包里的所有文件都拖到 <strong>public_html </strong>这个文件夹里面去就行。这时候打开虚拟主机分配给你的域名，就可以来配置参数。</p><h3 id="四-配置参数"><a href="#四-配置参数" class="headerlink" title="四  配置参数"></a>四  配置参数</h3><p>都是中文，还是挺容易理解的。到最后填入之前的 <strong>API秘钥</strong> ，再填入邮箱就完成了。</p><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>此时就可以通过这个 虚拟主机分配给你的域名 例如：123.000webhostapp.com 这样来观看油管的视频，可以搜索，可以下载。还是挺不错的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;可以零成本观看油管视频，免费，但只能电脑网页看。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="虚拟主机" scheme="http://yoursite.com/tags/%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>克隆 WordPress 网站</title>
+    <link href="http://yoursite.com/2018/06/clone-WordPress/"/>
+    <id>http://yoursite.com/2018/06/clone-WordPress/</id>
+    <published>2018-06-11T10:46:29.000Z</published>
+    <updated>2018-08-13T07:21:58.691Z</updated>
+    
+    <content type="html"><![CDATA[<p>我现在的网站是放在美国的一个 vps 里的，之前一直想要怎么备份，万一这台服务器被墙了（毕竟真的发生过），或者将来换服务器了，那我怎么转移。当时找了好多方法。</p><a id="more"></a><h3 id="一-自带的导出导入"><a href="#一-自带的导出导入" class="headerlink" title="一 自带的导出导入"></a>一 自带的导出导入</h3><p>这是最简单的了，WordPress 本身就有这功能。登录后台，工具，就有导入和导出。把旧的导出，然后在一台新的服务器上导入，这样所有的文章就都过去了。确实方便，然而，只能导出文章，主题、插件是没法的。</p><h3 id="二-All-in-One-WP-Migration"><a href="#二-All-in-One-WP-Migration" class="headerlink" title="二 All-in-One WP Migration"></a>二 All-in-One WP Migration</h3><p>这是一个插件，在添加插件里搜索就能找到。安装后会出现在后台面板的左侧。点导出，会生成一个文件，可以下载。然后在一台新的服务器也安装这个插件，就能导入刚才下载的这个文件，这样就能把整个网站完整的克隆。这样也可以当做备份，不过免费版最多只能备份 500M 的网站，而且只能备份到本地。</p><h3 id="三-UpdraftPlus"><a href="#三-UpdraftPlus" class="headerlink" title="三 UpdraftPlus"></a>三 UpdraftPlus</h3><p>在添加插件里搜索 back 排第一的就是它。支持定时备份，既可以备份在本地，也可以备份在网盘、邮箱、FTP 这些，而且还是免费的。果然厉害，于是我设置它每天备份到 Dropbox ，只保留两份备份，这样就不会一下子就把网盘给塞满了。</p><p><strong>缺点：</strong>不能像上面那个插件那样，克隆网站，它只是支持数据丢失后的恢复。如果要实现网站克隆，需要花钱购买它的专业版。</p><h3 id="四-免费让-UpdraftPlus-支持网站克隆"><a href="#四-免费让-UpdraftPlus-支持网站克隆" class="headerlink" title="四 免费让 UpdraftPlus 支持网站克隆"></a>四 免费让 UpdraftPlus 支持网站克隆</h3><p>这是我无意发现的。那天是在查让 WordPress 绑定多个域名。</p><p>在 WordPress 程序根目录 wp-config.php 文件中加上下面代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">define(&apos;WP_SITEURL&apos;, &apos;http://&apos; . $_SERVER[&apos;HTTP_HOST&apos;]);</span><br><span class="line">define(&apos;WP_HOME&apos;, &apos;http://&apos; . $_SERVER[&apos;HTTP_HOST&apos;]);</span><br></pre></td></tr></table></figure><p>这样只要是解析进来的域名都可以打开且不会看到串联到其他域名</p><p>这样修改后再就可以用 UpdraftPlus 来克隆网站了</p><p>我只是想多备份而已，不然这么久的努力忽然消失了，岂不是很心疼。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我现在的网站是放在美国的一个 vps 里的，之前一直想要怎么备份，万一这台服务器被墙了（毕竟真的发生过），或者将来换服务器了，那我怎么转移。当时找了好多方法。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="WordPress" scheme="http://yoursite.com/tags/WordPress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>更改hosts文件</title>
+    <link href="http://yoursite.com/2018/06/change-hosts/"/>
+    <id>http://yoursite.com/2018/06/change-hosts/</id>
+    <published>2018-06-08T17:38:08.000Z</published>
+    <updated>2018-08-13T07:19:10.071Z</updated>
+    
+    <content type="html"><![CDATA[<p>原理：我们上网的时候,输入网址,浏览器先检查 hosts 文件中是否有对应的IP地址,如果没有,就连接到DNS服务器,查找这个网址对应的 IP 地址。</p><a id="more"></a><p>我联想到域名绑定IP后是提交到DNS服务器的，那么按理说我去弄一个域名，比如：sb.com 然后将解析到我局域网的IP，比如：192.168.1.8 ，那么我在局域网中就不用输入那么长的IP地址了。哈哈，不过这显然很麻烦，而且也有点浪费，一个域名居然只用在局域网中。</p><p>于是就想到之前的更改 hosts 文件来访问一些被墙的网站，还有来屏蔽一些网站。于是通过此，我就把 39.io 给解析到 192.168.1.39 ，因为我平时还是挺常开虚拟机的，所以只是IP最后这个不同而已 ，例如其它的为 192.168.1.88 ，那么我也可以把它绑定为 88.io</p><p>这样，我通过这个短网址就能访问虚拟机了，而不用去输入那一大串的IP。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;原理：我们上网的时候,输入网址,浏览器先检查 hosts 文件中是否有对应的IP地址,如果没有,就连接到DNS服务器,查找这个网址对应的 IP 地址。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>我的相册备份方案</title>
     <link href="http://yoursite.com/2018/06/photos-backup/"/>
     <id>http://yoursite.com/2018/06/photos-backup/</id>
@@ -208,6 +331,26 @@
     </summary>
     
       <category term="手机" scheme="http://yoursite.com/categories/%E6%89%8B%E6%9C%BA/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>在mac把系统固件写入U盘</title>
+    <link href="http://yoursite.com/2018/06/Write-system-firmware-to-u-disk-on-MAC/"/>
+    <id>http://yoursite.com/2018/06/Write-system-firmware-to-u-disk-on-MAC/</id>
+    <published>2018-06-01T11:03:08.000Z</published>
+    <updated>2018-08-13T07:14:16.068Z</updated>
+    
+    <content type="html"><![CDATA[<p>苹果官方文章:<a href="https://support.apple.com/zh-cn/HT201372" target="_blank" rel="noopener">如何创建可引导的 macOS 安装器</a></p><a id="more"></a><p>最终我执行的是这一段命令</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo /Volumes/Install\ macOS\ High\ Sierra/Install\ macOS\ High\ Sierra.app/Contents/Resources/createinstallmedia --volume /Volumes/installMacOS --applicationpath /Volumes/Install\ macOS\ High\ Sierra/Install\ macOS\ High\ Sierra.app --nointeraction</span><br></pre></td></tr></table></figure><p>分析：<code>（以下内容是在双击固件，将其挂载，在桌面看得到其快捷方式下进行的）</code></p><p>一，这一段为固件的位置（前面到.app这一段可以通过双击打开桌面的固件，然后将里面的安装程序拖进来，而来得到地址）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/Volumes/Install\macOS\High\Sierra/Install\macOS\High\Sierra.app/Contents/Resources/createinstallmedia</span><br></pre></td></tr></table></figure><p>二，这一段为写入的地址，即此时我命名为 installMacOS 的U盘</p><blockquote><p>/Volumes/installMacOS</p></blockquote><p>三，这又为固件地址</p><blockquote><p>/Volumes/Install\ macOS\ High\ Sierra/Install\ macOS\ High\ Sierra.app</p></blockquote><p>写入完成后会出现 done ，估计十几分钟，耐心等待即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;苹果官方文章:&lt;a href=&quot;https://support.apple.com/zh-cn/HT201372&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;如何创建可引导的 macOS 安装器&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="mac" scheme="http://yoursite.com/categories/mac/"/>
     
     
   </entry>
@@ -229,6 +372,48 @@
     
       <category term="服务器" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>让一个服务器拥有多个网站</title>
+    <link href="http://yoursite.com/2018/05/Multiple-websites-in-one-server/"/>
+    <id>http://yoursite.com/2018/05/Multiple-websites-in-one-server/</id>
+    <published>2018-05-27T20:10:15.000Z</published>
+    <updated>2018-08-13T07:39:16.292Z</updated>
+    
+    <content type="html"><![CDATA[<p>可以在一台机器上放置多个网站，若是静态网站的话，理论上可以放置无限多个。</p><a id="more"></a><h3 id="本操作基于Ubuntu"><a href="#本操作基于Ubuntu" class="headerlink" title="本操作基于Ubuntu"></a>本操作基于Ubuntu</h3><p>我的nginx访问的根目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/home/wwwroot/default</span><br></pre></td></tr></table></figure></p><p>创建一个”vhost”目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/local/nginx/conf/vhost</span><br></pre></td></tr></table></figure></p><hr><p><span style="color: #ff0000;">创建siteA的配置文件</span><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /usr/local/nginx/conf/vhost/vhost_siteA.conf</span><br></pre></td></tr></table></figure></p><pre class="lang:default decode:true">    server {    listen       80;                        # 监听端口    server_name www.siteA.com siteA.com;    # 站点域名    root  /home/wwwroot/default;              # 站点根目录    index index.html index.htm index.php;   # 默认导航页    location / {        # WordPress固定链接URL重写        if (!-e $request_filename) {            rewrite (.*) /index.php;        }    }    # PHP配置    location ~ \.php$ {        fastcgi_pass unix:/var/run/php5-fpm.sock;        fastcgi_index index.php;        include fastcgi_params;    }}</pre><hr><p><span style="color: #ff0000;">创建siteB的配置文件</span><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/nginx/vhost/vhost_siteB.conf</span><br></pre></td></tr></table></figure></p><pre class="lang:default decode:true ">    server {    listen       80;                        # 监听端口    server_name www.siteA.com siteA.com;    # 站点域名    root  /home/wwwroot/old;              # 站点根目录    index index.html index.htm index.php;   # 默认导航页    location / {        # WordPress固定链接URL重写        if (!-e $request_filename) {            rewrite (.*) /index.php;        }    }    # PHP配置    location ~ \.php$ {        fastcgi_pass unix:/var/run/php5-fpm.sock;        fastcgi_index index.php;        include fastcgi_params;    }}</pre><hr><p>修改nginx.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure></p><p>在http里加入这段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">include /usr/local/nginx/conf/vhost/*.conf;</span><br></pre></td></tr></table></figure></p><p>重启 nginx 即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;可以在一台机器上放置多个网站，若是静态网站的话，理论上可以放置无限多个。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用Python创建HTTP服务</title>
+    <link href="http://yoursite.com/2018/05/Python-HTTP-server/"/>
+    <id>http://yoursite.com/2018/05/Python-HTTP-server/</id>
+    <published>2018-05-27T08:50:38.000Z</published>
+    <updated>2018-08-13T07:52:49.614Z</updated>
+    
+    <content type="html"><![CDATA[<p>一般的Linux都带有python<br><a id="more"></a><br>通过命令进入所要共享的文件夹</p><p>输入这个命令<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m SimpleHTTPServer <span class="number">80</span></span><br></pre></td></tr></table></figure></p><p>后面的80为端口，这种适合没有搭建其它web服务的</p><p>若已经有搭建类似nginx的服务 可以通过修改端口数字，例如改为88</p><p>或者不输入端口，则会默认采用8000端口</p><p>此时输入 <span style="color: #000000;"><strong>IP:8000</strong></span> 或者 <span style="color: #ff0000;"><strong><span style="color: #000000;">域名:8000</span></strong></span></p><p></p><p>即可访问当前目录下的文件，如果有 <strong>index.html </strong>则会默认加载。</p><p>然后想要停止时，按<code>CTRL + C</code> 取消。</p><hr><p><strong>之前一直搜索想要达到这种效果，却没有找到，没想到今天偶然就看到了，哈哈</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一般的Linux都带有python&lt;br&gt;
+    
+    </summary>
+    
+      <category term="服务器" scheme="http://yoursite.com/categories/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="服务器" scheme="http://yoursite.com/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
   </entry>
   
