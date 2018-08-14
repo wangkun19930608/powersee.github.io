@@ -340,6 +340,12 @@
       </div>
     {% endif %}
 
+            <div>
+                {% if not is_index %}
+                    <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束-------------</div>
+                {% endif %}
+            </div>
+
     {% if (theme.alipay or theme.wechatpay or theme.bitcoin) and not is_index %}
 
 
@@ -349,11 +355,7 @@
         {% endif %}
       </div>
 
-      <div>
-        {% if not is_index %}
-          {% include 'passage-end-tag.swig' %}
-        {% endif %}
-      </div>
+
 
 
       <div>
