@@ -19,9 +19,10 @@ search:
   limit: 10000
 
 
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://powersee.pw
 root: /
 permalink: :year/:month/:title/
 permalink_defaults:
@@ -62,6 +63,8 @@ index_generator:
   per_page: 10
   order_by: -date
 
+archive_generator:
+  per_page: 30
 # Category & Tag
 default_category: uncategorized
 category_map:
