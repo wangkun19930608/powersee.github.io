@@ -1,7 +1,7 @@
 ---
 title: 搭建一个聊天室——rocket.chat
 date: 2018-07-18 14:30:45
-tags:
+tags: 服务器
 ---
 Rocket.Chat 是一款开源软件。
 项目地址：https://github.com/RocketChat/Rocket.Chat

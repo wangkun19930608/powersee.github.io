@@ -3,6 +3,7 @@ title: 在mac把系统固件写入U盘
 categories:
       mac
 date: 2018-06-01 19:03:08
+tags: mac
 ---
 
 苹果官方文章:[如何创建可引导的 macOS 安装器](https://support.apple.com/zh-cn/HT201372)

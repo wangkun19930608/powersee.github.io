@@ -1,7 +1,7 @@
 ---
 title: PSV存档管理器 savemgr 使用经验
 date: 2018-08-02 11:02:59
-tags:
+tags: 游戏
 ---
 savemgr，存档管理器，在 Github 上项目名称为：vita-savemgr
 <!--more-->

@@ -1,7 +1,7 @@
 ---
 title: VPS离线下载文件最简易方案
 date: 2018-08-04 05:48:34
-tags:
+tags: 服务器
 categories:
   - 服务器
 ---

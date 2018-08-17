@@ -3,7 +3,7 @@ title: 搭建个人网盘——syncthing
 categories:
   - 服务器
 date: 2018-05-29 23:23:19
-tags:
+tags: 服务器
 ---
 
 ### 一  下载
