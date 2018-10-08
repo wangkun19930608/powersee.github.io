@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://powersee.pw/"/>
-  <updated>2018-10-02T15:04:18.790Z</updated>
+  <updated>2018-10-08T14:56:12.707Z</updated>
   <id>https://powersee.pw/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>禁止 mac 在U盘产生隐藏文件</title>
+    <link href="https://powersee.pw/2018/10/%E7%A6%81%E6%AD%A2-mac-%E5%9C%A8U%E7%9B%98%E4%BA%A7%E7%94%9F%E9%9A%90%E8%97%8F%E6%96%87%E4%BB%B6/"/>
+    <id>https://powersee.pw/2018/10/禁止-mac-在U盘产生隐藏文件/</id>
+    <published>2018-10-08T14:51:23.000Z</published>
+    <updated>2018-10-08T14:56:12.707Z</updated>
+    
+    <content type="html"><![CDATA[<p>自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。<br><a id="more"></a><br>每个都是 4KB。基本上 U 盘里每个文件，都有一个跟它对应的隐藏文件。看来是 Mac 自动生成的，但不知道是用来干什么的，而且平时也没什么影响，毕竟隐藏文件不管在 win 还是 Mac，默认情况下都是不显示的，所以也就没去管它。</p><p>直到，那天 U 盘插别人的电脑，居然被安全软件检测到这些隐藏文件，弹窗说有安全隐患……</p><p>再接着，拿 U 盘去自助打印机，这一堆隐藏文件显示在那里，严重影响我查找要打印的文件的效率。这不能忍。</p><p>于是我百度一下，没有找到方法。再谷歌，就找到了。</p><p>是 Mac 上【聚焦搜索】（spotlight）这个软件造成的，这是一个全局搜索软件。应该是它为了能快速搜索到 U 盘里的文件，所以，当我们在 mac 上往 U 盘传文件的时候，同时会在文件旁边创建一个 4KB 的隐藏文件。</p><h2 id="关闭方法"><a href="#关闭方法" class="headerlink" title="关闭方法"></a>关闭方法</h2><p>打开【系统偏好设置】，第一行倒数第二个的【聚焦】，进去后点【隐私】，然后左下角的【+】，之后选中 U 盘，确认就好了。以后再往 U 盘写入文件就不会有这些隐藏文件了，之前产生的那些可以在 win 下将之删除。（Mac 下在访达里根本无法显示这些文件）</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="mac" scheme="https://powersee.pw/tags/mac/"/>
+    
+  </entry>
   
   <entry>
     <title>解决 ireader 阅读器无法连接电脑问题</title>
@@ -41,7 +61,7 @@
     <link href="https://powersee.pw/2018/09/hexo-change-computer/"/>
     <id>https://powersee.pw/2018/09/hexo-change-computer/</id>
     <published>2018-09-09T02:11:51.000Z</published>
-    <updated>2018-09-09T02:34:08.028Z</updated>
+    <updated>2018-10-02T14:39:40.937Z</updated>
     
     <content type="html"><![CDATA[<p>hexo 搭建博客容易。但是搭建好后只能在这一台电脑上用，这就有点麻烦了。而且要是电脑坏了那且不是完了？所以备份以及恢复很重要。</p><a id="more"></a><p>（当然，windows 下能下载个便携版的 hexo 环境，(<a href="https://portablehexo.bitmoe.cn/" target="_blank" rel="noopener">https://portablehexo.bitmoe.cn/</a>) ，放在 U 盘里面，这样随便到哪里都可以用。这种这里不讨论。）</p><h2 id="备份哪"><a href="#备份哪" class="headerlink" title="备份哪"></a>备份哪</h2><p>用 hexo 搭建博客好后，生成的静态网页是放在（public）这个文件夹里的。正常流程就是把这个文件夹里的内容发布到 github 或者自己的服务器上。而我们要备份的，不是这个，而是整个博客源码，就是（public）的上一层的这整个文件夹。</p><h2 id="如何备份"><a href="#如何备份" class="headerlink" title="如何备份"></a>如何备份</h2><p>那么可以手动复制吗？额，有点难。因为小文件太多，接近一万个，复制要很久。而且文件经常变动，每次变动都再重新复制一份？不现实。</p><p>因此用 <strong>git</strong> 用管理是最好的方法。在博客项目根目录，比如我的博客源码放在 blog 这个文件夹里，那么就用命令行进入这个文件夹，git init 初始化这个项目，将它变成一个仓库，然后就可以把备份到网上了。</p><h2 id="准备新环境"><a href="#准备新环境" class="headerlink" title="准备新环境"></a>准备新环境</h2><p>比如说电脑坏了，或者换了新电脑。要怎么在新的新电脑上继续写博客呢？</p><p>首先得先在新的电脑上安装好运行 hexo 的环境，比如 windows 就得先安装 node.js 和 git，然后再安装 hexo。等可以运行 hexo 并在浏览器显示了，再把刚才备份到网上的博客源码克隆下来。</p><h2 id="克隆之后"><a href="#克隆之后" class="headerlink" title="克隆之后"></a>克隆之后</h2><p>如果顺利的话，此时进入克隆下来的文件夹，再 npm install 一下，应该就可以用了。如果像我这样，发现可以启动，但是打开链接后什么都没显示。那么应该是主题缺失的原因。可以选择重新下载主题，或者在备份的时候把主题也备份到网络。可以参考这篇文章：<a href="https://powersee.github.io/2018/08/about-git-cache/" target="_blank" rel="noopener">修复 next 主题无法提交到 git 仓库</a></p>]]></content>
     
@@ -61,7 +81,7 @@
     <link href="https://powersee.pw/2018/09/add-video-in-post/"/>
     <id>https://powersee.pw/2018/09/add-video-in-post/</id>
     <published>2018-09-02T08:51:06.000Z</published>
-    <updated>2018-09-08T12:39:12.607Z</updated>
+    <updated>2018-10-02T14:39:40.936Z</updated>
     
     <content type="html"><![CDATA[<p>在博客上可以用嵌入的方式，引用优酷和 YouTube 的视频，那么可以播放放在网站（服务器）的视频吗？<br><a id="more"></a></p><p>下面依然用这串代码<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">315</span> <span class="attr">width</span>=<span class="string">560</span> <span class="attr">src</span>=<span class="string">'视频的相对路径'</span> <span class="attr">frameborder</span>=<span class="string">0</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure></p><p>在本地的启动 web 服务，然后在浏览器打开，视频可以播放。不错，手机端也可以正常访问。此时将网页和视频文件放置在 GitHub 上，同样可以播放。但是有个缺点，一打开就自动播放，不知道怎么关闭。</p><p>后来了解到用 video 标签的话，就可以设置它不自动播放，并且如果想让视频能够自动适应大小，只需要加上 div 标签就行。如下面这样<br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>  <span class="attr">width</span>=<span class="string">"100%"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">height</span>=<span class="string">"100%"</span> <span class="attr">width</span>=<span class="string">"100%"</span> <span class="attr">src</span>=<span class="string">"视频路径"</span> <span class="attr">controls</span>=<span class="string">"controls"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p><div width="100%"><br><video height="100%" width="100%" src="/misc/1.mp4" controls="controls"></video><br></div>]]></content>
     
@@ -81,7 +101,7 @@
     <link href="https://powersee.pw/2018/08/ireader-vs-APP/"/>
     <id>https://powersee.pw/2018/08/ireader-vs-APP/</id>
     <published>2018-08-26T15:22:53.000Z</published>
-    <updated>2018-08-30T15:25:26.751Z</updated>
+    <updated>2018-10-02T14:39:40.938Z</updated>
     
     <content type="html"><![CDATA[<p>近日买了个 ireader light 青春版。是一款类似 kindle 的电子阅读器，不过性价比高，功能体验也比较好。所以综合了解后我选择了它。<br><a id="more"></a><br>因为是掌阅出的，那么功能就和在手机下载个 掌阅APP 差不多。主要还是看中它的墨水屏，据说墨水屏看久不易伤眼睛。其它的也是有些不同的。</p><h2 id="阅读器独有的"><a href="#阅读器独有的" class="headerlink" title="阅读器独有的"></a>阅读器独有的</h2><ul><li><p>阅读器书城的图书价格和掌阅APP价格，总体价格保持一致。阅读器书城为回馈书友，每周会有特价书目，仅限阅读器书友享有。</p></li><li><p>无广告。这点其实不怎么值得提，因为手机有些定制版的也是无广告的。比如 OPPO vivo 这两个牌子的手机，自带的定制版的掌阅好像就是无广告的。而阅读器其实也就是一个定制版的掌阅APP，装在一个墨水屏平板里面罢了。况且我花了几百块买了这个只能阅读的机器，倘若得和手机免费下载一个APP一样，忍受着广告，这说得过去吗？</p></li><li><p>传送资料。这个功能说是主打微信文章推送，就是可以把公众号文章，弄到阅读器里面来阅读。流程是先关注它的公众号，绑定手机，然后再来阅读器用手机号登录。之后看到文章，复制它的链接，发送给公众号，阅读器就能收到这条链接。可见只是把文章网址发过去罢了，因此其它链接应该也是可以的。我试了一些博客文章，有英文的和中文的，发现有时候图片会加载不出来，全英文排版也还可以，故没图片或者图片少的文章，推送到阅读器里面再来观看，体验还是不错的。然后知乎的回答也可以推送到此。这个功能体验几次后我还是挺喜欢的。</p></li><li><p>阅读时长奖励代金券。这个并非手机端同有的 『阅读30分钟奖励5代金券』，而是阅读器里『我的，福利，时长福利』，（手机端我找不到这个，所以应该是阅读器特权吧）。这个一个星期算一次，阅读不同时间领取不同代金券，888分钟为最高，达到的话，全部领取有几百代金券。</p></li></ul><h2 id="手机独有的（或者说阅读器还没有的）"><a href="#手机独有的（或者说阅读器还没有的）" class="headerlink" title="手机独有的（或者说阅读器还没有的）"></a>手机独有的（或者说阅读器还没有的）</h2><ul><li><p>读完写评论。手机端看完一本书，可以给它评星级和写评论，而阅读器看完了就只出现：全书完。因此在阅读器看完，我得回到手机，翻到最后一页，再点一下，出现写书评的界面再来写。不写过段时间都不知道这本书有没有看完……</p></li><li><p>杂志往期。手机端打开一本杂志，右上角有个『往期』，这个非常方便，看完就能继续下载下一本。阅读器应该只能去书城里面搜索吧。</p></li></ul><p>阅读器的系统是可以升级的，所以我觉得未来应该会有越来越多的功能加进来。不过现在有些功能只有手机有，阅读器没有，有些不太方便。其它的暂时对我好像没多大影响。</p>]]></content>
     
@@ -101,7 +121,7 @@
     <link href="https://powersee.pw/2018/08/Netizen-self-censorship/"/>
     <id>https://powersee.pw/2018/08/Netizen-self-censorship/</id>
     <published>2018-08-18T14:50:47.000Z</published>
-    <updated>2018-08-19T02:00:32.081Z</updated>
+    <updated>2018-10-02T14:39:40.936Z</updated>
     
     <content type="html"><![CDATA[<p>　　今晚本来是在网上闲看的，突然搜索到阮一峰老师 2012 年写的一篇博文，是教人用 Jekyll 搭建个人博客，并且发布到 github 上面去。<br><a id="more"></a><br>　　于是我仔细看了一下，不容易啊。原来六年前 Jekyll 搭建博客这么多步骤，还得自己创建模板、首页之类的。哪像现在，几行命令就行了，一切自动生成。</p><p>　　但这些并不是重点，下面的评论才是。180 多条，除了跟着教程做，报错后来求问的我跳过了，其它的我都仔细看。看完内心五味杂陈。</p><p>　　首先排前面的就指责的，说这样搞将会大量国人去使用 github 的资源，滥用它这个功能，只会让 github 被墙。这样的人还是挺多的。</p><p>　　这里我就挺佩服阮一峰老师了，对于这些，他一律不回复。他肯定是看到了，因为夹在中间那些向他求问的评论，他大多都有回复。而对于这些指责他的评论，他不理睬，也不删除。可能是博客写久，这种情况见多了吧。</p><p>　　我看这些评论时是感到很不爽的，我还是倾向于分享。但是以我现在的观点去看六年前的事，明显是不妥的。我已经知道现今 github pages 搞得很好，现在用它来搭建博客的人很多很多了。我是站在未来看过去，所以我能知道评论里哪些人的说法，将来是错误的。</p><p>　　而且我并不了解当时的互联网环境，所以只能通过评论区，来看当时人们对此的不同观点。上面那一派就是反对派吧。那么另一派呢，也不能叫赞同派，应该叫反对反对派。因为他们主要是来指出反对派的不合理处的。</p><p><strong>大概有这些</strong>：</p><ul><li>楼上太杞人忧天了，会用 git 的普通百姓有多少？怕他们去上面建垃圾网站？有点想多了。</li><li>互联网的精神就是分享，新事物就应该发出来让大家去尝试啊。</li><li>楼上这些人是墙内人民的自我审查。</li></ul><p>　　我也不全盘否定那些担忧被墙的人的观点，他们的话确实也有些道理吧。但是这种担心太多人知道，会被玩烂，只让少部分人知道就行的想法，估计是不行的。</p><p>　　而现如今，这种 git pages 还是发展得挺好的，国内的 gitee 和 coding 现在也同样提供这种服务，我自己也去注册了个 coding，多一份备份。</p><p>　　在这些评论中，还有两个让我印象深刻的。一个是看了这些评论后，说他看了评论后，觉得这样去利用 github 的资源，感觉不太好，于是放弃了这个想法，决定去买空间……</p><p>　　另一个是，看了评论里争个不停，于是他写信给 github 官方，问这样利用 Github pages 来搭建博客，官方是否允许，官方给了他肯定的回复。这个我想是最有力的论点了。很佩服这位兄台。</p>]]></content>
     
@@ -121,7 +141,7 @@
     <link href="https://powersee.pw/2018/08/jekyll-vs-hexo/"/>
     <id>https://powersee.pw/2018/08/jekyll-vs-hexo/</id>
     <published>2018-08-17T10:02:07.000Z</published>
-    <updated>2018-08-19T02:00:33.010Z</updated>
+    <updated>2018-10-02T14:39:40.938Z</updated>
     
     <content type="html"><![CDATA[<p>jekyll 和 hexo 的差别呢，就是 jekyll 可以直接在 GitHub 上面写文章，而 hexo 则需要在电脑里面写好再上传上来。<br><a id="more"></a><br>前面平台搭建的部分可以说是差不多的，搭建好同样传到 GitHub 上，jekyll 是把博客源码传上来，而 hexo 则是先在电脑里生成 html 的静态文件，再将这些传上来。</p><p>也因为这样，hexo 的备份会比较麻烦一点。而 jekyll 则可以说本来就自带备份（针对于像我这种使用 git pages 的人来说）。因为 jekyll 本身就是把整个博客都上传的。</p><p>不仅备份方便，编辑修改也方便，因为文件都在 GitHub 上，可以直接用浏览器登录 GitHub ，直接更改文章源文件就能修改博客文章，在上面新增 Markdown 文件就能往博客添加新文章。</p><p>但是呢，jekyll 不能像 hexo 一样使用命令行 <code>hexo new &#39;title&#39;</code> 来生成文章模板。因此用这个来写文章的话，就得自己打文章开头的那些设置，如这些</p><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">layout:</span> <span class="string">post</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">jekyll</span> <span class="string">与</span> <span class="string">hexo</span> <span class="string">的对比</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2018</span><span class="bullet">-08</span><span class="bullet">-05</span> <span class="number">21</span><span class="string">:02:07</span></span><br><span class="line"><span class="attr">tags:</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><p>因此这个感觉也算是劣势吧。当然复制粘贴上一篇文章的，然后修改一下也不会用太久的时间。但还是能自动生成方便啊。</p><p>因此在这上面写好像也没见得有多爽……</p>]]></content>
     
@@ -143,7 +163,7 @@
     <link href="https://powersee.pw/2018/08/one-day-computer-no-network/"/>
     <id>https://powersee.pw/2018/08/one-day-computer-no-network/</id>
     <published>2018-08-14T16:05:59.000Z</published>
-    <updated>2018-08-19T02:00:33.012Z</updated>
+    <updated>2018-10-02T14:39:40.938Z</updated>
     
     <content type="html"><![CDATA[<p>13 号晚上的 23:30 左右，我拔掉了路由器 wan 口的网线，这样我电脑和手机都无法通过它来上网了。到现在已经 24 个小时了。</p><a id="more"></a><h2 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h2><p>本来想试试断网一天是什么体验的，因为我经常意识到，无缘无故一天就过去了，我好像什么都没干啊，好像浪费很多时间在网上闲逛。虽有时意识到会自制下，但效果不太明显。</p><p>但我有自知之明，不可能完全断网的，太难做到了。于是，我还可以用手机开数据上网。</p><h2 id="那么这-24-小时左右，我干了什么呢？"><a href="#那么这-24-小时左右，我干了什么呢？" class="headerlink" title="那么这 24 小时左右，我干了什么呢？"></a>那么这 24 小时左右，我干了什么呢？</h2><ul><li>看了几集《老友记》，其实下载挺久的了，有时就看一两集这样，其实这一天好像就看了三集吧。虽然电脑里也有下载好的电影，不过没去看。</li><li>练练 Python，这个最近又接着开始学了，还是一头雾水。毕竟从图书馆借的这本书也不厚，还是坚持看并跟着练吧。</li><li>看 Rick West 的文章，其实我也不认识他，看别的博主说他是大神，并且推荐他的文章，于是就去看看，应该是英国人，一个 web developer。因为文章都是英文的，我把他一共接近 10 篇文章看完了，也就消去了不少的时间。</li><li>然后呢，也看阮一峰老师的博客，挺厉害的，从 2003 年写博客到现在，看他的文章还是有挺多东西学的。</li><li>接着就是日常的 知乎 和 v2ex 咯。</li></ul><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实最终还是大部分时间都是在网上，只是从电脑转移到手机罢了。不过也是因为是在手机，能干的事并不多，所以才能看这么多的文章。要是在电脑上肯定不行，因为它能做的事太多了，容易在这事时张那事，导致能集中精力做一件事，因此效率也很低。</p><p>总之，还是一次挺不错的体验的。下次试试能不能完全断网体验一下。</p>]]></content>
     
@@ -163,7 +183,7 @@
     <link href="https://powersee.pw/2018/08/about-git-cache/"/>
     <id>https://powersee.pw/2018/08/about-git-cache/</id>
     <published>2018-08-14T15:55:09.000Z</published>
-    <updated>2018-08-19T02:00:32.421Z</updated>
+    <updated>2018-10-02T14:39:40.936Z</updated>
     
     <content type="html"><![CDATA[<p>修复 git 仓库内，有另一个仓库，而产生冲突的问题。</p><a id="more"></a><p>用 hexo 来部署博客，只是把生成的静态网页给发布上去。但完整的备份是需要备份博客源码的，很多人会新建一个项目来放置博客源码。这样每次写好文章更新博客后，再把源码更新到远程仓库，例如 github 就行。完美备份。</p><p>但是，我发现我的 Next 主题下的文件全部无法上传，官方自带的主题就行。于是想到，当前这整个博客文件夹都是一个 git 仓库，而 next 主题是从 github 上克隆下来的，也是一个仓库，估计是会产生冲突。</p><p>于是，进入到 next 目录下，用命令行<br><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">rm</span> <span class="selector-tag">-rf</span> <span class="selector-class">.git</span></span><br></pre></td></tr></table></figure></p><p>删除掉 <code>.git</code> 这个文件夹。这样应该就把这个仓库变成一个普通的文件夹了吧。于是再来把它添加到博客源码这个项目里吧<br><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> .</span></span><br></pre></td></tr></table></figure></p><p>结果不行，报错了，显示：<br><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">fatal:</span> <span class="keyword">in</span> unpopulated subnodule <span class="string">'themes/next'</span></span><br></pre></td></tr></table></figure></p><p>看来不只是删除一个文件夹就行。好像还得再清除下，先返回上一级目录，<code>cd ..</code> 后就是在 themes 这个目录下咯，再执行<br><figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line">git rm -r –cached /<span class="keyword">next</span></span><br></pre></td></tr></table></figure></p><p>去掉已经托管的文件，然后提交即可。</p><p>此时再输入<br><figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> .</span></span><br></pre></td></tr></table></figure></p><p>就可以了。<br>之后再 commit，并成功同步到远程仓库。</p>]]></content>
     
@@ -183,7 +203,7 @@
     <link href="https://powersee.pw/2018/08/just-for-fun/"/>
     <id>https://powersee.pw/2018/08/just-for-fun/</id>
     <published>2018-08-12T06:05:11.000Z</published>
-    <updated>2018-08-19T02:00:33.010Z</updated>
+    <updated>2018-10-02T14:39:40.938Z</updated>
     
     <content type="html"><![CDATA[<p>这本书是 Linux 的发明者 Linus 的自传。是昨天看阮一峰老师的博客，看到他有一篇文章是介绍这书的，然后评论下面有人分享这书的链接，于是就下载来看看。</p><a id="more"></a><p>文章链接：<a href="http://www.ruanyifeng.com/blog/2012/09/linus_torvalds.html" target="_blank" rel="noopener">《Linus Torvalds自传》摘录</a></p><p>本书一共129页，于2001年出版，从主人公出生到后来到美国工作。之间有介绍他的家庭情况，学校，社交等。主要还是介绍 Linux ，其诞生与发展。</p><p>其中有些我觉得还是挺有趣的。</p><h3 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h3><p>比如一开始 Linus 把系统免费放网上让人使用时。当时他的电脑是分期付款的，要三年还完，而他又不 Linux 来赚钱，人们为了感激他，众筹帮他还电脑的钱。</p><blockquote><p>别人都知道 Linux 并没有让我获利，于是人们便觉得，让我们大家凑点钱，替 Linus 把电脑钱还清。</p></blockquote><h3 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h3><p>1992年，当 Linux 的用户越来越多，Linus 本可以让用户给他寄钱，但他却没有这么做，而是让人们给他寄明信片。他想知道有哪些地方的人在使用他的系统，于是，他收到来自世界各地的明信片，有几千封。</p><h3 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h3><p>还有的就是当他相当出名之后，每天联系他的人非常多，他对此的态度。</p><blockquote><p>我并不认为人们应该把我看成是一个所谓的好人，任何给我打电话或者发电子邮件的人，我都应该回话。</p></blockquote><p>这点其实也很合理，我就有类似的想法。当然没法跟大神比，但我多少也有过别人在网上问我问题的经历。</p><hr><p>当我在网上做过几个教学视频，并且有了一定的播放量，然后就能收到一堆的私信求问了。有些问题表述清晰，并且我也知道怎么解决，那我直接告诉他，这样很好啊。</p><p>然而跟多的其实是，视频压根没看就来问我问题，问的都是我视频讲的……有些还要加我QQ或者微信。经过几次之后，从此这些人我一律不理睬，有些在评论留言的，感觉内容毫无意义的，我直接删掉。</p><p>对于这些不尊重他人的人，完全没必要对他们客气。</p>]]></content>
     
@@ -205,7 +225,7 @@
     <link href="https://powersee.pw/2018/08/child-of-light/"/>
     <id>https://powersee.pw/2018/08/child-of-light/</id>
     <published>2018-08-05T07:05:43.000Z</published>
-    <updated>2018-08-19T02:00:32.831Z</updated>
+    <updated>2018-10-02T14:39:40.937Z</updated>
     
     <content type="html"><![CDATA[<p>这个游戏是去年这个时候录的，是我第一个全程录完的游戏。当时是在 PSV 上先玩一段，再到 PS4 上重玩这一段并录制下来的。<br><a id="more"></a></p><p>下面的视频是用这样的代码的。</p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">315</span> <span class="attr">width</span>=<span class="string">560</span> <span class="attr">src</span>=<span class="string">'https://player.youku.com/embed/视频的ID在这里替换=='</span> <span class="attr">frameborder</span>=<span class="string">0</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="01"><a href="#01" class="headerlink" title="01"></a>01</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4MjgyMDk3Mg==" frameborder="0" allowfullscreen></iframe><h3 id="02"><a href="#02" class="headerlink" title="02"></a>02</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4Mjg1MDM4NA==" frameborder="0" allowfullscreen></iframe><h3 id="03"><a href="#03" class="headerlink" title="03"></a>03</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4NjMxOTc4NA==" frameborder="0" allowfullscreen></iframe><h3 id="04"><a href="#04" class="headerlink" title="04"></a>04</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4NjQ1NTAwNA==" frameborder="0" allowfullscreen></iframe><h3 id="05"><a href="#05" class="headerlink" title="05"></a>05</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4Nzk4NjU3Mg==" frameborder="0" allowfullscreen></iframe><h3 id="06"><a href="#06" class="headerlink" title="06"></a>06</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4OTI5MzY3Ng==" frameborder="0" allowfullscreen></iframe><h3 id="07"><a href="#07" class="headerlink" title="07"></a>07</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4OTU4NDgxMg==" frameborder="0" allowfullscreen></iframe><h3 id="08"><a href="#08" class="headerlink" title="08"></a>08</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk5Mjc4ODgyOA==" frameborder="0" allowfullscreen></iframe><h3 id="09"><a href="#09" class="headerlink" title="09"></a>09</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk5NDgwMjQzMg==" frameborder="0" allowfullscreen></iframe><h3 id="10"><a href="#10" class="headerlink" title="10"></a>10</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk5ODgyMTMxMg==" frameborder="0" allowfullscreen></iframe>]]></content>
     
@@ -225,7 +245,7 @@
     <link href="https://powersee.pw/2018/08/offline-download/"/>
     <id>https://powersee.pw/2018/08/offline-download/</id>
     <published>2018-08-03T21:48:34.000Z</published>
-    <updated>2018-08-19T02:00:33.011Z</updated>
+    <updated>2018-10-02T14:39:40.938Z</updated>
     
     <content type="html"><![CDATA[<h3 id="所使用的工具："><a href="#所使用的工具：" class="headerlink" title="所使用的工具："></a>所使用的工具：</h3><ul><li>Aria2</li><li>caddy</li><li>AriaNg<a id="more"></a></li></ul><p>脚本来自<strong>逗比根据地</strong></p><h3 id="首先安装-下载工具–-Aria2"><a href="#首先安装-下载工具–-Aria2" class="headerlink" title="首先安装 下载工具– Aria2"></a>首先安装 下载工具– Aria2</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/aria2.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> aria2.<span class="keyword">sh</span> &amp;&amp; bash aria2.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure><p>按 1 ，就可以安装。成功后会看到这样的显示。<br><img src="/img/2018/Aria2-done.png" alt="image"></p><p>由于我们用 ssh 登录 vps 后，默认是在 root 目录下。因此我想让下载位置也在这之下，方便以后用命令行删除文件。</p><p>因此需先创建文件夹</p><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">mkdir -<span class="selector-tag">p</span> web/down</span><br></pre></td></tr></table></figure><p>然后进入 Aria2 来需改下载位置和密码</p><figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="string">./aria2.sh</span></span><br></pre></td></tr></table></figure><p>选择 7. 修改 配置文件</p><p>再选择 4.  修改 Aria2 密码+端口+文件下载位置</p><p>密码就个人按喜好改了(后面要用到)，端口就不改了，按回车键使用默认即可，下载位置就改为新的路径</p><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/root/</span>web<span class="regexp">/down</span></span><br></pre></td></tr></table></figure><p>再次看到 ==Aria2 启动成功 !  == 这部分就完成了。</p><hr><h3 id="安装使用界面"><a href="#安装使用界面" class="headerlink" title="安装使用界面"></a>安装使用界面</h3><p>下载工具安装完成了，那要怎么用它呢？难道用命令行来下载文件？虽然确实可以，不过这有点……</p><p>还是图形界面比较任性化，点点几下就行。</p><h4 id="安装-web-服务器-caddy"><a href="#安装-web-服务器-caddy" class="headerlink" title="安装 web 服务器 caddy"></a>安装 web 服务器 caddy</h4><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/caddy_install.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> caddy_install.<span class="keyword">sh</span> &amp;&amp; bash caddy_install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure><h4 id="写入配置到-Caddy-配置文件"><a href="#写入配置到-Caddy-配置文件" class="headerlink" title="写入配置到 Caddy 配置文件"></a>写入配置到 Caddy 配置文件</h4><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="comment">":80 &#123;</span></span><br><span class="line"> root /root/web</span><br><span class="line"> timeouts none</span><br><span class="line"> gzip</span><br><span class="line"> <span class="keyword">browse</span></span><br><span class="line">&#125;<span class="comment">" &gt; /usr/local/caddy/Caddyfile</span></span><br></pre></td></tr></table></figure><h4 id="下载-AriaNg"><a href="#下载-AriaNg" class="headerlink" title="下载 AriaNg"></a>下载 AriaNg</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cd web &amp;&amp; wget https:<span class="regexp">//gi</span>thub.com<span class="regexp">/mayswind/</span>AriaNg<span class="regexp">/releases/</span>download<span class="regexp">/0.4.0/</span>aria-ng-<span class="number">0.4</span>.<span class="number">0</span>.zip &amp;&amp; unzip aria-ng-<span class="number">0.4</span>.<span class="number">0</span>.zip</span><br></pre></td></tr></table></figure><p>这里出错的话，可能是因为没有安装 unzip 这个应用，根据提示安装下即可。</p><h4 id="启动-caddy"><a href="#启动-caddy" class="headerlink" title="启动 caddy"></a>启动 caddy</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/caddy start</span></span><br></pre></td></tr></table></figure><hr><h3 id="下载文件并取回本地"><a href="#下载文件并取回本地" class="headerlink" title="下载文件并取回本地"></a>下载文件并取回本地</h3><p>这时候就可以用浏览器，通过 IP 或者域名来访问下载界面。需要设置一下。<br><img src="/img/2018/AriaNg.png" alt="image"></p><p>第一个红圈可以填 IP 和域名，都行的。第二个红圈就是填刚才设置的密码了。</p><p>连接上会有左下角有绿色的已连接提醒。然后就可以下载文件了，也可以下载种子。</p><p>下载完就在我们的 vps 里面，那要怎么取回本地呢？只需要在浏览器地址栏里，在  IP 或者域名后面加上 /down 就行。例如</p><blockquote><p>115.152.148.55/down</p></blockquote><p>就会显示下载的那些文件。</p><hr><p>这个方法呢，是我个人觉得比较简易的，比较适合我自己的。下载完就在命令行里用</p><blockquote><p>rm -rf web/down/*</p></blockquote><p>来删除所有的文件。</p><p>因此也就不去搞那些需要 PHP 的了。也因为下载完就删除，所以也没必要设置需要密码才能访问文件列表。</p>]]></content>
     
@@ -250,7 +270,7 @@
     <link href="https://powersee.pw/2018/08/savemgr/"/>
     <id>https://powersee.pw/2018/08/savemgr/</id>
     <published>2018-08-02T03:02:59.000Z</published>
-    <updated>2018-08-19T02:00:33.015Z</updated>
+    <updated>2018-10-02T14:39:40.938Z</updated>
     
     <content type="html"><![CDATA[<p>savemgr，存档管理器，在 Github 上项目名称为：vita-savemgr<br><a id="more"></a><br>项目地址：<a href="https://github.com/d3m3vilurr/vita-savemgr" target="_blank" rel="noopener">https://github.com/d3m3vilurr/vita-savemgr</a></p><p>作用：备份还原存档，分享存档给别人，使用他人存档。</p><p>使用方法：（#本文只讲v2.0正式版）那么首先下载这个安装包，之后在PSV上面打开安装。</p><blockquote><p><a href="https://github.com/d3m3vilurr/vita-savemgr/releases/download/2.0.0/savemgr.vpk" target="_blank" rel="noopener">https://github.com/d3m3vilurr/vita-savemgr/releases/download/2.0.0/savemgr.vpk</a></p></blockquote><p>完成之后PSV桌面就有这个图标了。打开，选择一个游戏，然后出现四个选项。分别是 备份，恢复，删除，格式化。看字面意思很容易懂其作用。</p><p><img src="/img/2018/savemgr.jpg" alt="软件截图"></p><p>比如我要备份空之轨迹sc这个游戏存档（游戏编号为 PCSH10060）。点击这个游戏，备份，选择一个位置，如第七个。之后存档就会备份到</p><blockquote><p>ux0:data/savegames/PCSH10060/SLOT7</p></blockquote><p><img src="/img/2018/savegamepath.jpg" alt="备份路径"></p><p>这里。把这个文件夹放在别的PSV的这个路径，别人再使用存档管理器恢复存档，即可以使用我们分享出来的存档。同理，我们也可以这样使用别人的存档。</p><hr><p>　　问题：使用 savemgr 一备份就报错。</p><p>　　其实这才是我一开始要写的内容。因为用0.8版本，导致档案损坏，以至于我整个游戏重新安装。于是我就上网下载了个2.0汉化版，却出现 一备份就报错 的情况。关机重启也还是一样。</p><p>　　然后去 Github 下载7月1号更新的最新版本，还是一样。看看issue里面，也有人是这种情况，没法解决。但是发现了用原装2.0版本的话，安装好以后，机子重启一下就能正常使用了。备份恢复都可以。</p><p>　　吐槽：我网上查了很多，发现很少有人给官方的下载地址，github的直链，大多数都是给个百度云……感觉还是给像<br><a href="https://github.com/d3m3vilurr/vita-savemgr/releases/download/2.0.0/savemgr.vpk" target="_blank" rel="noopener">https://github.com/d3m3vilurr/vita-savemgr/releases/download/2.0.0/savemgr.vpk</a><br>这样好吧，直接浏览器就能下载，而且不用怕链接失效。最重要的是，我能知道这个是从哪里来的。</p>]]></content>
     
@@ -270,7 +290,7 @@
     <link href="https://powersee.pw/2018/07/analysis-cheating-process/"/>
     <id>https://powersee.pw/2018/07/analysis-cheating-process/</id>
     <published>2018-07-29T10:57:00.000Z</published>
-    <updated>2018-08-19T02:00:32.600Z</updated>
+    <updated>2018-10-02T14:39:40.937Z</updated>
     
     <content type="html"><![CDATA[<p>此类消息一般多见于 QQ 群，毕竟对于个人来说，这个应该算是最大的曝光率了。<a id="more"></a>可见其宣传手段以 QQ 群为主。（后面我去加入，管理员的要求也印证了这一点）</p><p>从网络得知了一个 QQ 群号，我去加入。之后联系管理员了解工作。这时她的 QQ 性别一般都是女性，美女头像，20 多岁。（至于真假呢，呵呵。）然后她就会开始介绍工作，例如刷单、打字或者快递单录入，都会强调其简单、时间自由、收益不错等。之后问你要不要加入？回答要，然后就说需要帮她宣传，自然就是转发 QQ 群了。而我昨天的尝试，发现现在还得发空间说说和微信朋友圈了。</p><p>很不容易宣传完了，再联系她。这时就会说可以了，得去听一个老师的课，培训完才能工作。以前是 QT 语音和 YY 语音，现在可能这些不能用了吧，改成了第三方软件，估计是自己专门开发的。（应该是，我后来又去登录一次，这个软件连自己名称都不能改，只有那些‘老师’才能改你的名称。）注册好帐号之后，登录上去，等人差不多了，就开始讲了。先装模作样地介绍怎么工作，balabala 一堆之后。就开始要钱了，说需要花一百块左右买一个激活码，然后才能有一个工号，才可以接任务。然后就是各种游说。</p><p>这个时候，大多数人会在这放弃，但是此时想起之前转发这些也很不容易，甚至因为这个而被很多个 QQ 群踢了。此时放弃，岂不是前功尽弃了？或许有人就因此而选择了去交钱。而有的就还有些犹豫，于是去问之前那个介绍人。（例如我就去问，之前不是说不用交钱吗？）此时介绍人就会说，你放心啦，这个每个人都交的，我也交了，待会做几个任务就拿回来了。然后就发一些截图过来，证明她的话。这时就又增加了交钱的可能性。</p><p>那么，有人也许会想，交就交嘛，反正一会就拿回来了。然而，呵呵→_→。等交了钱，准备去完成那几个新手任务，这时这个老师就会让你去另一个老师那。来到新老师这，你以为可以开始了吗？不行的，接下来会说，你这是普通会员，只能接普通任务，要再交 298 成为钻石会员……又 balabala 之类，这时我相信大多数人会发现自己被骗了的。</p><p>但是，还是会有人想着，唉，前面都交钱了，这是放弃那钱不就打水漂了吗？所以还真有人又交了。这时据说就真的完成了，（只是据说，我并不清楚，好像也有继续要求交很多钱的。）可以接任务了。然后就准备大干一场吧。……过了不久，就会发现，一天耗费不少的精力，最后大概能赚个几块钱。又或者得经常去注册什么什么帐号，绑定银行卡身份证之类的。要把本钱赚回来基本不可能。</p><p>之后有人估计就算了，当作花钱买教训吧。而有的人呢，发现唯一能赚回本的方式，就是去拉人，据说拉人那人交的钱，有 70%能归拉人者，也就是客服。于是，一个新的客服就此诞生……</p>]]></content>
     
@@ -290,7 +310,7 @@
     <link href="https://powersee.pw/2018/07/purewrite/"/>
     <id>https://powersee.pw/2018/07/purewrite/</id>
     <published>2018-07-18T18:57:31.000Z</published>
-    <updated>2018-08-19T02:00:33.014Z</updated>
+    <updated>2018-10-02T14:39:40.938Z</updated>
     
     <content type="html"><![CDATA[<p>我现在就是在使用这款软件写这篇文章。今晚本来是在 <strong>play 商店</strong> 看日记软件的。然后推荐那里出现了这款软件，看介绍和评价不错，就下载来试试。<a id="more"></a> 这款软件是国人开发的，因此在国内的手机应用商店应该是可以下载到的，试了下小米的是搜索得到的。</p><h2 id="推荐它的理由："><a href="#推荐它的理由：" class="headerlink" title="推荐它的理由："></a>推荐它的理由：</h2><ul><li>好看</li><li>无广告</li><li>自动备份，数据安全</li><li>安装包小，只有 2.7M</li><li>无后台偷运行担忧</li><li>对我来说很实用</li></ul><p>主要是能帮我节省时间，比如在中英文之间插入空格，还有支持 markdown 语法，这也挺不错，比如能让我方便文章 markdown 化。还有首行缩进和段落之间自动加空格，这能让我少打了无数个空格。 总之，对这个软件真有种相见恨晚的感觉。</p><hr><h2 id="下面这些是官方对它的介绍"><a href="#下面这些是官方对它的介绍" class="headerlink" title="下面这些是官方对它的介绍"></a>下面这些是官方对它的介绍</h2><ol><li>这是一个快速的纯文本编辑器，我们希望写作能够回到原本的样子：纯粹、有安全感、随时、绝对不丢失内容、具备良好的写作体验。</li><li>纯纯写作实现了在 Android 上完美的行间距和段间距，它能够使您的文本看起来更加舒适，清晰。同时，它还实现了顺滑滚动、下滑关闭输入法软键盘，以及许多喜人的细节内容。</li><li>蕴繁于简，您能够最快速度达到灵感页面，能够随时随地中断和继续写作，能够使用指纹加密您的文本，能够轻易、快速将文本分享发送到其他 App，这些我们都已经为您做好了。</li><li>最重要的，在使用这个编辑器时，它将会保证您的内容永远不会丢失，除非您主动将它清空。否则即使误操作将文本删除，或瞬间断电，您仍然能够从历史记录中将它恢复。</li><li>当您完成一篇文章写作之后，可以选择 右上角发送按钮 将它发送到另外的 App。</li></ol>]]></content>
     
@@ -312,7 +332,7 @@
     <link href="https://powersee.pw/2018/07/rocket-chat/"/>
     <id>https://powersee.pw/2018/07/rocket-chat/</id>
     <published>2018-07-18T06:30:45.000Z</published>
-    <updated>2018-08-19T02:00:33.014Z</updated>
+    <updated>2018-10-02T14:39:40.938Z</updated>
     
     <content type="html"><![CDATA[<p>Rocket.Chat 是一款开源软件。<br>项目地址：<a href="https://github.com/RocketChat/Rocket.Chat" target="_blank" rel="noopener">https://github.com/RocketChat/Rocket.Chat</a><br><a id="more"></a></p><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>我是在 Ubuntu 18.04 纯净系统下使用的<br>用 snap 安装</p><pre>snap install rocketchat-server</pre><h4 id="联结-caddy"><a href="#联结-caddy" class="headerlink" title="联结 caddy"></a>联结 caddy</h4><figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">sudo rocketchat-<span class="keyword">server</span>.initcaddy</span><br></pre></td></tr></table></figure><p>编辑 Caddyfile 文件</p><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">nano <span class="regexp">/var/</span>snap<span class="regexp">/rocketchat-server/</span>current<span class="regexp">/Caddyfile</span></span><br></pre></td></tr></table></figure><p>将  http://:8080 为你的网站,如 powersee.tk</p><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">http:</span><span class="comment">//powersee.tk</span></span><br><span class="line">proxy / <span class="string">localhost:</span><span class="number">3000</span> &#123;</span><br><span class="line">  websocket</span><br><span class="line">  transparent</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>再重启</p><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart snap<span class="selector-class">.rocketchat-server</span><span class="selector-class">.rocketchat-caddy</span></span><br></pre></td></tr></table></figure><p>那么此时访问网址就能进入聊天室了<br> 因为此处用 SSL 的话，我试了好多次，只能搞自签证书，而这样在手机客户端又没办法连接，因此不演示。</p><h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p>第一次进入注册的账号会成为管理账号。<br>进入后是英文的，可以设置为中文。<br>点击导航栏的三个点，进入管理界面</p><p>然后在里面可以找到设置语言的地方</p><h4 id="手机端登录"><a href="#手机端登录" class="headerlink" title="手机端登录"></a>手机端登录</h4><p>第一次进入会出现这个界面<br>(让你输入网址)<br>因为我没有使用 SSL，因此得点那个倒三角，选择 http:// 然后再输入网址，如我的 powersee.tk<br>再用账号密码登录即可。同个账号在多平台是可以同时在线的。</p><h4 id="手机客户端下载"><a href="#手机客户端下载" class="headerlink" title="手机客户端下载"></a>手机客户端下载</h4><p>去 play 商店 下载<br>GitHub下载:下载 armv7 版本的到手机安装，x86版本的则到平板。<a href="https://github.com/RocketChat/Rocket.Chat.Cordova/releases/" target="_blank" rel="noopener">https://github.com/RocketChat/Rocket.Chat.Cordova/releases/</a><br>总体而言，还是挺有趣的。</p>]]></content>
     
@@ -332,7 +352,7 @@
     <link href="https://powersee.pw/2018/07/edu-email-Chicago/"/>
     <id>https://powersee.pw/2018/07/edu-email-Chicago/</id>
     <published>2018-07-08T10:56:47.000Z</published>
-    <updated>2018-08-19T02:00:32.994Z</updated>
+    <updated>2018-10-02T14:39:40.937Z</updated>
     
     <content type="html"><![CDATA[<p>今天看到别的博主更新文章，然后就去试试，最后成功申请到了。</p><p>这个填的资料比较少，而且申请通过速度非常快。还是挺不错的。</p><a id="more"></a><p>申请地址:<a href="https://applycredit.ccc.edu/" target="_blank" rel="noopener">https://applycredit.ccc.edu/</a></p><p>美国人信息自动生成地址:<a href="http://www.haoweichi.com" target="_blank" rel="noopener">http://www.haoweichi.com</a></p><p>我申请不到一个小时就通过了，但是通过后账号还不能立即使用，再等一个多小时回来就可以用了。</p><p>可以使用 office365 ，然后 OneDrive 有 1T 的空间。</p><p>具体操作做个视频吧。</p><p>视频地址：<a href="https://www.bilibili.com/video/av27063977" target="_blank" rel="noopener">B 站传送</a></p><p>参考文章：<a href="https://www.xzymoe.com/city-colleges-of-chicago-edu-email/" target="_blank" rel="noopener">xzymoe 的博客</a></p>]]></content>
     
@@ -353,7 +373,7 @@
     <link href="https://powersee.pw/2018/06/install-wordpress-with-lnmp/"/>
     <id>https://powersee.pw/2018/06/install-wordpress-with-lnmp/</id>
     <published>2018-06-19T10:52:14.000Z</published>
-    <updated>2018-08-19T02:00:33.009Z</updated>
+    <updated>2018-10-02T14:39:40.937Z</updated>
     
     <content type="html"><![CDATA[<p>#发现1.5正式版更新了，我自己也试了，所以现在把原来命令行里的 1.4 全部都换成 1.5 了</p><h3 id="一，安装lnmp-Nginx-MySQL-PHP-环境"><a href="#一，安装lnmp-Nginx-MySQL-PHP-环境" class="headerlink" title="一，安装lnmp(Nginx/MySQL/PHP)环境"></a>一，安装lnmp(Nginx/MySQL/PHP)环境</h3><blockquote><p>wget <a href="http://soft2.vpser.net/lnmp/lnmp1.5-full.tar.gz" target="_blank" rel="noopener">http://soft2.vpser.net/lnmp/lnmp1.5-full.tar.gz</a></p></blockquote><a id="more"></a><blockquote><p>tar -zxvf lnmp1.5-full.tar.gz</p></blockquote><blockquote><p>cd lnmp1.5-full</p></blockquote><blockquote><p>./install.sh</p></blockquote><p>一路默认，虚拟机一个小时应该能安装好 之后就可以访问IP了</p><p>默认的访问目录为这个</p><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">/<span class="built_in">home</span>/wwwroot/<span class="built_in">default</span></span><br></pre></td></tr></table></figure><h3 id="二，安装wordpress"><a href="#二，安装wordpress" class="headerlink" title="二，安装wordpress"></a>二，安装wordpress</h3><p>此时进入默认的访问目录的上一级</p><blockquote><p>cd /home/wwwroot/</p></blockquote><blockquote><p>wget <a href="https://cn.wordpress.org/wordpress-4.9.4-zh_CN.tar.gz" target="_blank" rel="noopener">https://cn.wordpress.org/wordpress-4.9.4-zh_CN.tar.gz</a></p></blockquote><blockquote><p>tar -zxvf wordpress-4.9.4-zh_CN.tar.gz</p></blockquote><blockquote><p>mv default old</p></blockquote><blockquote><p>mv wordpress default</p></blockquote><p>此时应该就可以访问wordpress了</p><h3 id="三，创建数据库"><a href="#三，创建数据库" class="headerlink" title="三，创建数据库"></a>三，创建数据库</h3><blockquote><p>mysql -u root -p</p></blockquote><p>输入密码，默认的话就是root</p><blockquote><p>create database wordpress;</p></blockquote><blockquote><p>exit</p></blockquote><h3 id="四，给权限"><a href="#四，给权限" class="headerlink" title="四，给权限"></a>四，给权限</h3><blockquote><p>chown -R 755 /home/wwwroot/</p></blockquote><blockquote><p>chown -R www:www /home/wwwroot/</p></blockquote><hr><p>此时输入IP即可访问配置 wordpress</p>]]></content>
     
@@ -378,7 +398,7 @@
     <link href="https://powersee.pw/2018/06/about-blog/"/>
     <id>https://powersee.pw/2018/06/about-blog/</id>
     <published>2018-06-18T11:44:10.000Z</published>
-    <updated>2018-08-19T02:00:32.336Z</updated>
+    <updated>2018-10-02T14:39:40.936Z</updated>
     
     <content type="html"><![CDATA[<p>今天是 18 号了，上个月的 20 号是我第一次在 vps 成功建立了 WordPress。现在已经有二十多篇文章了。<a id="more"></a>（虽然有些只是我做的一些简单的笔记而已）。因为我在网站添加了个日历小工具，只有当天有写文章，那天在日历上才会点亮，所以有时就不得不找些来写了。这篇也许也算吧。</p><p>这段时间确实耗费了非常多非常多的时间在这上面，没想到这东西还能玩上瘾。想想当初买 vps 主要是用来搭梯子的。这个很容易，接着就去了解 Linux，逐渐地了解了一些常用的命令的多种用法，以及其这样命名的缘由。还记得前不久好像是在知乎上看到有人推荐一本 Linux 的书《 Linux 入门很简单》，于是我在图书馆的公众号查了一下，发现居然有，就去借来看。由于其写得很通俗易懂，看得挺投入的，几天就看完了。从中学到了很多，非常感谢这本书。</p><p>之后我还去研究 Python，毕竟这是现在最热门的语言，而且都已经加入高考了，想想以后后辈们都多少会点 Python，自己一点都不了解怎么行。再之后又去研究 Android 开发，想想自己能做一个 APP，这是一件多么值得吹的事。但，终究还是因为它们太难了……然后就没有然后了。</p><p>于是我又回来折腾 Linux 了，毕竟有两台 vps 了，而且前阵子还看到 vultr 有活动，搞了一个帐号，现在一般情况下至少有三台运行着。于是我必须找着事来折腾。一开始就对 WordPress 展开研究，备份、迁移、优化、加证书等等，还有插件、主题这些，也就耗费了挺多时间。</p><p>之后就来研究 vps 可以干哪些有趣的事。</p><ul><li>用来搭建多个网站，只用一台 vps</li><li>用来作为同步盘，同步手机文件和电脑文件</li><li>用来搭建网盘，可以放文件，也可以分享给别人，不限速</li><li>用来搭建一个论坛，人人都可以注册，可以发帖讨论</li><li>用来当下载工具，一些用迅雷下载不动的资源，放在 vps 可以下载得动</li><li>用来搭建一个聊天工具，使用与他人不同的聊天方式</li></ul><p>因为老是研究这些，通过搜索我发现了很多博客网站，好的我都添加到书签和 rss 订阅了。很多个网站我都把他们的全部文章都过一篇了，也收获了很多。然后发现他们喜欢的一些东西，我希望自己不要像他们那样。比如喜欢老是折腾网站的速度，快了那么零点几秒就很高兴，这点我很不能理解，我自己的网页我两三秒能打开就行了。还有折腾 SEO 的，看那么多的文章写到这，我也有点想去搞搞，最后还是算了。我还是少折腾这些吧，不去重视这些，这样我域名被墙了，那就换一个呗，vps 都被墙了，那就在电脑的虚拟机里运行呗。不在乎这些，省点心思做些有意义的事好。</p><p>接下来的想法是有些视频里需要的文章，我可以把它放 Github 的博客里，然后双份链接，保险。域名、流量、被搜索引擎收录这些，现在真心不想去搞，希望以后也不去搞，就单纯的因为想做这些事而去做就好。</p>]]></content>
     
@@ -400,7 +420,7 @@
     <link href="https://powersee.pw/2018/06/about-router/"/>
     <id>https://powersee.pw/2018/06/about-router/</id>
     <published>2018-06-15T05:54:15.000Z</published>
-    <updated>2018-08-19T02:00:32.506Z</updated>
+    <updated>2018-10-02T14:39:40.936Z</updated>
     
     <content type="html"><![CDATA[<p>如果我的路由器的管理地址为 <code>192.168.1.1</code> 如果我开放外网访问，当在外网输入我的公网IP，那么默认是访问 公网IP:80 然后进入路由器的管理界面 192.168.1.1</p><a id="more"></a><p><strong>端口映射</strong></p><p>端口映射，可以设置不同的端口来访问路由器内不同的设备。例如我的电脑连接路由器，然后分配的IP是192.168.1.2，此时我可以通过设置一个端口（8888）来映射到电脑，设置完成后输入公网IP:8888 访问的就是电脑了而不是路由器。通过这种方法,可以让电脑开启web服务，然后从外网访问。此处必须输入外网ip来访问，通过内网像 192.168.1.1:8888 这样是没用的。</p><p><strong>内网穿透</strong></p><p>当然上面的那样明显只适合有公网IP的情况，像我的话就没有公网IP。所以外网访问内网就需要内网穿透了，这里使用 ngrok 和<code>老毛子固件</code>。</p><p>我使用的路由器固件为恩山的hiboyhiboy大神的固件，路由器为斐讯K2。</p><p>打开路由器的ngrok穿透界面，去 Server.ngrok.cc 注册帐号，然后得到一个 token 码，复制它，之后开通隧道，可以选择免费的。设置域名前缀，如123，那么最后你的域名就是 <span style="background-color: #ffff00;">123.free.ngrok.cc</span></p><p>之后设置一个端口，用默认的4443也可以。</p><p>开通隧道完成后，再回到路由器这里，然后把信息填进去，</p><p><a href="/img/2018/ngrok.png"><img src="/img/2018/ngrok.png" alt=""></a></p><p>之后再把启动 【ngrok 内网穿透】的的开关打开，再应用本页面设置，此时通过访问域名</p><p>如上面的<span style="background-color: #ffff00;">123.free.ngrok.cc</span></p><p>应该就可以进入路由器管理界面了。</p>]]></content>
     
@@ -412,26 +432,6 @@
     
     
       <category term="服务器" scheme="https://powersee.pw/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>搭油管镜像</title>
-    <link href="https://powersee.pw/2018/06/you2php/"/>
-    <id>https://powersee.pw/2018/06/you2php/</id>
-    <published>2018-06-13T04:59:29.000Z</published>
-    <updated>2018-08-19T02:00:33.017Z</updated>
-    
-    <content type="html"><![CDATA[<p>可以零成本观看油管视频，免费，但只能电脑网页看。<br><a id="more"></a><br>项目：<a href="https://github.com/You2php/you2php" target="_blank" rel="noopener">https://github.com/You2php/you2php</a></p><p>利用一台免费的虚拟主机来搭建私人镜像，然后在国内通过访问这台虚拟主机来观看油管的视频。</p><h3 id="一-注册一台虚拟主机"><a href="#一-注册一台虚拟主机" class="headerlink" title="一  注册一台虚拟主机"></a>一  注册一台虚拟主机</h3><p><a href="https://www.000webhost.com/free-website-sign-up" target="_blank" rel="noopener">https://www.000webhost.com/free-website-sign-up</a></p><p>当然得使用国外的，进去后填邮箱、密码、域名前缀就行，之后在邮箱里打开收到的邮件，确认邮箱即可。</p><h3 id="二-YouTube-API"><a href="#二-YouTube-API" class="headerlink" title="二  YouTube API"></a>二  YouTube API</h3><p><a href="https://console.developers.google.com/" target="_blank" rel="noopener">https://console.developers.google.com/</a></p><p>当然得有谷歌账号才行的，进去后右上角，创建项目，然后默认，再点击刚才创建的项目，启用 API 和服务，YouTube Data API v3，启用，创建凭据，之后选下面这个</p><ol><li><ol><li><p><strong>您使用的是哪个 API？</strong></p><p>YouTube Data API v3</p></li><li><p><strong>您从哪里调用 API？</strong></p><p>网页服务器（例如 node.js、Tomcat）</p></li><li><p><strong>您要访问那些数据？</strong></p><p>公开数据</p></li></ol></li></ol><p>再点  <strong>我需要哪些凭据？</strong></p><p>此时就会出现API秘钥，复制保存好，然后点完成。</p><h3 id="三-安装"><a href="#三-安装" class="headerlink" title="三  安装"></a>三  安装</h3><p>可以去开发者的GitHub下载 <a href="https://github.com/You2php/you2php/archive/v1.2.zip" target="_blank" rel="noopener">https://github.com/You2php/you2php/archive/v1.2.zip</a></p><p>也可以在我这本地下载 [download id=&#8221;240&#8243;]</p><p></p><p>下载后是一个zip压缩包，解压后上传到刚才创建的虚拟主机里面。</p><p>在账号登录的情况下，打开<a href="https://files.000webhost.com/" target="_blank" rel="noopener">https://files.000webhost.com/</a></p><p>应该可以进入上传文件界面吧，然后把压缩包里的所有文件都拖到 <strong>public_html </strong>这个文件夹里面去就行。这时候打开虚拟主机分配给你的域名，就可以来配置参数。</p><h3 id="四-配置参数"><a href="#四-配置参数" class="headerlink" title="四  配置参数"></a>四  配置参数</h3><p>都是中文，还是挺容易理解的。到最后填入之前的 <strong>API秘钥</strong> ，再填入邮箱就完成了。</p><h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>此时就可以通过这个 虚拟主机分配给你的域名 例如：123.000webhostapp.com 这样来观看油管的视频，可以搜索，可以下载。还是挺不错的。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;可以零成本观看油管视频，免费，但只能电脑网页看。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="虚拟主机" scheme="https://powersee.pw/tags/%E8%99%9A%E6%8B%9F%E4%B8%BB%E6%9C%BA/"/>
     
   </entry>
   

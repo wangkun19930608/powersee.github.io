@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="服务器," />
+  <meta name="keywords" content="mac," />
 
 
 
@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="一  下载到其官网下载对应的客户端">
-<meta name="keywords" content="服务器">
+<meta name="description" content="自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。">
+<meta name="keywords" content="mac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建个人网盘——syncthing">
-<meta property="og:url" content="https://powersee.pw/2018/05/syncthing/index.html">
+<meta property="og:title" content="禁止 mac 在U盘产生隐藏文件">
+<meta property="og:url" content="https://powersee.pw/2018/10/禁止-mac-在U盘产生隐藏文件/index.html">
 <meta property="og:site_name" content="Powersee的博客">
-<meta property="og:description" content="一  下载到其官网下载对应的客户端">
+<meta property="og:description" content="自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-02T14:39:40.939Z">
+<meta property="og:updated_time" content="2018-10-08T14:56:12.707Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建个人网盘——syncthing">
-<meta name="twitter:description" content="一  下载到其官网下载对应的客户端">
+<meta name="twitter:title" content="禁止 mac 在U盘产生隐藏文件">
+<meta name="twitter:description" content="自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。">
 
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://powersee.pw/2018/05/syncthing/"/>
+  <link rel="canonical" href="https://powersee.pw/2018/10/禁止-mac-在U盘产生隐藏文件/"/>
 
 
 
 
 
-  <title>搭建个人网盘——syncthing | Powersee的博客</title>
+  <title>禁止 mac 在U盘产生隐藏文件 | Powersee的博客</title>
   
 
 
@@ -279,7 +279,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://powersee.pw/2018/05/syncthing/">
+    <link itemprop="mainEntityOfPage" href="https://powersee.pw/2018/10/禁止-mac-在U盘产生隐藏文件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="powersee">
@@ -296,7 +296,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">搭建个人网盘——syncthing</h1>
+          <h1 class="post-title" itemprop="name headline">禁止 mac 在U盘产生隐藏文件</h1>
         
 
         <div class="post-meta">
@@ -308,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T23:23:19+08:00">
-                2018-05-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-08T22:51:23+08:00">
+                2018-10-08
               </time>
             
 
@@ -318,28 +318,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/服务器/" itemprop="url" rel="index">
-                    <span itemprop="name">服务器</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -368,11 +346,12 @@
       
 
       
-        <h3 id="一-下载"><a href="#一-下载" class="headerlink" title="一  下载"></a>一  下载</h3><p>到其官网下载对应的客户端<a id="more"></a>：<a href="https://syncthing.net/" target="_blank" rel="noopener">官网链接</a>  例如我下载Android版和Ubuntu版 Ubuntu版链接：<a href="https://apt.syncthing.net/" target="_blank" rel="noopener">点我</a><br>安卓安装就不用说了，Ubuntu则根据其页面的这段命令输入就行。<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">\# Add the release PGP key<span class="variable">s:</span></span><br><span class="line">curl -s http<span class="variable">s:</span>//syncthing.net/release-key.txt | sudo apt-key <span class="built_in">add</span> -</span><br><span class="line"></span><br><span class="line">\# Add the <span class="string">"stable"</span> channel <span class="keyword">to</span> your APT <span class="keyword">source</span><span class="variable">s:</span></span><br><span class="line"><span class="keyword">echo</span> <span class="string">"deb https://apt.syncthing.net/ syncthing stable"</span> | sudo tee /etc/apt/sources.<span class="keyword">list</span>.d/syncthing.<span class="keyword">list</span></span><br><span class="line"></span><br><span class="line">\# Update <span class="built_in">and</span> install syncthin<span class="variable">g:</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> <span class="keyword">update</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> install syncthing</span><br></pre></td></tr></table></figure></p>
-<h3 id="二-运行"><a href="#二-运行" class="headerlink" title="二  运行"></a>二  运行</h3><p>此时在Ubuntu终端输入命令：<code>syncthing</code> 来运行它 等待看到<br><code>GUI and API listening on 127.0.0.1:8384</code><br>同时按<code>ctrl 和 C</code> 来取消命令 运行此命令的目的时为了生成配文件</p>
-<h3 id="三-修改"><a href="#三-修改" class="headerlink" title="三  修改"></a>三  修改</h3><p>此时我们即可修改配文件<br><code>vim ~/.config/syncthing/config.xml</code><br>然后找到 <code>127.0.0.1:8384</code> 将之改为 <code>0.0.0.0:8384</code><br>更改方法为找到此处 按键盘的 <code>i</code> 便可以修改，改完按 <code>Esc</code> 退出编辑状态，输入 <code>:wq</code> (保存并退出的意思)</p>
-<h3 id="四-配置"><a href="#四-配置" class="headerlink" title="四  配置"></a>四  配置</h3><p>这时就可以输入<code>IP:8384</code> (例如 <code>192.168.123.184:8384</code> )进入管理页面了 我们可以设置账号密码，以免随便他人登录这个界面 点击右上角的 操作 显示ID 将会出现一张二维码，用手机扫描这即可添加关联 然后设置想要同步的文件夹，当两个客户端都运行时就会自动同步</p>
-<p>完</p>
+        <p>自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。<br><a id="more"></a><br>每个都是 4KB。基本上 U 盘里每个文件，都有一个跟它对应的隐藏文件。看来是 Mac 自动生成的，但不知道是用来干什么的，而且平时也没什么影响，毕竟隐藏文件不管在 win 还是 Mac，默认情况下都是不显示的，所以也就没去管它。</p>
+<p>直到，那天 U 盘插别人的电脑，居然被安全软件检测到这些隐藏文件，弹窗说有安全隐患……</p>
+<p>再接着，拿 U 盘去自助打印机，这一堆隐藏文件显示在那里，严重影响我查找要打印的文件的效率。这不能忍。</p>
+<p>于是我百度一下，没有找到方法。再谷歌，就找到了。</p>
+<p>是 Mac 上【聚焦搜索】（spotlight）这个软件造成的，这是一个全局搜索软件。应该是它为了能快速搜索到 U 盘里的文件，所以，当我们在 mac 上往 U 盘传文件的时候，同时会在文件旁边创建一个 4KB 的隐藏文件。</p>
+<h2 id="关闭方法"><a href="#关闭方法" class="headerlink" title="关闭方法"></a>关闭方法</h2><p>打开【系统偏好设置】，第一行倒数第二个的【聚焦】，进去后点【隐私】，然后左下角的【+】，之后选中 U 盘，确认就好了。以后再往 U 盘写入文件就不会有这些隐藏文件了，之前产生的那些可以在 win 下将之删除。（Mac 下在访达里根本无法显示这些文件）</p>
 
       
     </div>
@@ -396,7 +375,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/服务器/" rel="tag"><i class="fa fa-tag"></i> 服务器</a>
+            <a href="/tags/mac/" rel="tag"><i class="fa fa-tag"></i> mac</a>
           
         </div>
       
@@ -409,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/Multiple-websites-in-one-server/" rel="next" title="让一个服务器拥有多个网站">
-                <i class="fa fa-chevron-left"></i> 让一个服务器拥有多个网站
+              <a href="/2018/10/Solve-the-problem-that-the-ireader-cannot-connect-to-the-computer/" rel="next" title="解决 ireader 阅读器无法连接电脑问题">
+                <i class="fa fa-chevron-left"></i> 解决 ireader 阅读器无法连接电脑问题
               </a>
             
           </div>
@@ -418,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/Write-system-firmware-to-u-disk-on-MAC/" rel="prev" title="在mac把系统固件写入U盘">
-                在mac把系统固件写入U盘 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -560,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-下载"><span class="nav-number">1.</span> <span class="nav-text">一  下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-运行"><span class="nav-number">2.</span> <span class="nav-text">二  运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-修改"><span class="nav-number">3.</span> <span class="nav-text">三  修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-配置"><span class="nav-number">4.</span> <span class="nav-text">四  配置</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭方法"><span class="nav-number">1.</span> <span class="nav-text">关闭方法</span></a></li></ol></div>
             
 
           </div>
