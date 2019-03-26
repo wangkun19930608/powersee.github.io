@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://powersee.pw/"/>
-  <updated>2019-03-12T01:41:01.942Z</updated>
+  <updated>2019-03-12T01:36:31.644Z</updated>
   <id>https://powersee.pw/</id>
   
   <author>
@@ -15,20 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>20190312094101</title>
-    <link href="https://powersee.pw/2019/03/Mac%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9/"/>
-    <id>https://powersee.pw/2019/03/Mac批量修改文本内容/</id>
-    <published>2019-03-12T01:41:01.000Z</published>
-    <updated>2019-03-12T01:41:01.942Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
   
   <entry>
     <title>Nginx下修改WordPress固定链接导致无法访问</title>
@@ -419,6 +405,27 @@
     
     
       <category term="服务器" scheme="https://powersee.pw/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>申请教育邮箱–芝加哥城市学院</title>
+    <link href="https://powersee.pw/2018/07/edu-email-Chicago/"/>
+    <id>https://powersee.pw/2018/07/edu-email-Chicago/</id>
+    <published>2018-07-08T10:56:47.000Z</published>
+    <updated>2019-03-12T01:36:31.651Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天看到别的博主更新文章，然后就去试试，最后成功申请到了。</p><p>这个填的资料比较少，而且申请通过速度非常快。还是挺不错的。</p><a id="more"></a><p>申请地址:<a href="https://applycredit.ccc.edu/" target="_blank" rel="noopener">https://applycredit.ccc.edu/</a></p><p>美国人信息自动生成地址:<a href="http://www.haoweichi.com" target="_blank" rel="noopener">http://www.haoweichi.com</a></p><p>我申请不到一个小时就通过了，但是通过后账号还不能立即使用，再等一个多小时回来就可以用了。</p><p>可以使用 office365 ，然后 OneDrive 有 1T 的空间。</p><p>具体操作做个视频吧。</p><p>视频地址：<a href="https://www.bilibili.com/video/av27063977" target="_blank" rel="noopener">B 站传送</a></p><p>参考文章：<a href="https://www.xzymoe.com/city-colleges-of-chicago-edu-email/" target="_blank" rel="noopener">xzymoe 的博客</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天看到别的博主更新文章，然后就去试试，最后成功申请到了。&lt;/p&gt;
+&lt;p&gt;这个填的资料比较少，而且申请通过速度非常快。还是挺不错的。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="网络" scheme="https://powersee.pw/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   

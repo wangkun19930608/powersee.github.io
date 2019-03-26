@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[20190312094101]]></title>
-    <url>%2F2019%2F03%2FMac%E6%89%B9%E9%87%8F%E4%BF%AE%E6%94%B9%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9%2F</url>
-    <content type="text"></content>
-  </entry>
-  <entry>
     <title><![CDATA[Nginx下修改WordPress固定链接导致无法访问]]></title>
     <url>%2F2019%2F03%2FNginx%E4%B8%8B%E4%BF%AE%E6%94%B9WordPress%E5%9B%BA%E5%AE%9A%E9%93%BE%E6%8E%A5%E5%AF%BC%E8%87%B4%E6%97%A0%E6%B3%95%E8%AE%BF%E9%97%AE%2F</url>
     <content type="text"><![CDATA[内容来自：CSDN 先找到配置文件的位置，如我这里是/usr/local/nginx/conf/nginx.conf 用 vim 来修改，在server{} 字段 中的 “root /websit/wwwroot/;”(这行就是指定网站所在目录的) 这一行的下面 ，添加下面的内容：if (-f $request_filename/index.html)&#123;rewrite (.*) $1/index.html break;&#125;if (-f $request_filename/index.php)&#123;rewrite (.*) $1/index.php;&#125;if (!-f $request_filename)&#123;rewrite (.*) /index.php;&#125;rewrite /wp-admin$ $scheme://$host$uri/ permanent; 然后重启 Nginx ，如果和我一样是用 lnmp 的，可以输入lnmp nginx restart 之后就可以访问了文章了。]]></content>
