@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及取回手机]]></title>
+    <url>%2F2019%2F08%2Fdocker-qb%2F</url>
+    <content type="text"><![CDATA[此教程并不难，只要你会复制粘贴即可。 要想进行下面的操作，需要有一个服务器，如果你没有的话， 点此链接注册充值 10 美元送 50 美元送的 50美元只有一个月的有效期。（所以不要省，开贵点的机器吧） 开始 使用这家的服务器，是因为它可以随时的删除，不像其它的，一买就得一年。而且，这家还可以选择自动安装 docker ，又节省了一些时间。 点击左边的 billing 充值方式支持 支付宝 微信（但最少 10 美元） 充值好后 ，点右边那个 + 的圆圈 然后选择服务器的地区（日本和新加坡会比较快，不过有可能连接不上，选美国也可以） Server Type点 application ，里面就有 docker Server Size 就是服务器的配置，越高就越贵。（如果有赠送的 50 美元，那就选那个 40 美元的吧，反正你不花，下个月也没了） 把下面的 Enable IPv6 前面的 框 打钩✅（可以使我们下载时连接到更多的用户） 然后点击右下角的 deploy now 等待几分钟……10.就可以看到服务器部署好了，给了一个 ip 地址。 安装 我们要控制这台服务器，需要用 ssh 工具，这里我用 putty 来演示。 如果用安卓手机的话，可以下载个 JuiceSSH 有能力的可以去 GitHub 下载：地址无法在 GitHub 下载的，可以到我的网盘里下载：地址（在『电脑软件』里） 下载后解压，打开 putty填上 IP 地址连接 接着输入用户名和密码。（密码输入时不会显示的） 连接后输入docker pull linuxserver/qbittorrent 完成后输入 docker create \ --name=qbittorrent \ -e PUID=1000 \ -e PGID=1000 \ -e TZ=Aisa/Shanghai \ -e UMASK_SET=022 \ -e WEBUI_PORT=8080 \ -p 8999:8999 \ -p 8999:8999/udp \ -p 8080:8080 \ -v /path/to/appdata/config:/config \ -v /path/to/downloads:/downloads \ --restart unless-stopped \ linuxserver/qbittorrent 完成后就可以在浏览器里，输入 IP:8080 来访问 qB 了。 取回本地但是下载好后文件是在服务器里，我想把它取回到电脑或者手机。那么，开启一个 http 服务即可。 这里安装一个 caddywget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/caddy_install.sh &amp;&amp; chmod +x caddy_install.sh &amp;&amp; bash caddy_install.sh 写入配置echo ":80 &#123; root /path/to/downloads timeouts none gzip browse &#125;" &gt; /usr/local/caddy/Caddyfile 启动 caddy/etc/init.d/caddy start 完成后就可以在浏览器里，输入 IP地址 来访问下载好的文件了。如果是 MP4 文件的话，还可以支持在线播放。]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[推送到 kindle]]></title>
     <url>%2F2019%2F04%2Fpush-to-kindle%2F</url>
     <content type="text"><![CDATA[手机端关注微信公众号：cn_Kindle绑定自己的亚马逊账号，即可把微信文章或者其它文章网址发送到这个号，即可把内容推送到 kindle 。 电脑端微信电脑版就不讲了。https://fivefilters.org/kindle-it/到这个网址将文章地址粘贴，然后点 preview ，出现预览界面，将其显示的邮箱（例如：kindle@fivefilters.org）添加到 已认可的发件人电子邮箱列表 然后填入自己的 kindle 邮箱点 send 。 多个网页一起推送上面的推送都是一次一篇文章的，如果想把多篇文章一起推送到 kindle 可以用这种方法。 浏览器插件 EpubPress这个插件 Chrome 和 Firefox 都有，安装后同时打开多篇文章，再点击这个插件，就可以把这些文章做成 mobi 格式的电子书，可以本地下载，也可以绑定 kindle 邮箱，直接发送到 kindle。]]></content>

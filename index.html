@@ -275,6 +275,163 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://powersee.pw/2019/08/docker-qb/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="powersee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Powersee的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/docker-qb/" itemprop="url">用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及取回手机</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-29T09:54:24+08:00">
+                2019-08-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><strong>此教程并不难，只要你会复制粘贴即可。</strong></p>
+<blockquote>
+<p>要想进行下面的操作，需要有一个服务器，如果你没有的话， <a href="https://www.vultr.com/?ref=8161953-4F" target="_blank" rel="noopener">点此链接注册充值 10 美元送 50 美元</a><br>送的 50美元只有一个月的有效期。（所以不要省，开贵点的机器吧）</p>
+</blockquote>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><blockquote>
+<p>使用这家的服务器，是因为它可以随时的删除，不像其它的，一买就得一年。而且，这家还可以选择自动安装 docker ，又节省了一些时间。</p>
+</blockquote>
+<ol>
+<li>点击左边的 billing</li>
+<li>充值方式支持 <strong>支付宝</strong> <strong>微信</strong>（但最少 10 美元）</li>
+<li>充值好后 ，点右边那个 <strong>+</strong> 的圆圈</li>
+<li>然后选择服务器的<strong>地区</strong>（日本和新加坡会比较快，不过有可能连接不上，选美国也可以）</li>
+<li><strong>Server Type</strong>点 <strong>application</strong> ，里面就有 <strong>docker</strong></li>
+<li><strong>Server Size</strong> 就是服务器的配置，越高就越贵。（如果有赠送的 50 美元，那就选那个 40 美元的吧，反正你不花，下个月也没了）</li>
+<li>把下面的 <strong>Enable IPv6</strong> 前面的 框 打钩✅（可以使我们下载时连接到更多的用户）</li>
+<li>然后点击右下角的 deploy now</li>
+<li>等待几分钟……<br>10.就可以看到服务器部署好了，给了一个 ip 地址。 </li>
+</ol>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p> 我们要控制这台服务器，需要用 ssh 工具，这里我用 putty 来演示。</p>
+<blockquote>
+<p>如果用安卓手机的话，可以下载个 <strong>JuiceSSH</strong></p>
+</blockquote>
+<p>有能力的可以去 GitHub 下载：<a href="https://github.com/larryli/PuTTY/releases" target="_blank" rel="noopener">地址</a><br>无法在 GitHub 下载的，可以到我的网盘里下载：<a href="http://veger.ys168.com/" target="_blank" rel="noopener">地址（在『电脑软件』里）</a></p>
+<p>下载后解压，打开 putty<br><img src="https://i.loli.net/2019/08/29/QwXt5dyAIofNHMW.png" alt="putty 连接.png"><br>填上 IP 地址连接</p>
+<p>接着输入用户名和密码。（密码输入时不会显示的）</p>
+<p>连接后输入<br><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker</span> pull linuxserver/qbittorrent</span><br></pre></td></tr></table></figure></p>
+<p>完成后输入</p>
+<figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker create \</span><br><span class="line">  -<span class="ruby">-name=qbittorrent \</span></span><br><span class="line"><span class="ruby">  -e PUID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e PGID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e TZ=Aisa/Shanghai \</span></span><br><span class="line"><span class="ruby">  -e UMASK_SET=<span class="number">022</span> \</span></span><br><span class="line"><span class="ruby">  -e WEBUI_PORT=<span class="number">8080</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8999</span><span class="symbol">:</span><span class="number">8999</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8999</span><span class="symbol">:</span><span class="number">8999</span>/udp \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8080</span><span class="symbol">:</span><span class="number">8080</span> \</span></span><br><span class="line"><span class="ruby">  -v /path/to/appdata/<span class="symbol">config:</span>/config \</span></span><br><span class="line"><span class="ruby">  -v /path/to/<span class="symbol">downloads:</span>/downloads \</span></span><br><span class="line"><span class="ruby">  --restart <span class="keyword">unless</span>-stopped \</span></span><br><span class="line"><span class="ruby">  linuxserver/qbittorrent</span></span><br></pre></td></tr></table></figure>
+<p>完成后就可以在浏览器里，输入 <code>IP:8080</code> 来访问 qB 了。</p>
+<h2 id="取回本地"><a href="#取回本地" class="headerlink" title="取回本地"></a>取回本地</h2><p>但是下载好后文件是在服务器里，我想把它取回到电脑或者手机。那么，开启一个 http 服务即可。</p>
+<p>这里安装一个 caddy<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/caddy_install.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> caddy_install.<span class="keyword">sh</span> &amp;&amp; bash caddy_install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p>
+<p>写入配置<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="comment">":80 &#123;  </span></span><br><span class="line"> root /path/<span class="keyword">to</span>/downloads</span><br><span class="line"> timeouts none  </span><br><span class="line"> gzip  </span><br><span class="line"> <span class="keyword">browse</span>  </span><br><span class="line">&#125;<span class="comment">" &gt; /usr/local/caddy/Caddyfile</span></span><br></pre></td></tr></table></figure></p>
+<p>启动 caddy<br><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/caddy start</span></span><br></pre></td></tr></table></figure></p>
+<p>完成后就可以在浏览器里，输入 <code>IP地址</code> 来访问下载好的文件了。如果是 MP4 文件的话，还可以支持在线播放。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+            <div>
+                
+            </div>
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://powersee.pw/2019/04/push-to-kindle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1418,134 +1575,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://powersee.pw/2018/08/Netizen-self-censorship/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="powersee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Powersee的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/Netizen-self-censorship/" itemprop="url">网民的自我审查</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-18T22:50:47+08:00">
-                2018-08-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>　　今晚本来是在网上闲看的，突然搜索到阮一峰老师 2012 年写的一篇博文，是教人用 Jekyll 搭建个人博客，并且发布到 github 上面去。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/Netizen-self-censorship/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-            <div>
-                
-            </div>
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1596,7 +1625,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">35</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
