@@ -81,18 +81,18 @@
 
 
 
-<meta name="description" content="此教程并不难，只要你会复制粘贴即可。  要想进行下面的操作，需要有一个服务器，如果你没有的话， 点此链接注册充值 10 美元送 50 美元送的 50美元只有一个月的有效期。（所以不要省，开贵点的机器吧）  开始 使用这家的服务器，是因为它可以随时的删除，不像其它的，一买就得一年。而且，这家还可以选择自动安装 docker ，又节省了一些时间。   点击左边的 billing 充值方式支持 支付宝">
+<meta name="description" content="此教程并不难，只要你会复制粘贴即可。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及取回手机">
 <meta property="og:url" content="https://powersee.pw/2019/08/docker-qb/index.html">
 <meta property="og:site_name" content="Powersee的博客">
-<meta property="og:description" content="此教程并不难，只要你会复制粘贴即可。  要想进行下面的操作，需要有一个服务器，如果你没有的话， 点此链接注册充值 10 美元送 50 美元送的 50美元只有一个月的有效期。（所以不要省，开贵点的机器吧）  开始 使用这家的服务器，是因为它可以随时的删除，不像其它的，一买就得一年。而且，这家还可以选择自动安装 docker ，又节省了一些时间。   点击左边的 billing 充值方式支持 支付宝">
+<meta property="og:description" content="此教程并不难，只要你会复制粘贴即可。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/08/29/QwXt5dyAIofNHMW.png">
-<meta property="og:updated_time" content="2019-08-29T03:11:56.751Z">
+<meta property="og:updated_time" content="2019-08-29T04:17:05.269Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及取回手机">
-<meta name="twitter:description" content="此教程并不难，只要你会复制粘贴即可。  要想进行下面的操作，需要有一个服务器，如果你没有的话， 点此链接注册充值 10 美元送 50 美元送的 50美元只有一个月的有效期。（所以不要省，开贵点的机器吧）  开始 使用这家的服务器，是因为它可以随时的删除，不像其它的，一买就得一年。而且，这家还可以选择自动安装 docker ，又节省了一些时间。   点击左边的 billing 充值方式支持 支付宝">
+<meta name="twitter:description" content="此教程并不难，只要你会复制粘贴即可。">
 <meta name="twitter:image" content="https://i.loli.net/2019/08/29/QwXt5dyAIofNHMW.png">
 
 
@@ -348,6 +348,7 @@
 
       
         <p><strong>此教程并不难，只要你会复制粘贴即可。</strong></p>
+<a id="more"></a>
 <blockquote>
 <p>要想进行下面的操作，需要有一个服务器，如果你没有的话， <a href="https://www.vultr.com/?ref=8161953-4F" target="_blank" rel="noopener">点此链接注册充值 10 美元送 50 美元</a><br>送的 50美元只有一个月的有效期。（所以不要省，开贵点的机器吧）</p>
 </blockquote>
@@ -375,6 +376,7 @@
 <p>连接后输入<br><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker</span> pull linuxserver/qbittorrent</span><br></pre></td></tr></table></figure></p>
 <p>完成后输入</p>
 <figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker create \</span><br><span class="line">  -<span class="ruby">-name=qbittorrent \</span></span><br><span class="line"><span class="ruby">  -e PUID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e PGID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e TZ=Aisa/Shanghai \</span></span><br><span class="line"><span class="ruby">  -e UMASK_SET=<span class="number">022</span> \</span></span><br><span class="line"><span class="ruby">  -e WEBUI_PORT=<span class="number">8080</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8999</span><span class="symbol">:</span><span class="number">8999</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8999</span><span class="symbol">:</span><span class="number">8999</span>/udp \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8080</span><span class="symbol">:</span><span class="number">8080</span> \</span></span><br><span class="line"><span class="ruby">  -v /path/to/appdata/<span class="symbol">config:</span>/config \</span></span><br><span class="line"><span class="ruby">  -v /path/to/<span class="symbol">downloads:</span>/downloads \</span></span><br><span class="line"><span class="ruby">  --restart <span class="keyword">unless</span>-stopped \</span></span><br><span class="line"><span class="ruby">  linuxserver/qbittorrent</span></span><br></pre></td></tr></table></figure>
+<p>创建好后再启动<br><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">docker <span class="literal">start</span> qbittorrent</span><br></pre></td></tr></table></figure></p>
 <p>完成后就可以在浏览器里，输入 <code>IP:8080</code> 来访问 qB 了。</p>
 <h2 id="取回本地"><a href="#取回本地" class="headerlink" title="取回本地"></a>取回本地</h2><p>但是下载好后文件是在服务器里，我想把它取回到电脑或者手机。那么，开启一个 http 服务即可。</p>
 <p>这里安装一个 caddy<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/caddy_install.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> caddy_install.<span class="keyword">sh</span> &amp;&amp; bash caddy_install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p>
@@ -496,7 +498,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
