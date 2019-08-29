@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://powersee.pw/"/>
-  <updated>2019-08-29T04:35:47.848Z</updated>
+  <updated>2019-08-29T07:49:33.819Z</updated>
   <id>https://powersee.pw/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及取回手机</title>
+    <title>用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及把文件取回手机</title>
     <link href="https://powersee.pw/2019/08/docker-qb/"/>
     <id>https://powersee.pw/2019/08/docker-qb/</id>
     <published>2019-08-29T01:54:24.000Z</published>
-    <updated>2019-08-29T04:35:47.848Z</updated>
+    <updated>2019-08-29T07:49:33.819Z</updated>
     
     <content type="html"><![CDATA[<p><strong>此教程并不难，只要你会复制粘贴即可。</strong></p><a id="more"></a><blockquote><p>要想进行下面的操作，需要有一个服务器，如果你没有的话， <a href="https://www.vultr.com/?ref=8161953-4F" target="_blank" rel="noopener">点此链接注册充值 10 美元送 50 美元</a><br>送的 50美元只有一个月的有效期。（所以不要省，开贵点的机器吧）</p></blockquote><h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><blockquote><p>使用这家的服务器，是因为它可以随时的删除，不像其它的，一买就得一年。而且，这家还可以选择自动安装 docker ，又节省了一些时间。</p></blockquote><ol><li>点击左边的 billing</li><li>充值方式支持 <strong>支付宝</strong> <strong>微信</strong>（但最少 10 美元）</li><li>充值好后 ，点右边那个 <strong>+</strong> 的圆圈</li><li>然后选择服务器的<strong>地区</strong>（日本和新加坡会比较快，不过有可能连接不上，选美国也可以）</li><li><strong>Server Type</strong>点 <strong>application</strong> ，里面就有 <strong>docker</strong></li><li><strong>Server Size</strong> 就是服务器的配置，越高就越贵。（如果有赠送的 50 美元，那就选那个 40 美元的吧，反正你不花，下个月也没了）</li><li>把下面的 <strong>Enable IPv6</strong> 前面的 框 打钩✅（可以使我们下载时连接到更多的用户）</li><li>然后点击右下角的 deploy now</li><li>等待几分钟……<br>10.就可以看到服务器部署好了，给了一个 ip 地址。</li></ol><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p> 我们要控制这台服务器，需要用 ssh 工具，这里我用 putty 来演示。</p><blockquote><p>如果用安卓手机的话，可以下载个 <strong>JuiceSSH</strong></p></blockquote><p>有能力的可以去 GitHub 下载：<a href="https://github.com/larryli/PuTTY/releases" target="_blank" rel="noopener">地址</a><br>无法在 GitHub 下载的，可以到我的网盘里下载：<a href="http://veger.ys168.com/" target="_blank" rel="noopener">地址（在『电脑软件』里）</a></p><p>下载后解压，打开 putty<br><img src="https://i.loli.net/2019/08/29/QwXt5dyAIofNHMW.png" alt="putty 连接.png"><br>填上 IP 地址连接</p><p>接着输入用户名和密码。（密码输入时不会显示的）</p><p>连接后输入<br><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker</span> pull linuxserver/qbittorrent</span><br></pre></td></tr></table></figure></p><p>完成后输入</p><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker create \</span><br><span class="line">  -<span class="ruby">-name=qbittorrent \</span></span><br><span class="line"><span class="ruby">  -e PUID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e PGID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e TZ=Aisa/Shanghai \</span></span><br><span class="line"><span class="ruby">  -e UMASK_SET=<span class="number">022</span> \</span></span><br><span class="line"><span class="ruby">  -e WEBUI_PORT=<span class="number">8080</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8999</span><span class="symbol">:</span><span class="number">8999</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8999</span><span class="symbol">:</span><span class="number">8999</span>/udp \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8080</span><span class="symbol">:</span><span class="number">8080</span> \</span></span><br><span class="line"><span class="ruby">  -v /path/to/appdata/<span class="symbol">config:</span>/config \</span></span><br><span class="line"><span class="ruby">  -v /path/to/<span class="symbol">downloads:</span>/downloads \</span></span><br><span class="line"><span class="ruby">  --restart <span class="keyword">unless</span>-stopped \</span></span><br><span class="line"><span class="ruby">  linuxserver/qbittorrent</span></span><br></pre></td></tr></table></figure><p>创建好后再启动<br><figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">docker <span class="literal">start</span> qbittorrent</span><br></pre></td></tr></table></figure></p><p>完成后就可以在浏览器里，输入 <code>IP:8080</code> 来访问 qB 了。</p><h2 id="取回本地"><a href="#取回本地" class="headerlink" title="取回本地"></a>取回本地</h2><p>但是下载好后文件是在服务器里，我想把它取回到电脑或者手机。那么，开启一个 http 服务即可。</p><p>这里安装一个 caddy<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/caddy_install.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> caddy_install.<span class="keyword">sh</span> &amp;&amp; bash caddy_install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p><p>写入配置<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="comment">":80 &#123;  </span></span><br><span class="line"> root /path/<span class="keyword">to</span>/downloads</span><br><span class="line"> timeouts none  </span><br><span class="line"> gzip  </span><br><span class="line"> <span class="keyword">browse</span>  </span><br><span class="line">&#125;<span class="comment">" &gt; /usr/local/caddy/Caddyfile</span></span><br></pre></td></tr></table></figure></p><p>启动 caddy<br><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/caddy start</span></span><br></pre></td></tr></table></figure></p><p>开放服务器 80 端口<br><figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">ufw allow <span class="number">80</span></span><br></pre></td></tr></table></figure></p><p>完成后就可以在浏览器里，输入 <code>IP地址</code> 来访问下载好的文件了。如果是 MP4 文件的话，还可以支持在线播放。</p>]]></content>
     
@@ -235,28 +235,6 @@
   </entry>
   
   <entry>
-    <title>《Just For Fun》观后感</title>
-    <link href="https://powersee.pw/2018/08/just-for-fun/"/>
-    <id>https://powersee.pw/2018/08/just-for-fun/</id>
-    <published>2018-08-12T06:05:11.000Z</published>
-    <updated>2019-03-12T01:36:31.653Z</updated>
-    
-    <content type="html"><![CDATA[<p>这本书是 Linux 的发明者 Linus 的自传。是昨天看阮一峰老师的博客，看到他有一篇文章是介绍这书的，然后评论下面有人分享这书的链接，于是就下载来看看。</p><a id="more"></a><p>文章链接：<a href="http://www.ruanyifeng.com/blog/2012/09/linus_torvalds.html" target="_blank" rel="noopener">《Linus Torvalds自传》摘录</a></p><p>本书一共129页，于2001年出版，从主人公出生到后来到美国工作。之间有介绍他的家庭情况，学校，社交等。主要还是介绍 Linux ，其诞生与发展。</p><p>其中有些我觉得还是挺有趣的。</p><h3 id="1、"><a href="#1、" class="headerlink" title="1、"></a>1、</h3><p>比如一开始 Linus 把系统免费放网上让人使用时。当时他的电脑是分期付款的，要三年还完，而他又不 Linux 来赚钱，人们为了感激他，众筹帮他还电脑的钱。</p><blockquote><p>别人都知道 Linux 并没有让我获利，于是人们便觉得，让我们大家凑点钱，替 Linus 把电脑钱还清。</p></blockquote><h3 id="2、"><a href="#2、" class="headerlink" title="2、"></a>2、</h3><p>1992年，当 Linux 的用户越来越多，Linus 本可以让用户给他寄钱，但他却没有这么做，而是让人们给他寄明信片。他想知道有哪些地方的人在使用他的系统，于是，他收到来自世界各地的明信片，有几千封。</p><h3 id="3、"><a href="#3、" class="headerlink" title="3、"></a>3、</h3><p>还有的就是当他相当出名之后，每天联系他的人非常多，他对此的态度。</p><blockquote><p>我并不认为人们应该把我看成是一个所谓的好人，任何给我打电话或者发电子邮件的人，我都应该回话。</p></blockquote><p>这点其实也很合理，我就有类似的想法。当然没法跟大神比，但我多少也有过别人在网上问我问题的经历。</p><hr><p>当我在网上做过几个教学视频，并且有了一定的播放量，然后就能收到一堆的私信求问了。有些问题表述清晰，并且我也知道怎么解决，那我直接告诉他，这样很好啊。</p><p>然而跟多的其实是，视频压根没看就来问我问题，问的都是我视频讲的……有些还要加我QQ或者微信。经过几次之后，从此这些人我一律不理睬，有些在评论留言的，感觉内容毫无意义的，我直接删掉。</p><p>对于这些不尊重他人的人，完全没必要对他们客气。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这本书是 Linux 的发明者 Linus 的自传。是昨天看阮一峰老师的博客，看到他有一篇文章是介绍这书的，然后评论下面有人分享这书的链接，于是就下载来看看。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://powersee.pw/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="https://powersee.pw/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
     <title>光之子 去年录制游戏全程</title>
     <link href="https://powersee.pw/2018/08/child-of-light/"/>
     <id>https://powersee.pw/2018/08/child-of-light/</id>
@@ -426,6 +404,28 @@
       <category term="服务器" scheme="https://powersee.pw/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
       <category term="WordPress" scheme="https://powersee.pw/tags/WordPress/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>希望博客能坚持下去</title>
+    <link href="https://powersee.pw/2018/06/about-blog/"/>
+    <id>https://powersee.pw/2018/06/about-blog/</id>
+    <published>2018-06-18T11:44:10.000Z</published>
+    <updated>2019-03-12T01:36:31.647Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天是 18 号了，上个月的 20 号是我第一次在 vps 成功建立了 WordPress。现在已经有二十多篇文章了。<a id="more"></a>（虽然有些只是我做的一些简单的笔记而已）。因为我在网站添加了个日历小工具，只有当天有写文章，那天在日历上才会点亮，所以有时就不得不找些来写了。这篇也许也算吧。</p><p>这段时间确实耗费了非常多非常多的时间在这上面，没想到这东西还能玩上瘾。想想当初买 vps 主要是用来搭梯子的。这个很容易，接着就去了解 Linux，逐渐地了解了一些常用的命令的多种用法，以及其这样命名的缘由。还记得前不久好像是在知乎上看到有人推荐一本 Linux 的书《 Linux 入门很简单》，于是我在图书馆的公众号查了一下，发现居然有，就去借来看。由于其写得很通俗易懂，看得挺投入的，几天就看完了。从中学到了很多，非常感谢这本书。</p><p>之后我还去研究 Python，毕竟这是现在最热门的语言，而且都已经加入高考了，想想以后后辈们都多少会点 Python，自己一点都不了解怎么行。再之后又去研究 Android 开发，想想自己能做一个 APP，这是一件多么值得吹的事。但，终究还是因为它们太难了……然后就没有然后了。</p><p>于是我又回来折腾 Linux 了，毕竟有两台 vps 了，而且前阵子还看到 vultr 有活动，搞了一个帐号，现在一般情况下至少有三台运行着。于是我必须找着事来折腾。一开始就对 WordPress 展开研究，备份、迁移、优化、加证书等等，还有插件、主题这些，也就耗费了挺多时间。</p><p>之后就来研究 vps 可以干哪些有趣的事。</p><ul><li>用来搭建多个网站，只用一台 vps</li><li>用来作为同步盘，同步手机文件和电脑文件</li><li>用来搭建网盘，可以放文件，也可以分享给别人，不限速</li><li>用来搭建一个论坛，人人都可以注册，可以发帖讨论</li><li>用来当下载工具，一些用迅雷下载不动的资源，放在 vps 可以下载得动</li><li>用来搭建一个聊天工具，使用与他人不同的聊天方式</li></ul><p>因为老是研究这些，通过搜索我发现了很多博客网站，好的我都添加到书签和 rss 订阅了。很多个网站我都把他们的全部文章都过一篇了，也收获了很多。然后发现他们喜欢的一些东西，我希望自己不要像他们那样。比如喜欢老是折腾网站的速度，快了那么零点几秒就很高兴，这点我很不能理解，我自己的网页我两三秒能打开就行了。还有折腾 SEO 的，看那么多的文章写到这，我也有点想去搞搞，最后还是算了。我还是少折腾这些吧，不去重视这些，这样我域名被墙了，那就换一个呗，vps 都被墙了，那就在电脑的虚拟机里运行呗。不在乎这些，省点心思做些有意义的事好。</p><p>接下来的想法是有些视频里需要的文章，我可以把它放 Github 的博客里，然后双份链接，保险。域名、流量、被搜索引擎收录这些，现在真心不想去搞，希望以后也不去搞，就单纯的因为想做这些事而去做就好。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天是 18 号了，上个月的 20 号是我第一次在 vps 成功建立了 WordPress。现在已经有二十多篇文章了。
+    
+    </summary>
+    
+      <category term="随笔" scheme="https://powersee.pw/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="https://powersee.pw/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
