@@ -89,7 +89,8 @@
 <meta property="og:description" content="此教程并不难，只要你会复制粘贴即可。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.loli.net/2019/08/29/QwXt5dyAIofNHMW.png">
-<meta property="og:updated_time" content="2019-08-29T07:49:33.819Z">
+<meta property="og:image" content="https://i.loli.net/2019/08/30/tVnbi6zFp8SIED4.png">
+<meta property="og:updated_time" content="2019-08-30T05:07:48.974Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及把文件取回手机">
 <meta name="twitter:description" content="此教程并不难，只要你会复制粘贴即可。">
@@ -384,6 +385,14 @@
 <p>启动 caddy<br><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/caddy start</span></span><br></pre></td></tr></table></figure></p>
 <p>开放服务器 80 端口<br><figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">ufw allow <span class="number">80</span></span><br></pre></td></tr></table></figure></p>
 <p>完成后就可以在浏览器里，输入 <code>IP地址</code> 来访问下载好的文件了。如果是 MP4 文件的话，还可以支持在线播放。</p>
+<h3 id="补充："><a href="#补充：" class="headerlink" title="补充："></a>补充：</h3><p>看到有些人评论说用服务器下载会有风险，这个我也是知道的。因为国外的版权保护比较严格，所以有时会监控到你在下载 BT ，如果发现你下载的内容是盗版视频之类的，有可能会对你发出警告⚠️！</p>
+<p>但是，我说过我已经用了一年了，没有碰到过，所以才敢出这个教程。我认为可能和上传有关吧，不用上传太多应该就不太容易被查水表吧。所以我的分享率就设置为 2 而已。</p>
+<blockquote>
+<p>就算你真的被警告了，一般也就是叫你把视频删了而已。如果再严重点，我大不了就把这台服务器删了，然后重新开一台。（就跟我们在网吧里一样，这也是用 vultr 的好处。）</p>
+</blockquote>
+<p>而且，有的人问这个流量的问题，想视频中演示的，最便宜的套餐都有 1000G 流量，而且是上传 1000G，下载也 1000G ，一般使用根本是用不完的，只要设置一下这个分享率，一般是不会用超过的。</p>
+<p><img src="https://i.loli.net/2019/08/30/tVnbi6zFp8SIED4.png" alt="bandi.png"><br>像我这一个月才用 200G ……</p>
+<p>暂时这些……</p>
 
       
     </div>
@@ -561,7 +570,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取回本地"><span class="nav-number">3.</span> <span class="nav-text">取回本地</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">2.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取回本地"><span class="nav-number">3.</span> <span class="nav-text">取回本地</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#补充："><span class="nav-number">3.1.</span> <span class="nav-text">补充：</span></a></li></ol></li></ol></div>
             
 
           </div>
