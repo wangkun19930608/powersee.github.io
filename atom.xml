@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://powersee.pw/"/>
-  <updated>2019-08-30T05:07:48.974Z</updated>
+  <updated>2019-09-07T16:08:17.875Z</updated>
   <id>https://powersee.pw/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>BT挂机利器 transmission docker 安装法</title>
+    <link href="https://powersee.pw/2019/09/transmission-docker/"/>
+    <id>https://powersee.pw/2019/09/transmission-docker/</id>
+    <published>2019-09-07T14:11:40.000Z</published>
+    <updated>2019-09-07T16:08:17.875Z</updated>
+    
+    <content type="html"><![CDATA[<p>上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。</p><p>于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。</p><blockquote><p>这次使用一台纯净系统的服务器来装。</p></blockquote><h3 id="安装-docker"><a href="#安装-docker" class="headerlink" title="安装 docker"></a>安装 docker</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -sSL http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure><h3 id="安装-transmission"><a href="#安装-transmission" class="headerlink" title="安装 transmission"></a>安装 transmission</h3><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">-<span class="ruby">-restart=always \</span></span><br><span class="line"><span class="ruby">--name transmission \</span></span><br><span class="line"><span class="ruby">-v /home/tr/<span class="symbol">torrents:</span>/to_download \</span></span><br><span class="line"><span class="ruby">-v /home/tr/<span class="symbol">download:</span>/output \</span></span><br><span class="line"><span class="ruby">-p <span class="number">9091</span><span class="symbol">:</span><span class="number">9091</span> \</span></span><br><span class="line"><span class="ruby">-p <span class="number">51413</span><span class="symbol">:</span><span class="number">51413</span> \</span></span><br><span class="line"><span class="ruby">-e USERNAME=admin \</span></span><br><span class="line"><span class="ruby">-e PASSWORD=admin \</span></span><br><span class="line"><span class="ruby">jaymoulin/transmission</span></span><br></pre></td></tr></table></figure><h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>输入 IP:9091 即可进入 transmission 的管理界面<br>下载后的文件是保存在 <code>/home/tr/download</code> 这个路径下的</p><p>想要取回本地，可以和上一篇文章一样，安装 caddy ，或者也可以使用 FTP 的方法。</p><h3 id="取回本地"><a href="#取回本地" class="headerlink" title="取回本地"></a>取回本地</h3><p>但是下载好后文件是在服务器里，我想把它取回到电脑或者手机。那么，开启一个 http 服务即可。</p><p>这里安装一个 caddy<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/caddy_install.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> caddy_install.<span class="keyword">sh</span> &amp;&amp; bash caddy_install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p><p>写入配置<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="comment">":80 &#123;  </span></span><br><span class="line"> root /home/<span class="keyword">tr</span></span><br><span class="line"> timeouts none  </span><br><span class="line"> gzip  </span><br><span class="line"> <span class="keyword">browse</span>  </span><br><span class="line">&#125;<span class="comment">" &gt; /usr/local/caddy/Caddyfile</span></span><br></pre></td></tr></table></figure></p><p>启动 caddy<br><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/caddy start</span></span><br></pre></td></tr></table></figure></p><p>开放服务器 80 端口<br><figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">ufw allow <span class="number">80</span></span><br></pre></td></tr></table></figure></p><p>完成后就可以在浏览器里，输入 <code>IP地址</code> 来访问下载好的文件了。如果是 MP4 文件的话，还可以支持在线播放。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。&lt;/p&gt;
+&lt;p&gt;于是， transmission 是一个不错的选择。它对硬件的配置要
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及把文件取回手机</title>
@@ -404,28 +426,6 @@
       <category term="服务器" scheme="https://powersee.pw/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
     
       <category term="WordPress" scheme="https://powersee.pw/tags/WordPress/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>希望博客能坚持下去</title>
-    <link href="https://powersee.pw/2018/06/about-blog/"/>
-    <id>https://powersee.pw/2018/06/about-blog/</id>
-    <published>2018-06-18T11:44:10.000Z</published>
-    <updated>2019-03-12T01:36:31.647Z</updated>
-    
-    <content type="html"><![CDATA[<p>今天是 18 号了，上个月的 20 号是我第一次在 vps 成功建立了 WordPress。现在已经有二十多篇文章了。<a id="more"></a>（虽然有些只是我做的一些简单的笔记而已）。因为我在网站添加了个日历小工具，只有当天有写文章，那天在日历上才会点亮，所以有时就不得不找些来写了。这篇也许也算吧。</p><p>这段时间确实耗费了非常多非常多的时间在这上面，没想到这东西还能玩上瘾。想想当初买 vps 主要是用来搭梯子的。这个很容易，接着就去了解 Linux，逐渐地了解了一些常用的命令的多种用法，以及其这样命名的缘由。还记得前不久好像是在知乎上看到有人推荐一本 Linux 的书《 Linux 入门很简单》，于是我在图书馆的公众号查了一下，发现居然有，就去借来看。由于其写得很通俗易懂，看得挺投入的，几天就看完了。从中学到了很多，非常感谢这本书。</p><p>之后我还去研究 Python，毕竟这是现在最热门的语言，而且都已经加入高考了，想想以后后辈们都多少会点 Python，自己一点都不了解怎么行。再之后又去研究 Android 开发，想想自己能做一个 APP，这是一件多么值得吹的事。但，终究还是因为它们太难了……然后就没有然后了。</p><p>于是我又回来折腾 Linux 了，毕竟有两台 vps 了，而且前阵子还看到 vultr 有活动，搞了一个帐号，现在一般情况下至少有三台运行着。于是我必须找着事来折腾。一开始就对 WordPress 展开研究，备份、迁移、优化、加证书等等，还有插件、主题这些，也就耗费了挺多时间。</p><p>之后就来研究 vps 可以干哪些有趣的事。</p><ul><li>用来搭建多个网站，只用一台 vps</li><li>用来作为同步盘，同步手机文件和电脑文件</li><li>用来搭建网盘，可以放文件，也可以分享给别人，不限速</li><li>用来搭建一个论坛，人人都可以注册，可以发帖讨论</li><li>用来当下载工具，一些用迅雷下载不动的资源，放在 vps 可以下载得动</li><li>用来搭建一个聊天工具，使用与他人不同的聊天方式</li></ul><p>因为老是研究这些，通过搜索我发现了很多博客网站，好的我都添加到书签和 rss 订阅了。很多个网站我都把他们的全部文章都过一篇了，也收获了很多。然后发现他们喜欢的一些东西，我希望自己不要像他们那样。比如喜欢老是折腾网站的速度，快了那么零点几秒就很高兴，这点我很不能理解，我自己的网页我两三秒能打开就行了。还有折腾 SEO 的，看那么多的文章写到这，我也有点想去搞搞，最后还是算了。我还是少折腾这些吧，不去重视这些，这样我域名被墙了，那就换一个呗，vps 都被墙了，那就在电脑的虚拟机里运行呗。不在乎这些，省点心思做些有意义的事好。</p><p>接下来的想法是有些视频里需要的文章，我可以把它放 Github 的博客里，然后双份链接，保险。域名、流量、被搜索引擎收录这些，现在真心不想去搞，希望以后也不去搞，就单纯的因为想做这些事而去做就好。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;今天是 18 号了，上个月的 20 号是我第一次在 vps 成功建立了 WordPress。现在已经有二十多篇文章了。
-    
-    </summary>
-    
-      <category term="随笔" scheme="https://powersee.pw/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-      <category term="随笔" scheme="https://powersee.pw/tags/%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   

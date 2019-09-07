@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="服务器," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,18 +81,17 @@
 
 
 
-<meta name="description" content="可以在一台机器上放置多个网站，若是静态网站的话，理论上可以放置无限多个。">
-<meta name="keywords" content="服务器">
+<meta name="description" content="上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。 于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。  这次使用一台纯净系统的服务器来装。  安装 dockercurl -sSL https://ge">
 <meta property="og:type" content="article">
-<meta property="og:title" content="让一个服务器拥有多个网站">
-<meta property="og:url" content="https://powersee.pw/2018/05/Multiple-websites-in-one-server/index.html">
+<meta property="og:title" content="BT挂机利器 transmission docker 安装法">
+<meta property="og:url" content="https://powersee.pw/2019/09/transmission-docker/index.html">
 <meta property="og:site_name" content="Powersee的博客">
-<meta property="og:description" content="可以在一台机器上放置多个网站，若是静态网站的话，理论上可以放置无限多个。">
+<meta property="og:description" content="上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。 于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。  这次使用一台纯净系统的服务器来装。  安装 dockercurl -sSL https://ge">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-12T01:36:31.643Z">
+<meta property="og:updated_time" content="2019-09-07T16:08:17.875Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="让一个服务器拥有多个网站">
-<meta name="twitter:description" content="可以在一台机器上放置多个网站，若是静态网站的话，理论上可以放置无限多个。">
+<meta name="twitter:title" content="BT挂机利器 transmission docker 安装法">
+<meta name="twitter:description" content="上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。 于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。  这次使用一台纯净系统的服务器来装。  安装 dockercurl -sSL https://ge">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://powersee.pw/2018/05/Multiple-websites-in-one-server/"/>
+  <link rel="canonical" href="https://powersee.pw/2019/09/transmission-docker/"/>
 
 
 
 
 
-  <title>让一个服务器拥有多个网站 | Powersee的博客</title>
+  <title>BT挂机利器 transmission docker 安装法 | Powersee的博客</title>
   
 
 
@@ -279,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://powersee.pw/2018/05/Multiple-websites-in-one-server/">
+    <link itemprop="mainEntityOfPage" href="https://powersee.pw/2019/09/transmission-docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="powersee">
@@ -296,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">让一个服务器拥有多个网站</h1>
+          <h1 class="post-title" itemprop="name headline">BT挂机利器 transmission docker 安装法</h1>
         
 
         <div class="post-meta">
@@ -308,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T04:10:15+08:00">
-                2018-05-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-07T22:11:40+08:00">
+                2019-09-07
               </time>
             
 
@@ -346,60 +345,21 @@
       
 
       
-        <p>可以在一台机器上放置多个网站，若是静态网站的话，理论上可以放置无限多个。</p>
-<a id="more"></a>
-<h3 id="本操作基于Ubuntu"><a href="#本操作基于Ubuntu" class="headerlink" title="本操作基于Ubuntu"></a>本操作基于Ubuntu</h3><p>我的nginx访问的根目录<br><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">/<span class="built_in">home</span>/wwwroot/<span class="built_in">default</span></span><br></pre></td></tr></table></figure></p>
-<p>创建一个”vhost”目录<br><figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">sudo <span class="keyword">mkdir</span> /usr/<span class="keyword">local</span>/nginx/<span class="keyword">conf</span>/vhost</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p><span style="color: #ff0000;">创建siteA的配置文件</span><br><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo vi <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>conf<span class="regexp">/vhost/</span>vhost_siteA.conf</span><br></pre></td></tr></table></figure></p>
-<pre class="lang:default decode:true">    server {
-    listen       80;                        # 监听端口
-    server_name www.siteA.com siteA.com;    # 站点域名
-    root  /home/wwwroot/default;              # 站点根目录
-    index index.html index.htm index.php;   # 默认导航页
-
-    location / {
-        # WordPress固定链接URL重写
-        if (!-e $request_filename) {
-            rewrite (.*) /index.php;
-        }
-    }
-
-    # PHP配置
-    location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
-        fastcgi_index index.php;
-        include fastcgi_params;
-    }
-}</pre>
-
-<hr>
-<p><span style="color: #ff0000;">创建siteB的配置文件</span><br><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo vi <span class="regexp">/etc/</span>nginx<span class="regexp">/vhost/</span>vhost_siteB.conf</span><br></pre></td></tr></table></figure></p>
-<pre class="lang:default decode:true ">    server {
-    listen       80;                        # 监听端口
-    server_name www.siteA.com siteA.com;    # 站点域名
-    root  /home/wwwroot/old;              # 站点根目录
-    index index.html index.htm index.php;   # 默认导航页
-
-    location / {
-        # WordPress固定链接URL重写
-        if (!-e $request_filename) {
-            rewrite (.*) /index.php;
-        }
-    }
-
-    # PHP配置
-    location ~ \.php$ {
-        fastcgi_pass unix:/var/run/php5-fpm.sock;
-        fastcgi_index index.php;
-        include fastcgi_params;
-    }
-}</pre>
-
-<hr>
-<p>修改nginx.conf<br><figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">sudo vi /usr/<span class="keyword">local</span>/nginx/<span class="keyword">conf</span>/nginx.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure></p>
-<p>在http里加入这段<br><figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">include</span> <span class="regexp">/usr/</span>local<span class="regexp">/nginx/</span>conf<span class="regexp">/vhost/</span>*.conf;</span><br></pre></td></tr></table></figure></p>
-<p>重启 nginx 即可。</p>
+        <p>上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。</p>
+<p>于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。</p>
+<blockquote>
+<p>这次使用一台纯净系统的服务器来装。</p>
+</blockquote>
+<h3 id="安装-docker"><a href="#安装-docker" class="headerlink" title="安装 docker"></a>安装 docker</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -sSL http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-transmission"><a href="#安装-transmission" class="headerlink" title="安装 transmission"></a>安装 transmission</h3><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">-<span class="ruby">-restart=always \</span></span><br><span class="line"><span class="ruby">--name transmission \</span></span><br><span class="line"><span class="ruby">-v /home/tr/<span class="symbol">torrents:</span>/to_download \</span></span><br><span class="line"><span class="ruby">-v /home/tr/<span class="symbol">download:</span>/output \</span></span><br><span class="line"><span class="ruby">-p <span class="number">9091</span><span class="symbol">:</span><span class="number">9091</span> \</span></span><br><span class="line"><span class="ruby">-p <span class="number">51413</span><span class="symbol">:</span><span class="number">51413</span> \</span></span><br><span class="line"><span class="ruby">-e USERNAME=admin \</span></span><br><span class="line"><span class="ruby">-e PASSWORD=admin \</span></span><br><span class="line"><span class="ruby">jaymoulin/transmission</span></span><br></pre></td></tr></table></figure>
+<h3 id="解释"><a href="#解释" class="headerlink" title="解释"></a>解释</h3><p>输入 IP:9091 即可进入 transmission 的管理界面<br>下载后的文件是保存在 <code>/home/tr/download</code> 这个路径下的</p>
+<p>想要取回本地，可以和上一篇文章一样，安装 caddy ，或者也可以使用 FTP 的方法。</p>
+<h3 id="取回本地"><a href="#取回本地" class="headerlink" title="取回本地"></a>取回本地</h3><p>但是下载好后文件是在服务器里，我想把它取回到电脑或者手机。那么，开启一个 http 服务即可。</p>
+<p>这里安装一个 caddy<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">wget -<span class="keyword">N</span> --<span class="keyword">no</span>-check-certificate http<span class="variable">s:</span>//raw.githubusercontent.<span class="keyword">com</span>/ToyoDAdoubi/doubi/master/caddy_install.<span class="keyword">sh</span> &amp;&amp; chmod +<span class="keyword">x</span> caddy_install.<span class="keyword">sh</span> &amp;&amp; bash caddy_install.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure></p>
+<p>写入配置<br><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="comment">":80 &#123;  </span></span><br><span class="line"> root /home/<span class="keyword">tr</span></span><br><span class="line"> timeouts none  </span><br><span class="line"> gzip  </span><br><span class="line"> <span class="keyword">browse</span>  </span><br><span class="line">&#125;<span class="comment">" &gt; /usr/local/caddy/Caddyfile</span></span><br></pre></td></tr></table></figure></p>
+<p>启动 caddy<br><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/etc/i</span>nit.d<span class="regexp">/caddy start</span></span><br></pre></td></tr></table></figure></p>
+<p>开放服务器 80 端口<br><figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">ufw allow <span class="number">80</span></span><br></pre></td></tr></table></figure></p>
+<p>完成后就可以在浏览器里，输入 <code>IP地址</code> 来访问下载好的文件了。如果是 MP4 文件的话，还可以支持在线播放。</p>
 
       
     </div>
@@ -421,12 +381,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/服务器/" rel="tag"><i class="fa fa-tag"></i> 服务器</a>
-          
-        </div>
-      
 
       
       
@@ -436,8 +390,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/Python-HTTP-server/" rel="next" title="用Python创建HTTP服务">
-                <i class="fa fa-chevron-left"></i> 用Python创建HTTP服务
+              <a href="/2019/08/docker-qb/" rel="next" title="用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及把文件取回手机">
+                <i class="fa fa-chevron-left"></i> 用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及把文件取回手机
               </a>
             
           </div>
@@ -445,10 +399,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/syncthing/" rel="prev" title="搭建个人网盘——syncthing">
-                搭建个人网盘——syncthing <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -587,7 +537,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#本操作基于Ubuntu"><span class="nav-number">1.</span> <span class="nav-text">本操作基于Ubuntu</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-docker"><span class="nav-number">1.</span> <span class="nav-text">安装 docker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-transmission"><span class="nav-number">2.</span> <span class="nav-text">安装 transmission</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解释"><span class="nav-number">3.</span> <span class="nav-text">解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#取回本地"><span class="nav-number">4.</span> <span class="nav-text">取回本地</span></a></li></ol></div>
             
 
           </div>
