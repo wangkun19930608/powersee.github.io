@@ -81,17 +81,19 @@
 
 
 
-<meta name="description" content="上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。 于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。  这次使用一台纯净系统的服务器来装。  安装 dockercurl -sSL https://ge">
+<meta name="description" content="本文主要介绍如何在服务器上安装 docker，并安装 transmission 来下载 BT 种子任务。并且取回本地。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BT挂机利器 transmission docker 安装法">
 <meta property="og:url" content="https://powersee.pw/2019/09/transmission-docker/index.html">
 <meta property="og:site_name" content="Powersee的博客">
-<meta property="og:description" content="上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。 于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。  这次使用一台纯净系统的服务器来装。  安装 dockercurl -sSL https://ge">
+<meta property="og:description" content="本文主要介绍如何在服务器上安装 docker，并安装 transmission 来下载 BT 种子任务。并且取回本地。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-07T16:08:17.875Z">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/lJAEmdBpbHKe4u5.png">
+<meta property="og:updated_time" content="2019-09-10T07:51:36.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BT挂机利器 transmission docker 安装法">
-<meta name="twitter:description" content="上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。 于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。  这次使用一台纯净系统的服务器来装。  安装 dockercurl -sSL https://ge">
+<meta name="twitter:description" content="本文主要介绍如何在服务器上安装 docker，并安装 transmission 来下载 BT 种子任务。并且取回本地。">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/10/lJAEmdBpbHKe4u5.png">
 
 
 
@@ -345,7 +347,13 @@
       
 
       
-        <p>上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。</p>
+        <p>本文主要介绍如何在服务器上安装 docker，并安装 transmission 来下载 BT 种子任务。并且取回本地。</p>
+<a id="more"></a>
+<blockquote>
+<p>要想进行下面的操作，需要有一个服务器，如果你没有的话， <a href="https://www.vultr.com/?ref=8161953-4F" target="_blank" rel="noopener">点此链接注册充值 10 美元送 50 美元</a><br>送的 50美元只有一个月的有效期。（所以不要省，开贵点的机器吧）</p>
+</blockquote>
+<p>上次已经用 docker 安装了 qbittorrent，这是一个非常强大的 BT 软件，我个人是非常喜欢的。但是，它占的内存比较大，如果服务器还要做一些其它的工作，用这个可能就不太合适了。</p>
+<p><img src="https://i.loli.net/2019/09/10/lJAEmdBpbHKe4u5.png" alt="qb speed"></p>
 <p>于是， transmission 是一个不错的选择。它对硬件的配置要求非常的低，甚至在路由器上面都可以运行。</p>
 <blockquote>
 <p>这次使用一台纯净系统的服务器来装。</p>
