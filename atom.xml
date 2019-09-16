@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://powersee.pw/"/>
-  <updated>2019-09-10T07:51:36.848Z</updated>
+  <updated>2019-09-16T15:47:40.961Z</updated>
   <id>https://powersee.pw/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>服务器搭建全能下载器 Aria2 以及私人网盘，只需一行命令（docker）</title>
+    <link href="https://powersee.pw/2019/09/docker-aria2/"/>
+    <id>https://powersee.pw/2019/09/docker-aria2/</id>
+    <published>2019-09-16T11:40:18.000Z</published>
+    <updated>2019-09-16T15:47:40.961Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文将利用 docker 一键安装 Aria2 和 filebrowser。</p><a id="more"></a><p>建议搭配之前的文章来观看：<a href="/2019/08/docker-qb">用服务器来离线下载 BT 种子，体验千兆网络的魅力</a></p><p><a href="https://github.com/wahyd4/aria2-ariang-docker/blob/master/README.CN.md" target="_blank" rel="noopener">项目 GitHub 地址</a></p><h3 id="安装-docker-如果机器没有的话）"><a href="#安装-docker-如果机器没有的话）" class="headerlink" title="安装 docker(如果机器没有的话）"></a>安装 docker(如果机器没有的话）</h3><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -sSL http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure><h3 id="最快速启动"><a href="#最快速启动" class="headerlink" title="最快速启动"></a>最快速启动</h3><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">docker run -d --name aria2-ui -v <span class="regexp">/home/</span><span class="string">down:</span><span class="regexp">/data -p 80:80 wahyd4/</span>aria2-ui</span><br></pre></td></tr></table></figure><ul><li>Aria2: <a href="http://yourip/ui/" target="_blank" rel="noopener">http://yourip/ui/</a></li><li>FileManger: <a href="http://yourip" target="_blank" rel="noopener">http://yourip</a></li><li>请使用 admin/admin 进行登录</li></ul><p>这样下载的文件都放在 <code>/home/down</code> 这个文件夹里面</p><p>文件夹没有写入权限，有兴趣看这篇文章了解 <a href="https://note.qidong.name/2018/01/docker-volume-permission/" target="_blank" rel="noopener">文章链接</a><br>不管原理，无脑给予 777</p><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">chmod <span class="number">777</span> /<span class="built_in">home</span>/down</span><br></pre></td></tr></table></figure><p>强制删除容器</p><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker</span> rm -f aria2-ui</span><br></pre></td></tr></table></figure><h3 id="加密下载界面"><a href="#加密下载界面" class="headerlink" title="加密下载界面"></a>加密下载界面</h3><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker run -d --name ariang \</span><br><span class="line">  -<span class="ruby">p <span class="number">80</span><span class="symbol">:</span><span class="number">80</span> \</span></span><br><span class="line"><span class="ruby">  -e PUID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e PGID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e ENABLE_AUTH=<span class="literal">true</span> \</span></span><br><span class="line"><span class="ruby">  -e RPC_SECRET=Hello \</span></span><br><span class="line"><span class="ruby">  -e ARIA2_SSL=<span class="literal">false</span> \</span></span><br><span class="line"><span class="ruby">  -e ARIA2_USER=user \</span></span><br><span class="line"><span class="ruby">  -e ARIA2_PWD=pwd \</span></span><br><span class="line"><span class="ruby">  -v /home/<span class="symbol">down:</span>/data \</span></span><br><span class="line"><span class="ruby">  wahyd4/aria2-ui</span></span><br></pre></td></tr></table></figure><ul><li>用户名：user </li><li>密码：pwd</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文将利用 docker 一键安装 Aria2 和 filebrowser。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>BT挂机利器 transmission docker 安装法</title>
@@ -397,31 +415,6 @@
     
     
       <category term="网络" scheme="https://powersee.pw/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用lnmp搭建wordpress</title>
-    <link href="https://powersee.pw/2018/06/install-wordpress-with-lnmp/"/>
-    <id>https://powersee.pw/2018/06/install-wordpress-with-lnmp/</id>
-    <published>2018-06-19T10:52:14.000Z</published>
-    <updated>2019-03-12T01:36:31.652Z</updated>
-    
-    <content type="html"><![CDATA[<p>#发现1.5正式版更新了，我自己也试了，所以现在把原来命令行里的 1.4 全部都换成 1.5 了</p><h3 id="一，安装lnmp-Nginx-MySQL-PHP-环境"><a href="#一，安装lnmp-Nginx-MySQL-PHP-环境" class="headerlink" title="一，安装lnmp(Nginx/MySQL/PHP)环境"></a>一，安装lnmp(Nginx/MySQL/PHP)环境</h3><blockquote><p>wget <a href="http://soft2.vpser.net/lnmp/lnmp1.5-full.tar.gz" target="_blank" rel="noopener">http://soft2.vpser.net/lnmp/lnmp1.5-full.tar.gz</a></p></blockquote><a id="more"></a><blockquote><p>tar -zxvf lnmp1.5-full.tar.gz</p></blockquote><blockquote><p>cd lnmp1.5-full</p></blockquote><blockquote><p>./install.sh</p></blockquote><p>一路默认，虚拟机一个小时应该能安装好 之后就可以访问IP了</p><p>默认的访问目录为这个</p><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">/<span class="built_in">home</span>/wwwroot/<span class="built_in">default</span></span><br></pre></td></tr></table></figure><h3 id="二，安装wordpress"><a href="#二，安装wordpress" class="headerlink" title="二，安装wordpress"></a>二，安装wordpress</h3><p>此时进入默认的访问目录的上一级</p><blockquote><p>cd /home/wwwroot/</p></blockquote><blockquote><p>wget <a href="https://cn.wordpress.org/wordpress-4.9.4-zh_CN.tar.gz" target="_blank" rel="noopener">https://cn.wordpress.org/wordpress-4.9.4-zh_CN.tar.gz</a></p></blockquote><blockquote><p>tar -zxvf wordpress-4.9.4-zh_CN.tar.gz</p></blockquote><blockquote><p>mv default old</p></blockquote><blockquote><p>mv wordpress default</p></blockquote><p>此时应该就可以访问wordpress了</p><h3 id="三，创建数据库"><a href="#三，创建数据库" class="headerlink" title="三，创建数据库"></a>三，创建数据库</h3><blockquote><p>mysql -u root -p</p></blockquote><p>输入密码，默认的话就是root</p><blockquote><p>create database wordpress;</p></blockquote><blockquote><p>exit</p></blockquote><h3 id="四，给权限"><a href="#四，给权限" class="headerlink" title="四，给权限"></a>四，给权限</h3><blockquote><p>chown -R 755 /home/wwwroot/</p></blockquote><blockquote><p>chown -R www:www /home/wwwroot/</p></blockquote><hr><p>此时输入IP即可访问配置 wordpress</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;#发现1.5正式版更新了，我自己也试了，所以现在把原来命令行里的 1.4 全部都换成 1.5 了&lt;/p&gt;
-&lt;h3 id=&quot;一，安装lnmp-Nginx-MySQL-PHP-环境&quot;&gt;&lt;a href=&quot;#一，安装lnmp-Nginx-MySQL-PHP-环境&quot; class=&quot;headerlink&quot; title=&quot;一，安装lnmp(Nginx/MySQL/PHP)环境&quot;&gt;&lt;/a&gt;一，安装lnmp(Nginx/MySQL/PHP)环境&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;wget &lt;a href=&quot;http://soft2.vpser.net/lnmp/lnmp1.5-full.tar.gz&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;http://soft2.vpser.net/lnmp/lnmp1.5-full.tar.gz&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="服务器" scheme="https://powersee.pw/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
-    
-      <category term="WordPress" scheme="https://powersee.pw/tags/WordPress/"/>
     
   </entry>
   
