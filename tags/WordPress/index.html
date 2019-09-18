@@ -83,7 +83,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Powersee的博客">
-<meta property="og:url" content="https://powersee.pw/tags/WordPress/index.html">
+<meta property="og:url" content="https://powersee.pw/tags/wordpress/index.html">
 <meta property="og:site_name" content="Powersee的博客">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -117,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="https://powersee.pw/tags/WordPress/"/>
+  <link rel="canonical" href="https://powersee.pw/tags/wordpress/"/>
 
 
 
 
 
-  <title>标签: WordPress | Powersee的博客</title>
+  <title>标签: wordpress | Powersee的博客</title>
   
 
 
@@ -267,7 +267,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>WordPress<small>标签</small>
+        <h1>wordpress<small>标签</small>
         </h1>
       </div>
 
@@ -279,37 +279,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/06/install-wordpress-with-lnmp/" itemprop="url">
+            <a class="post-title-link" href="/2019/03/Nginx-WordPress-link-error/" itemprop="url">
               
-                <span itemprop="name">利用lnmp搭建wordpress</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-19T18:52:14+08:00"
-              content="2018-06-19" >
-          06-19
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/clone-WordPress/" itemprop="url">
-              
-                <span itemprop="name">克隆 WordPress 网站</span>
+                <span itemprop="name">Nginx下修改WordPress固定链接导致无法访问</span>
               
             </a>
         
@@ -317,9 +289,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-11T18:46:29+08:00"
-              content="2018-06-11" >
-          06-11
+              datetime="2019-03-12T09:08:51+08:00"
+              content="2019-03-12" >
+          03-12
         </time>
       </div>
 
@@ -379,7 +351,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">33</span>
+                  <span class="site-state-item-count">34</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -904,6 +876,49 @@
 
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+rigger').click(function(e) {
       e.stopPropagation();
       if (isfetched === false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
