@@ -88,10 +88,12 @@
 <meta property="og:site_name" content="Powersee的博客">
 <meta property="og:description" content="本文将利用 docker 一键安装 Aria2 和 filebrowser。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-16T15:47:40.961Z">
+<meta property="og:image" content="https://i.loli.net/2019/09/30/SZ4jLRqiB5dzNgF.png">
+<meta property="og:updated_time" content="2019-09-30T10:43:37.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="服务器搭建全能下载器 Aria2 以及私人网盘，只需一行命令（docker）">
 <meta name="twitter:description" content="本文将利用 docker 一键安装 Aria2 和 filebrowser。">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/30/SZ4jLRqiB5dzNgF.png">
 
 
 
@@ -363,9 +365,13 @@
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">docker</span> rm -f aria2-ui</span><br></pre></td></tr></table></figure>
 <h3 id="加密下载界面"><a href="#加密下载界面" class="headerlink" title="加密下载界面"></a>加密下载界面</h3><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker run -d --name ariang \</span><br><span class="line">  -<span class="ruby">p <span class="number">80</span><span class="symbol">:</span><span class="number">80</span> \</span></span><br><span class="line"><span class="ruby">  -e PUID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e PGID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e ENABLE_AUTH=<span class="literal">true</span> \</span></span><br><span class="line"><span class="ruby">  -e RPC_SECRET=Hello \</span></span><br><span class="line"><span class="ruby">  -e ARIA2_SSL=<span class="literal">false</span> \</span></span><br><span class="line"><span class="ruby">  -e ARIA2_USER=user \</span></span><br><span class="line"><span class="ruby">  -e ARIA2_PWD=pwd \</span></span><br><span class="line"><span class="ruby">  -v /home/<span class="symbol">down:</span>/data \</span></span><br><span class="line"><span class="ruby">  wahyd4/aria2-ui</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>用户名：user </li>
+<li>用户名：user</li>
 <li>密码：pwd</li>
 </ul>
+<h3 id="后续补充"><a href="#后续补充" class="headerlink" title="后续补充"></a>后续补充</h3><p>根据个人的需求来选择，如果觉得不需要加密 Aria2 的管理界面的，其实用第一种方式就行了。非常简单，一行命令即可。</p>
+<p>同时也可以结合 APP ：Transdrone_2.5.15.apk 来使用，这个我放在网盘里，使用它来管理多个下载工具也是比较方便的。</p>
+<p><a href="http://veger.ys168.com/" target="_blank" rel="noopener">http://veger.ys168.com/</a></p>
+<p><img src="https://i.loli.net/2019/09/30/SZ4jLRqiB5dzNgF.png" alt="transdrone"></p>
 
       
     </div>
@@ -547,7 +553,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-docker-如果机器没有的话）"><span class="nav-number">1.</span> <span class="nav-text">安装 docker(如果机器没有的话）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最快速启动"><span class="nav-number">2.</span> <span class="nav-text">最快速启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加密下载界面"><span class="nav-number">3.</span> <span class="nav-text">加密下载界面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-docker-如果机器没有的话）"><span class="nav-number">1.</span> <span class="nav-text">安装 docker(如果机器没有的话）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最快速启动"><span class="nav-number">2.</span> <span class="nav-text">最快速启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加密下载界面"><span class="nav-number">3.</span> <span class="nav-text">加密下载界面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后续补充"><span class="nav-number">4.</span> <span class="nav-text">后续补充</span></a></li></ol></div>
             
 
           </div>
