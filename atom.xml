@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://powersee.GitHub.io/"/>
-  <updated>2019-10-26T11:37:10.928Z</updated>
+  <updated>2019-10-30T06:25:07.864Z</updated>
   <id>https://powersee.GitHub.io/</id>
   
   <author>
@@ -17,13 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于玩客云的一些资料</title>
+    <link href="https://powersee.GitHub.io/2019/10/about-wankeyun/"/>
+    <id>https://powersee.GitHub.io/2019/10/about-wankeyun/</id>
+    <published>2019-10-30T05:38:07.000Z</published>
+    <updated>2019-10-30T06:25:07.864Z</updated>
+    
+    <content type="html"><![CDATA[<p>玩客云能做什么？1、下载迅雷可以下载的内容。2、当私人网盘来使用，出门在外时，也可访问家中硬盘中的文件。</p><p>那它有什么缺点？最大的缺点是，会不停往硬盘存东西。因此会加大硬盘损耗，以及占用带宽。</p><p>下面是关于玩客云，个人收集的一些资料。</p><a id="more"></a><h2 id="问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）"><a href="#问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）" class="headerlink" title="问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）"></a>问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）</h2><ul><li><p>看你的用途吧。。。想要挖矿的就去买开了挖矿的，不需要挖矿、只想下载和当网盘用的买退出挖矿的或者未拆封的，要刷机或者装组件(如transmission、apache、nginx、php、mysql等)玩的买root的。</p></li><li><p>之前买了一个全新未拆封的，没有开通链克计划，硬盘是可以休眠的</p></li></ul><h2 id="玩客云限制上传的方法（最好电脑上操作）"><a href="#玩客云限制上传的方法（最好电脑上操作）" class="headerlink" title="玩客云限制上传的方法（最好电脑上操作）"></a>玩客云限制上传的方法（最好电脑上操作）</h2><ul><li><p>1、显示隐藏的文件，看到一个.onething_data的文件夹，删除了。</p></li><li><p>2、打开记事本，什么都不需要，直接另存为—保存类型选择为所有文件，文件名为.onething_data</p></li><li><p>丢到玩客云硬盘的根目录上，设置为只读的属性，完事。</p></li><li><ul><li>反正我这么搞，不会上班，远程访问也没毛病，一天还有0.几个蛋。大不了被绝育，能下载，能当家庭云用就行！</li></ul></li></ul><hr><p>很多人不满玩客云一直读写硬盘的这种行为，于是申请退出玩客链计划，当时想退出却没那么容易。因为迅雷要求你必须手持身份证，拍一张照片给他们，才愿意帮你退出计划。这想想还是挺可怕，谁知道照片会被拿去干什么事啊。但是在 张大妈 有这样一个有趣的例子。</p><p>与客服互怼成功拒绝提供身份证</p><p><a href="https://post.smzdm.com/p/az59706n/" target="_blank" rel="noopener">https://post.smzdm.com/p/az59706n/</a></p><p>同时这上面还有一篇非常详细的评测</p><p><a href="https://post.smzdm.com/p/aw3np922/" target="_blank" rel="noopener">https://post.smzdm.com/p/aw3np922/</a></p><p>B 站上面也有教</p><p><span style="color: rgb(34, 34, 34);">不让其不停读取硬盘的四种方案（</span><a href="https://www.bilibili.com/video/av53589623" target="_blank" rel="noopener">https://www.bilibili.com/video/av53589623</a><span style="color: rgb(34, 34, 34);">）</span></p><ul><li><p><span style="color: rgb(34, 34, 34);">① .onething_data文件夹封闭 具体操作看之前视频</span></p></li><li><p><span style="color: rgb(34, 34, 34);">② 发邮件退出玩客云奖励计划</span></p></li><li><p><span style="color: rgb(34, 34, 34);">③ 用闲置U盘或TF卡做主盘避免写入机械硬盘</span></p></li><li><p><span style="color: rgb(34, 34, 34);">④ 不用时弹出硬盘 使用时远程重启</span></p></li></ul><h2 id="用-Linux-禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别-ext4-格式的硬盘）"><a href="#用-Linux-禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别-ext4-格式的硬盘）" class="headerlink" title="用 Linux 禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别 ext4 格式的硬盘）"></a>用 Linux 禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别 ext4 格式的硬盘）</h2><ul><li><span style="color: rgb(34, 34, 34);">直接第一种覆盖就行 而且他不会改回来 但是需要把硬盘搞成ext4 同时设置该文件的用户组为root 再修改文件属性不可修改 以上操作在linux下进行</span></li></ul><h2 id="挂载到电脑的方法："><a href="#挂载到电脑的方法：" class="headerlink" title="挂载到电脑的方法："></a>挂载到电脑的方法：</h2><ul><li>Win + r 输入 //ip</li></ul><h2 id="我个人对于这台设备的评价"><a href="#我个人对于这台设备的评价" class="headerlink" title="我个人对于这台设备的评价"></a>我个人对于这台设备的评价</h2><p>我认为，对于下载，有这台设备还是不错的，因为它让我们在没有迅雷会员的情况下，也可以高速下载。当然前提是你下载的资源迅雷的服务器里面有。不过随着现在版权管理越来越严，迅雷能下载的东西也越来越少了。</p><p>对于当私人云盘，我看有人专门买两台这个来当私人云盘，不过买的硬盘盒都比机器贵。我个人是不会把手机的图片、视频放这的，不太敢，也没必要。</p><p>所以这台机器对我确实没多大用处，大多数情况下都是出于吃灰状态。不过也无所谓了，五六十块钱的东西，买来折腾折腾过过瘾也就值得了。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;玩客云能做什么？1、下载迅雷可以下载的内容。2、当私人网盘来使用，出门在外时，也可访问家中硬盘中的文件。&lt;/p&gt;
+&lt;p&gt;那它有什么缺点？最大的缺点是，会不停往硬盘存东西。因此会加大硬盘损耗，以及占用带宽。&lt;/p&gt;
+&lt;p&gt;下面是关于玩客云，个人收集的一些资料。&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
     <title>小钢炮又被折腾坏记录，最终成功用上 zsh</title>
     <link href="https://powersee.GitHub.io/2019/10/nano-zsh/"/>
     <id>https://powersee.GitHub.io/2019/10/nano-zsh/</id>
     <published>2019-10-26T11:31:39.000Z</published>
-    <updated>2019-10-26T11:37:10.928Z</updated>
+    <updated>2019-10-28T00:34:08.442Z</updated>
     
-    <content type="html"><![CDATA[<p>刚才给小钢炮安装了 zsh ，这个过程还是有点复杂的，不过好在都能找到教程。</p><a id="more"></a><h2 id="1、先去看灯大的这个文章"><a href="#1、先去看灯大的这个文章" class="headerlink" title="1、先去看灯大的这个文章"></a>1、先去看灯大的这个文章</h2><p><a href="https://gitee.com/8ox86/phicomm-n1-issue/wikis/entware%20guide?sort_id=1368793" target="_blank" rel="noopener">https://gitee.com/8ox86/phicomm-n1-issue/wikis/entware%20guide?sort_id=1368793</a></p><p>让我们可以用 opkg2 来安装其它应用</p><h2 id="2、安装-zsh-与配置集"><a href="#2、安装-zsh-与配置集" class="headerlink" title="2、安装 zsh 与配置集"></a>2、安装 zsh 与配置集</h2><p>于是我就安装了 zsh 以及 oh my zsh 为的就是用这个自动补全插件 zsh-autosuggestions</p><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">opkg2 <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone git:<span class="regexp">//gi</span>thub.com<span class="regexp">/zsh-users/</span>zsh-autosuggestions <span class="variable">$ZSH_CUSTOM</span><span class="regexp">/plugins/</span>zsh-autosuggestions</span><br></pre></td></tr></table></figure><h2 id="3、遇坑部分，无法-ssh-连接"><a href="#3、遇坑部分，无法-ssh-连接" class="headerlink" title="3、遇坑部分，无法 ssh 连接"></a>3、遇坑部分，无法 ssh 连接</h2><p>顺利地安装成功了，然后，我想将 zsh 设置为默认的 shell ，使用 chsh -s /opt/bin/zsh 却失败了。</p><p>然后网上找其它方法，看到有个是修改 /etc/passwd 这个文件，第一行就是 root 用户的默认 shell 路径，于是用 vim 修改这个文件，改为 zsh 的路径，然后退出，再重新 ssh 连接，就登录不了了……</p><p>本想这次扑街了，又得重装系统了，可惜 qb 的配置没有备份……</p><h2 id="4、想办法备份"><a href="#4、想办法备份" class="headerlink" title="4、想办法备份"></a>4、想办法备份</h2><p>于是想办法看看能不能备份出来，不然重装系统后所有记录都没了。想到 qb 的配置文件是放在 /var/lib/qbittorrent 这个文件夹里的，之前我是 ssh 之后，把复制到自己的硬盘的。现在无法 ssh，得另寻方法。</p><p>于是想到小钢炮的 web 界面有个定时任务的功能 Scheduled Tasks ，在这个我也可以执行命令啊，那我在这里备份这个文件夹不就行了。</p><p>同时灯大的 wiki 里也有写备份 qb 和 tr 的方法，他是用 tar 来打包这个文件夹的，这种可能更好吧。</p><p>于是我添加了这条任务，每十五分钟就将这两个文件夹打包备份到我这个叫 one 的硬盘里。</p><figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line"><span class="number">15</span> * * * * tar cvf /media/one/qb.tar /var/<span class="class"><span class="keyword">lib</span>/<span class="title">qbittorrent</span> &amp;&amp; <span class="title">tar</span> <span class="title">cvf</span> /<span class="title">media</span>/<span class="title">one</span>/<span class="title">tr</span>.<span class="title">tar</span> /<span class="title">var</span>/<span class="title">lib</span>/<span class="title">transmission</span></span></span><br></pre></td></tr></table></figure><h2 id="5、曲线救国"><a href="#5、曲线救国" class="headerlink" title="5、曲线救国"></a>5、曲线救国</h2><p>所以这样打包好后，就可以重装系统了嘛。不过我突然想到，既然这里可以执行命令，那我在这里修改 passwd 这个文件，改回去不就行了？</p><p>于是我将 passwd 这个文件的内容，输出到硬盘里</p><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cat <span class="regexp">/etc/</span>passwd &gt; <span class="regexp">/media/</span>one<span class="regexp">/pass.txt</span></span><br></pre></td></tr></table></figure><p>接着我用 filebrowser 修改这个文档里面的内容，再把它输入回 passwd</p><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cat <span class="regexp">/media/</span>one<span class="regexp">/pass.txt &gt; /</span>etc<span class="regexp">/passwd</span></span><br></pre></td></tr></table></figure><p>完成，再来 ssh ，就成功登录上了。</p><p>但是我的 zsh 还是没办法设置为默认 shell ……</p><p>怎么办呢？</p><h2 id="6、用上-zsh"><a href="#6、用上-zsh" class="headerlink" title="6、用上 zsh"></a>6、用上 zsh</h2><p>我想到，当我们用 ssh 连接上小钢炮的 sh 时，它会去执行 /etc/prifile 这个文件里面的内容，那我直接在这里面添加一行</p><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">zsh</span></span><br></pre></td></tr></table></figure><p>我将它放在环境变量之后，在 13 行这个位置。这样之后用 ssh 连接，系统就会先启动 sh ，然后读取 /etc/prifile 的内容，读到 13 行，执行了 zsh 这个命令，然后 shell 就自动切换到 zsh 了。</p><p>由于这个过程很快，我们不可能看到，所以一连接上看到的就是 zsh 了。完美！</p>]]></content>
+    <content type="html"><![CDATA[<p>刚才给小钢炮安装了 zsh ，这个过程还是有点复杂的，不过好在都能找到教程。</p><a id="more"></a><h2 id="1、先去看灯大的这个文章"><a href="#1、先去看灯大的这个文章" class="headerlink" title="1、先去看灯大的这个文章"></a>1、先去看灯大的这个文章</h2><p><a href="https://gitee.com/8ox86/phicomm-n1-issue/wikis/entware%20guide?sort_id=1368793" target="_blank" rel="noopener">https://gitee.com/8ox86/phicomm-n1-issue/wikis/entware%20guide?sort_id=1368793</a></p><p>让我们可以用 opkg2 来安装其它应用</p><h2 id="2、安装-zsh-与配置集"><a href="#2、安装-zsh-与配置集" class="headerlink" title="2、安装 zsh 与配置集"></a>2、安装 zsh 与配置集</h2><p>于是我就安装了 zsh 以及 oh my zsh 为的就是用这个自动补全插件 zsh-autosuggestions</p><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">opkg2 <span class="keyword">install</span> zsh</span><br></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">git clone git:<span class="regexp">//gi</span>thub.com<span class="regexp">/zsh-users/</span>zsh-autosuggestions <span class="variable">$ZSH_CUSTOM</span><span class="regexp">/plugins/</span>zsh-autosuggestions</span><br></pre></td></tr></table></figure><h2 id="3、遇坑部分，无法-ssh-连接"><a href="#3、遇坑部分，无法-ssh-连接" class="headerlink" title="3、遇坑部分，无法 ssh 连接"></a>3、遇坑部分，无法 ssh 连接</h2><p>顺利地安装成功了，然后，我想将 zsh 设置为默认的 shell ，使用 chsh -s /opt/bin/zsh 却失败了。</p><p>然后网上找其它方法，看到有个是修改 /etc/passwd 这个文件，第一行就是 root 用户的默认 shell 路径，于是用 vim 修改这个文件，改为 zsh 的路径，然后退出，再重新 ssh 连接，就登录不了了……</p><p><img src="/img/2019/can&#39;t login after edit the passwd.jpg" alt=""></p><p>本想这次扑街了，又得重装系统了，可惜 qb 的配置没有备份……</p><h2 id="4、想办法备份"><a href="#4、想办法备份" class="headerlink" title="4、想办法备份"></a>4、想办法备份</h2><p>于是想办法看看能不能备份出来，不然重装系统后所有记录都没了。想到 qb 的配置文件是放在 /var/lib/qbittorrent 这个文件夹里的，之前我是 ssh 之后，把复制到自己的硬盘的。现在无法 ssh，得另寻方法。</p><p>于是想到小钢炮的 web 界面有个定时任务的功能 Scheduled Tasks ，在这个我也可以执行命令啊，那我在这里备份这个文件夹不就行了。</p><p>同时灯大的 wiki 里也有写备份 qb 和 tr 的方法，他是用 tar 来打包这个文件夹的，这种可能更好吧。</p><p>于是我添加了这条任务，每十五分钟就将这两个文件夹打包备份到我这个叫 one 的硬盘里。</p><figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line"><span class="number">15</span> * * * * tar cvf /media/one/qb.tar /var/<span class="class"><span class="keyword">lib</span>/<span class="title">qbittorrent</span> &amp;&amp; <span class="title">tar</span> <span class="title">cvf</span> /<span class="title">media</span>/<span class="title">one</span>/<span class="title">tr</span>.<span class="title">tar</span> /<span class="title">var</span>/<span class="title">lib</span>/<span class="title">transmission</span></span></span><br></pre></td></tr></table></figure><h2 id="5、曲线救国"><a href="#5、曲线救国" class="headerlink" title="5、曲线救国"></a>5、曲线救国</h2><p>所以这样打包好后，就可以重装系统了嘛。不过我突然想到，既然这里可以执行命令，那我在这里修改 passwd 这个文件，改回去不就行了？</p><p>于是我将 passwd 这个文件的内容，输出到硬盘里</p><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cat <span class="regexp">/etc/</span>passwd &gt; <span class="regexp">/media/</span>one<span class="regexp">/pass.txt</span></span><br></pre></td></tr></table></figure><p>接着我用 filebrowser 修改这个文档里面的内容，再把它输入回 passwd</p><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">cat <span class="regexp">/media/</span>one<span class="regexp">/pass.txt &gt; /</span>etc<span class="regexp">/passwd</span></span><br></pre></td></tr></table></figure><p>完成，再来 ssh ，就成功登录上了。</p><p>但是我的 zsh 还是没办法设置为默认 shell ……</p><p>怎么办呢？</p><h2 id="6、用上-zsh"><a href="#6、用上-zsh" class="headerlink" title="6、用上 zsh"></a>6、用上 zsh</h2><p>我想到，当我们用 ssh 连接上小钢炮的 sh 时，它会去执行 /etc/prifile 这个文件里面的内容，那我直接在这里面添加一行</p><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">zsh</span></span><br></pre></td></tr></table></figure><p>我将它放在环境变量之后，在 13 行这个位置。这样之后用 ssh 连接，系统就会先启动 sh ，然后读取 /etc/prifile 的内容，读到 13 行，执行了 zsh 这个命令，然后 shell 就自动切换到 zsh 了。</p><p>由于这个过程很快，我们不可能看到，所以一连接上看到的就是 zsh 了。完美！</p>]]></content>
     
     <summary type="html">
     
@@ -388,28 +408,6 @@
     
     
       <category term="随笔" scheme="https://powersee.GitHub.io/tags/%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>推荐一款手机写作软件——纯纯写作</title>
-    <link href="https://powersee.GitHub.io/2018/07/purewrite/"/>
-    <id>https://powersee.GitHub.io/2018/07/purewrite/</id>
-    <published>2018-07-18T18:57:31.000Z</published>
-    <updated>2019-10-21T09:56:51.038Z</updated>
-    
-    <content type="html"><![CDATA[<p>我现在就是在使用这款软件写这篇文章。今晚本来是在 <strong>play 商店</strong> 看日记软件的。然后推荐那里出现了这款软件，看介绍和评价不错，就下载来试试。<a id="more"></a> 这款软件是国人开发的，因此在国内的手机应用商店应该是可以下载到的，试了下小米的是搜索得到的。</p><h2 id="推荐它的理由："><a href="#推荐它的理由：" class="headerlink" title="推荐它的理由："></a>推荐它的理由：</h2><ul><li>好看</li><li>无广告</li><li>自动备份，数据安全</li><li>安装包小，只有 2.7M</li><li>无后台偷运行担忧</li><li>对我来说很实用</li></ul><p>主要是能帮我节省时间，比如在中英文之间插入空格，还有支持 markdown 语法，这也挺不错，比如能让我方便文章 markdown 化。还有首行缩进和段落之间自动加空格，这能让我少打了无数个空格。 总之，对这个软件真有种相见恨晚的感觉。</p><hr><h2 id="下面这些是官方对它的介绍"><a href="#下面这些是官方对它的介绍" class="headerlink" title="下面这些是官方对它的介绍"></a>下面这些是官方对它的介绍</h2><ol><li>这是一个快速的纯文本编辑器，我们希望写作能够回到原本的样子：纯粹、有安全感、随时、绝对不丢失内容、具备良好的写作体验。</li><li>纯纯写作实现了在 Android 上完美的行间距和段间距，它能够使您的文本看起来更加舒适，清晰。同时，它还实现了顺滑滚动、下滑关闭输入法软键盘，以及许多喜人的细节内容。</li><li>蕴繁于简，您能够最快速度达到灵感页面，能够随时随地中断和继续写作，能够使用指纹加密您的文本，能够轻易、快速将文本分享发送到其他 App，这些我们都已经为您做好了。</li><li>最重要的，在使用这个编辑器时，它将会保证您的内容永远不会丢失，除非您主动将它清空。否则即使误操作将文本删除，或瞬间断电，您仍然能够从历史记录中将它恢复。</li><li>当您完成一篇文章写作之后，可以选择 右上角发送按钮 将它发送到另外的 App。</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;我现在就是在使用这款软件写这篇文章。今晚本来是在 &lt;strong&gt;play 商店&lt;/strong&gt; 看日记软件的。然后推荐那里出现了这款软件，看介绍和评价不错，就下载来试试。
-    
-    </summary>
-    
-      <category term="手机" scheme="https://powersee.GitHub.io/categories/%E6%89%8B%E6%9C%BA/"/>
-    
-    
-      <category term="手机" scheme="https://powersee.GitHub.io/tags/%E6%89%8B%E6%9C%BA/"/>
     
   </entry>
   

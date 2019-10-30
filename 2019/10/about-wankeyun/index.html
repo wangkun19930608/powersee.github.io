@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="mac," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -81,18 +81,17 @@
 
 
 
-<meta name="description" content="自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。">
-<meta name="keywords" content="mac">
+<meta name="description" content="玩客云能做什么？1、下载迅雷可以下载的内容。2、当私人网盘来使用，出门在外时，也可访问家中硬盘中的文件。 那它有什么缺点？最大的缺点是，会不停往硬盘存东西。因此会加大硬盘损耗，以及占用带宽。 下面是关于玩客云，个人收集的一些资料。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="禁止 mac 在U盘产生隐藏文件">
-<meta property="og:url" content="https://powersee.GitHub.io/2018/10/mac-hide-file/index.html">
+<meta property="og:title" content="关于玩客云的一些资料">
+<meta property="og:url" content="https://powersee.GitHub.io/2019/10/about-wankeyun/index.html">
 <meta property="og:site_name" content="Powersee的博客">
-<meta property="og:description" content="自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。">
+<meta property="og:description" content="玩客云能做什么？1、下载迅雷可以下载的内容。2、当私人网盘来使用，出门在外时，也可访问家中硬盘中的文件。 那它有什么缺点？最大的缺点是，会不停往硬盘存东西。因此会加大硬盘损耗，以及占用带宽。 下面是关于玩客云，个人收集的一些资料。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-21T09:56:51.038Z">
+<meta property="og:updated_time" content="2019-10-30T06:25:07.864Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="禁止 mac 在U盘产生隐藏文件">
-<meta name="twitter:description" content="自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。">
+<meta name="twitter:title" content="关于玩客云的一些资料">
+<meta name="twitter:description" content="玩客云能做什么？1、下载迅雷可以下载的内容。2、当私人网盘来使用，出门在外时，也可访问家中硬盘中的文件。 那它有什么缺点？最大的缺点是，会不停往硬盘存东西。因此会加大硬盘损耗，以及占用带宽。 下面是关于玩客云，个人收集的一些资料。">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://powersee.GitHub.io/2018/10/mac-hide-file/"/>
+  <link rel="canonical" href="https://powersee.GitHub.io/2019/10/about-wankeyun/"/>
 
 
 
 
 
-  <title>禁止 mac 在U盘产生隐藏文件 | Powersee的博客</title>
+  <title>关于玩客云的一些资料 | Powersee的博客</title>
   
 
 
@@ -279,7 +278,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://powersee.GitHub.io/2018/10/mac-hide-file/">
+    <link itemprop="mainEntityOfPage" href="https://powersee.GitHub.io/2019/10/about-wankeyun/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="powersee">
@@ -296,7 +295,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">禁止 mac 在U盘产生隐藏文件</h1>
+          <h1 class="post-title" itemprop="name headline">关于玩客云的一些资料</h1>
         
 
         <div class="post-meta">
@@ -308,8 +307,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-08T22:51:23+08:00">
-                2018-10-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-30T13:38:07+08:00">
+                2019-10-30
               </time>
             
 
@@ -346,12 +345,55 @@
       
 
       
-        <p>自从 U 盘在 mac 上使用一段时间后，我发现里面有好多隐藏文件。<br><a id="more"></a><br>每个都是 4KB。基本上 U 盘里每个文件，都有一个跟它对应的隐藏文件。看来是 Mac 自动生成的，但不知道是用来干什么的，而且平时也没什么影响，毕竟隐藏文件不管在 win 还是 Mac，默认情况下都是不显示的，所以也就没去管它。</p>
-<p>直到，那天 U 盘插别人的电脑，居然被安全软件检测到这些隐藏文件，弹窗说有安全隐患……</p>
-<p>再接着，拿 U 盘去自助打印机，这一堆隐藏文件显示在那里，严重影响我查找要打印的文件的效率。这不能忍。</p>
-<p>于是我百度一下，没有找到方法。再谷歌，就找到了。</p>
-<p>是 Mac 上【聚焦搜索】（spotlight）这个软件造成的，这是一个全局搜索软件。应该是它为了能快速搜索到 U 盘里的文件，所以，当我们在 mac 上往 U 盘传文件的时候，同时会在文件旁边创建一个 4KB 的隐藏文件。</p>
-<h2 id="关闭方法"><a href="#关闭方法" class="headerlink" title="关闭方法"></a>关闭方法</h2><p>打开【系统偏好设置】，第一行倒数第二个的【聚焦】，进去后点【隐私】，然后左下角的【+】，之后选中 U 盘，确认就好了。以后再往 U 盘写入文件就不会有这些隐藏文件了，之前产生的那些可以在 win 下将之删除。（Mac 下在访达里根本无法显示这些文件）</p>
+        <p>玩客云能做什么？1、下载迅雷可以下载的内容。2、当私人网盘来使用，出门在外时，也可访问家中硬盘中的文件。</p>
+<p>那它有什么缺点？最大的缺点是，会不停往硬盘存东西。因此会加大硬盘损耗，以及占用带宽。</p>
+<p>下面是关于玩客云，个人收集的一些资料。</p>
+<a id="more"></a>
+<h2 id="问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）"><a href="#问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）" class="headerlink" title="问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）"></a>问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）</h2><ul>
+<li><p>看你的用途吧。。。想要挖矿的就去买开了挖矿的，不需要挖矿、只想下载和当网盘用的买退出挖矿的或者未拆封的，要刷机或者装组件(如transmission、apache、nginx、php、mysql等)玩的买root的。</p>
+</li>
+<li><p>之前买了一个全新未拆封的，没有开通链克计划，硬盘是可以休眠的</p>
+</li>
+</ul>
+<h2 id="玩客云限制上传的方法（最好电脑上操作）"><a href="#玩客云限制上传的方法（最好电脑上操作）" class="headerlink" title="玩客云限制上传的方法（最好电脑上操作）"></a>玩客云限制上传的方法（最好电脑上操作）</h2><ul>
+<li><p>1、显示隐藏的文件，看到一个.onething_data的文件夹，删除了。</p>
+</li>
+<li><p>2、打开记事本，什么都不需要，直接另存为—保存类型选择为所有文件，文件名为.onething_data</p>
+</li>
+<li><p>丢到玩客云硬盘的根目录上，设置为只读的属性，完事。</p>
+</li>
+<li><ul>
+<li>反正我这么搞，不会上班，远程访问也没毛病，一天还有0.几个蛋。大不了被绝育，能下载，能当家庭云用就行！</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>很多人不满玩客云一直读写硬盘的这种行为，于是申请退出玩客链计划，当时想退出却没那么容易。因为迅雷要求你必须手持身份证，拍一张照片给他们，才愿意帮你退出计划。这想想还是挺可怕，谁知道照片会被拿去干什么事啊。但是在 张大妈 有这样一个有趣的例子。</p>
+<p>与客服互怼成功拒绝提供身份证</p>
+<p><a href="https://post.smzdm.com/p/az59706n/" target="_blank" rel="noopener">https://post.smzdm.com/p/az59706n/</a></p>
+<p>同时这上面还有一篇非常详细的评测</p>
+<p><a href="https://post.smzdm.com/p/aw3np922/" target="_blank" rel="noopener">https://post.smzdm.com/p/aw3np922/</a></p>
+<p>B 站上面也有教</p>
+<p><span style="color: rgb(34, 34, 34);">不让其不停读取硬盘的四种方案（</span><a href="https://www.bilibili.com/video/av53589623" target="_blank" rel="noopener">https://www.bilibili.com/video/av53589623</a><span style="color: rgb(34, 34, 34);">）</span></p>
+<ul>
+<li><p><span style="color: rgb(34, 34, 34);">① .onething_data文件夹封闭 具体操作看之前视频</span></p>
+</li>
+<li><p><span style="color: rgb(34, 34, 34);">② 发邮件退出玩客云奖励计划</span></p>
+</li>
+<li><p><span style="color: rgb(34, 34, 34);">③ 用闲置U盘或TF卡做主盘避免写入机械硬盘</span></p>
+</li>
+<li><p><span style="color: rgb(34, 34, 34);">④ 不用时弹出硬盘 使用时远程重启</span></p>
+</li>
+</ul>
+<h2 id="用-Linux-禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别-ext4-格式的硬盘）"><a href="#用-Linux-禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别-ext4-格式的硬盘）" class="headerlink" title="用 Linux 禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别 ext4 格式的硬盘）"></a>用 Linux 禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别 ext4 格式的硬盘）</h2><ul>
+<li><span style="color: rgb(34, 34, 34);">直接第一种覆盖就行 而且他不会改回来 但是需要把硬盘搞成ext4 同时设置该文件的用户组为root 再修改文件属性不可修改 以上操作在linux下进行</span></li>
+</ul>
+<h2 id="挂载到电脑的方法："><a href="#挂载到电脑的方法：" class="headerlink" title="挂载到电脑的方法："></a>挂载到电脑的方法：</h2><ul>
+<li>Win + r 输入 //ip</li>
+</ul>
+<h2 id="我个人对于这台设备的评价"><a href="#我个人对于这台设备的评价" class="headerlink" title="我个人对于这台设备的评价"></a>我个人对于这台设备的评价</h2><p>我认为，对于下载，有这台设备还是不错的，因为它让我们在没有迅雷会员的情况下，也可以高速下载。当然前提是你下载的资源迅雷的服务器里面有。不过随着现在版权管理越来越严，迅雷能下载的东西也越来越少了。</p>
+<p>对于当私人云盘，我看有人专门买两台这个来当私人云盘，不过买的硬盘盒都比机器贵。我个人是不会把手机的图片、视频放这的，不太敢，也没必要。</p>
+<p>所以这台机器对我确实没多大用处，大多数情况下都是出于吃灰状态。不过也无所谓了，五六十块钱的东西，买来折腾折腾过过瘾也就值得了。</p>
 
       
     </div>
@@ -373,12 +415,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/mac/" rel="tag"><i class="fa fa-tag"></i> mac</a>
-          
-        </div>
-      
 
       
       
@@ -388,8 +424,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/Solve-the-problem-that-the-ireader-cannot-connect-to-the-computer/" rel="next" title="解决 ireader 阅读器无法连接电脑问题">
-                <i class="fa fa-chevron-left"></i> 解决 ireader 阅读器无法连接电脑问题
+              <a href="/2019/10/nano-zsh/" rel="next" title="小钢炮又被折腾坏记录，最终成功用上 zsh">
+                <i class="fa fa-chevron-left"></i> 小钢炮又被折腾坏记录，最终成功用上 zsh
               </a>
             
           </div>
@@ -397,10 +433,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/Nginx-WordPress-link-error/" rel="prev" title="Nginx下修改WordPress固定链接导致无法访问">
-                Nginx下修改WordPress固定链接导致无法访问 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -539,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭方法"><span class="nav-number">1.</span> <span class="nav-text">关闭方法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）"><span class="nav-number">1.</span> <span class="nav-text">问：现在入手什么版本最好啊？（这个是几个月前的回答了，现在没什么用，一律买最便宜的就行）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#玩客云限制上传的方法（最好电脑上操作）"><span class="nav-number">2.</span> <span class="nav-text">玩客云限制上传的方法（最好电脑上操作）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用-Linux-禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别-ext4-格式的硬盘）"><span class="nav-number">3.</span> <span class="nav-text">用 Linux 禁止其读写的方法：（此方法本人测试无效，因为玩客云根本不能识别 ext4 格式的硬盘）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#挂载到电脑的方法："><span class="nav-number">4.</span> <span class="nav-text">挂载到电脑的方法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我个人对于这台设备的评价"><span class="nav-number">5.</span> <span class="nav-text">我个人对于这台设备的评价</span></a></li></ol></div>
             
 
           </div>
