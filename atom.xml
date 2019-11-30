@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://powersee.GitHub.io/"/>
-  <updated>2019-11-27T15:44:22.795Z</updated>
+  <updated>2019-11-30T12:00:29.000Z</updated>
   <id>https://powersee.GitHub.io/</id>
   
   <author>
@@ -17,13 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用 syncthing 同步多台设备的文件</title>
+    <link href="https://powersee.GitHub.io/2019/11/syncthing-better/"/>
+    <id>https://powersee.GitHub.io/2019/11/syncthing-better/</id>
+    <published>2019-11-30T10:13:05.000Z</published>
+    <updated>2019-11-30T12:00:29.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>又来折腾 syncthing 了，毕竟买了个 10T 的大硬盘，得好好利用起来才行。</p><blockquote><p>syncthing 是一个跨平台、开源的数据同步工具。它可以让你的文件夹，在多台设备保持同步。</p></blockquote><a id="more"></a><h2 id="Syncthing-支持平台"><a href="#Syncthing-支持平台" class="headerlink" title="Syncthing 支持平台"></a>Syncthing 支持平台</h2><p>Syncthing 官方支持 Linux、Windows、OS X、FreeBSD、Solaris 等系统，并且有第三方的 <a href="https://geo.itunes.apple.com/cn/app/fsync/id964427882?mt=8&amp;at=1000l7mq&amp;ct=appinnpost" target="_blank" rel="noopener">iOS</a>、<a href="https://play.google.com/store/apps/details?id=com.nutomic.syncthingandroid" target="_blank" rel="noopener">Android</a> 应用。</p><p>所以利用它，我可以让我手机（Android）的文件，同步到电脑（macOS，Windows）。同时它还可以在 Linux 上用，所以我可以把文件同步到服务器上，也可以同步到刷了<code>小钢炮系统</code>的斐讯 N1 上（系统自带 syncthing）。甚至我可以这些设备全部都使用，确保我的某个文件夹，同步到所有的设备上。（虽然现在没有重要到这样的文件……）</p><p>总之，它是一款很强大的软件，并且还免费开源，很了不起。其实我一年半之前就折腾过了 <a href="/2018/05/syncthing/">之前的文章</a> ，不过说来惭愧，当时折腾了一阵子，就没有再使用它了。因为当时的版本是 0.14 ，很多功能还不完善，并且在 Mac 上面，要使用只能<code>二进制执行文件</code>，并没有做出一个 app ，感觉不太方便。不过我的手机上面一直都有保留着它，即使不怎么使用了。</p><h2 id="现在的变化"><a href="#现在的变化" class="headerlink" title="现在的变化"></a>现在的变化</h2><p>时间过去这么久，这个应用现在更新了很多次，变得越来越好用了。例如：</p><ol><li>有 docker 版本，Linux 上安装起来更加方便</li><li>Windows 和 macOS 都有了 GUI 版本，使用门槛降低</li><li>同步的时候可以选择 仅发送，（而不接收，可以防止对方误操作而导致己方的文件也丢失）</li></ol><p>可能其它的功能我还没有用到，所以并不能更好地体验这个应用，不过就上面这几点，我就挺满意了。</p><h2 id="开始安装"><a href="#开始安装" class="headerlink" title="开始安装"></a>开始安装</h2><p>在其官网： <a href="https://syncthing.net/" target="_blank" rel="noopener">syncthing.net</a> 上面可以看到下载链接，不过都是放在 GitHub 上的，可能得用代理才能下载。</p><ul><li><strong>Windows</strong> tray utility, filesystem watcher &amp; launcher: <a href="https://github.com/canton7/SyncTrayzor/releases/latest" target="_blank" rel="noopener">SyncTrayzor</a></li><li><strong>macOS</strong> application bundle: <a href="https://github.com/syncthing/syncthing-macos/releases/latest" target="_blank" rel="noopener">syncthing-macos</a></li><li><strong>Cross-platform</strong> GUI wrapper: <a href="https://github.com/syncthing/syncthing-gtk/releases/latest" target="_blank" rel="noopener">Syncthing-GTK</a></li></ul><p>安卓手机可以去 Google play 搜索。</p><p>我这里主要介绍用 docker 将它装在服务器上面。</p><figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">  -<span class="ruby">-name=syncthing \</span></span><br><span class="line"><span class="ruby">  -e PUID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e PGID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e TZ=Asia/Shanghai \</span></span><br><span class="line"><span class="ruby">  -e UMASK_SET=<span class="number">022</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8384</span><span class="symbol">:</span><span class="number">8384</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">22000</span><span class="symbol">:</span><span class="number">22000</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">21027</span><span class="symbol">:</span><span class="number">21027</span>/udp \</span></span><br><span class="line"><span class="ruby">  -v /home/syncthing/appdata/<span class="symbol">config:</span>/config \</span></span><br><span class="line"><span class="ruby">  -v /home/syncthing/<span class="symbol">data1:</span>/data1 \</span></span><br><span class="line"><span class="ruby">  -v /home/syncthing/<span class="symbol">data2:</span>/data2 \</span></span><br><span class="line"><span class="ruby">  --restart <span class="keyword">unless</span>-stopped \</span></span><br><span class="line"><span class="ruby">  linuxserver/syncthing</span></span><br></pre></td></tr></table></figure><p>这里开放的 webUI 端口为 8384，所以启动成功后到浏览器输入 <code>IP:8384</code> 即可进入管理界面。因为我们是在服务器上使用，一定要设置用户，不然别人随便输入你的 IP:8384 就可以来管理你的设备了，很不安全。如果是在家里使用的话，例如群晖，或者和我一样使用 小钢炮 ，那不用设置也没多大问题。</p><h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>这里的添加用户，可以理解成和微信的添加好友相似。两台设备需要添加好友了才能互相发送文件，而要添加可以使用 <strong>二维码</strong> ，也可以使用 <strong>ID</strong> 。这里我以服务器作为被添加的设备。</p><p>点击右上角的 操作➡️显示 ID 即可看到。如果手机想添加这台设备，打开应用后，向左滑来到设备这里，点右上角的 ➕ ，然后点击二维码就可以扫码了。如果是电脑，就只能用 ID 的方式来添加了。点右下角的【添加远程设备】然后输入服务器的 ID 即可。</p><h2 id="同步文件"><a href="#同步文件" class="headerlink" title="同步文件"></a>同步文件</h2><p>这里我以手机文件同步到服务器为例。在手机上向右滑来到左边的 文件夹 这里。点击右上角的 ➕ 。文件夹标签可以随便起，目录选择要同步的文件夹，要同步到哪台设备，就把那台设备的开关打开。这样手机端的设置就完成了。</p><p>然后过一会服务器的就会收到通知，我们可以在浏览器的 webUI 里看到，提示某某人分享一个某某文件夹给你，是否接受。接受时可以设置要把这个文件夹放在哪里。</p><p>这样设置好后，就只需要等待了，手机会慢慢地把文件上传到服务器里。因为这个应用是使用 端–端 加密的，所以不用怕被中间人知道你在传输什么，不过可能也是因为这个原因吧，感觉传输的速度不是那么快，最高好像只能达到 2M/s 。</p><p>当然这个过程也是可以反过来的，把服务器的文件同步到手机上。</p><p>我本来是打算尝试一下，把服务器里 qbittorrent 下载好的文件，利用这个应用取回手机。但是，速度实在太慢了，虽然最大时能有 2M/s ，但是大部分时间都是几百 k 的速度。如果设置成服务器下载完，让它同步到我的小钢炮里面就还行，毕竟两台设备都是 24 小时开机。但是手机就没必要了，非要把文件取回手机，我还是选择开启一个临时的 HTTP 服务。</p><h2 id="暂时我的使用方案"><a href="#暂时我的使用方案" class="headerlink" title="暂时我的使用方案"></a>暂时我的使用方案</h2><p>我目前的使用有两个</p><ol><li>把手机的微信下载内容，同步到小钢炮。</li><li>把手机里用 vue 这个软件拍的视频，同步到电脑（用于在电脑剪辑）</li></ol><p>以后想到其它玩法再来更新。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;又来折腾 syncthing 了，毕竟买了个 10T 的大硬盘，得好好利用起来才行。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;syncthing 是一个跨平台、开源的数据同步工具。它可以让你的文件夹，在多台设备保持同步。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="服务器" scheme="https://powersee.GitHub.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
     <title>nds 游戏存档导入到电脑的模拟器玩</title>
     <link href="https://powersee.GitHub.io/2019/11/nds2desmume/"/>
     <id>https://powersee.GitHub.io/2019/11/nds2desmume/</id>
     <published>2019-11-27T06:52:54.000Z</published>
-    <updated>2019-11-27T15:44:22.795Z</updated>
+    <updated>2019-11-30T07:07:57.799Z</updated>
     
-    <content type="html"><![CDATA[<p>我有这么个需求，之前在 nds 上面用 R4 卡玩的游戏存档，想把它复制到电脑上，然后在电脑上用模拟器继承存档，继续玩之前的进度。但它并不是直接复制过来就可以用的。</p><a id="more"></a><p>用 desmume 这个 nds 游戏模拟器，它在游戏中正常保存后的存档格式为 .dsv</p><p>而用 nds 加 R4 卡来玩游戏，正常保存后，存档文件的后缀为 .SAV </p><p>这样就没法这边打完，就把存档复制到那边，然后继续玩。</p><p>不过现在（其实应该是好几年前了）模拟器已经支持把  .SAV 文件导入模拟器了。有一个选项，可以导入 sav 格式的存档，然后把它转换为 dsv 格式。</p><hr><p>在菜单里面可以导入存档（import开头的），然后选择sav格式的存档，导入之后将会被转换为 dsv 格式的存档。</p><p>在mac中导入是这样的<br><img src="/img/2019/mac-import.png" alt=""><br>在win中导入是这样的</p><p><img src="/img/2019/win-des.jpg" alt=""></p><p>但是，问题来了，我一开始是在 mac 上用的，导入是成功了，但是游戏中存档位置是空的。百思不得其解，最终我决定到 windows 上试一下。</p><p>果然，只有 windows 版的才行，导入后会跳出一个选项，问要转换为什么类型，我就直接选默认的第一个，就成功在游戏中看到存档了。</p><p>而在 mac 里，导入时并没有这些选择，所以导入后也识别不到，暂时无解。非要在 mac 上玩的话，就只能先在 windows 里导入，再导出（或者复制出 dsv 文件），再把这个 dsv 文件复制到 mac 上面用。</p>]]></content>
+    <content type="html"><![CDATA[<p>我有这么个需求，之前在 nds 上面用 R4 卡玩的游戏存档，想把它复制到电脑上，然后在电脑上用模拟器继承存档，继续玩之前的进度。但它并不是直接复制过来就可以用的。</p><a id="more"></a><p>用 desmume 这个 nds 游戏模拟器，它在游戏中正常保存后的存档格式为 .dsv</p><p>而用 nds 加 R4 卡来玩游戏，正常保存后，存档文件的后缀为 .SAV </p><p>这样就没法这边打完，就把存档复制到那边，然后继续玩。</p><p>不过现在（其实应该是好几年前了）模拟器已经支持把  .SAV 文件导入模拟器了。有一个选项，可以导入 sav 格式的存档，然后把它转换为 dsv 格式。</p><h2 id="把-nds-的存档复制到模拟器上用"><a href="#把-nds-的存档复制到模拟器上用" class="headerlink" title="把 nds 的存档复制到模拟器上用"></a>把 nds 的存档复制到模拟器上用</h2><p>在菜单里面可以导入存档（import开头的），然后选择sav格式的存档，导入之后将会被转换为 dsv 格式的存档。</p><p>在mac中导入是这样的<br><img src="/img/2019/mac-import.png" alt=""><br>在win中导入是这样的</p><p><img src="/img/2019/win-des.jpg" alt=""></p><p>但是，问题来了，我一开始是在 mac 上用的，导入是成功了，但是游戏中存档位置是空的。百思不得其解，最终我决定到 windows 上试一下。</p><p>果然，只有 windows 版的才行，导入后会跳出一个选项，问要转换为什么类型，我就直接选默认的第一个，就成功在游戏中看到存档了。</p><p>而在 mac 里，导入时并没有这些选择，所以导入后也识别不到，暂时无解。非要在 mac 上玩的话，就只能先在 windows 里导入，再导出（或者复制出 dsv 文件），再把这个 dsv 文件复制到 mac 上面用。</p><h2 id="模拟器的存档复制到-nds-上用"><a href="#模拟器的存档复制到-nds-上用" class="headerlink" title="模拟器的存档复制到 nds 上用"></a>模拟器的存档复制到 nds 上用</h2><p>刚才游戏中有个地方需要多次尝试，用模拟器的快速存档和读档会比较快。所以我把存档复制到电脑上，导入后游玩，用读取大法很快就过了关卡。</p><p>然后我不想一直在电脑用模拟器玩，所以想把存档导出， 复制到 nds 上玩。这个就没什么难度了。选择 <code>Export Rom Save File</code> 然后选择 sav 格式。导出并复制到 nds 的内存卡上即可。</p>]]></content>
     
     <summary type="html">
     
@@ -39,17 +62,17 @@
   </entry>
   
   <entry>
-    <title>即是使用 ipv6 也最好做好防范，ip6tables 与 ss</title>
+    <title>即使是使用 ipv6 也最好做好防范，ip6tables 与 ss</title>
     <link href="https://powersee.GitHub.io/2019/11/ip6tables-and-ss/"/>
     <id>https://powersee.GitHub.io/2019/11/ip6tables-and-ss/</id>
     <published>2019-11-25T04:43:28.000Z</published>
-    <updated>2019-11-25T04:48:43.126Z</updated>
+    <updated>2019-11-27T15:48:57.520Z</updated>
     
-    <content type="html"><![CDATA[<p>最近看到好多个人，因为开放群辉的端口号，导致宽带被封，运营商给出的原因是：未备案个人宽带不允许提供 web 服务……</p><a id="more"></a><p>这里有一个案例：<a href="https://koolshare.cn/thread-170517-1-1.html" target="_blank" rel="noopener">重要消息：上海电信对于绑定域名用于WEB服务的 直接封宽带</a></p><p>所以现在哪怕我只是开放给自己使用而已，也不行了。其实之前也是不允许的，不过运营商会把 80 端口和 443 端口给封了，这样我们就无法在家里搭建网站了。不过严格来讲还是可以的，只不过得在域名后面加个端口号，例如这样</p><blockquote><p><a href="http://www.baidu.com:12345" target="_blank" rel="noopener">www.baidu.com:12345</a></p></blockquote><p>但是现在这种也不允许了，而且一经发现，直接封了你的宽带。除非你自己去电信询问，否则都不知道为什么封的。没错，现在只有电信会封，而且看网友的讨论，好像只有 <strong>上海、深圳</strong> 这两个地方的<strong>电信宽带</strong>才会。</p><p>那么我是用 移动宽带 的，我需要担心吗？之前我是觉得不需要担心的，毕竟等网上别人出事的时候，我在网上看到别人的帖子，我再来开启防火墙就行了。</p><p>然而，我又一想，我怎么知道我不会是，移动用户中第一批遭殃的呢？所以我赶紧又打开我路由器的防火墙。</p><p>但我还是想享受外网访问的便捷性，所以我得来想想对策。</p><h3 id="之前的"><a href="#之前的" class="headerlink" title="之前的"></a>之前的</h3><p>我之前的话，是直接关闭防火墙，这样我就可以通过 ipv6 ，在外面访问宿舍的设备，主要有：</p><ol><li>进入路由器查看一下情况</li><li>访问刷了小钢炮系统的斐讯 N1 盒子，查看系统的负载，管理里面 qbittorrent 的下载</li><li>有时候电脑用虚拟机开着一台 Ubuntu 服务器，需要外网 ssh 连接</li></ol><p>所以这上面三台主机里面，我都有运行 ddns 脚本，让它们把自身的 ipv6 地址与我在阿里云申请的域名进行绑定。这样我就可以通过三个不同的域名访问这些主机。但是也麻烦，再添加机器我就得再去添加脚本，并且记住域名，所以我更改了方案。</p><h3 id="现在的"><a href="#现在的" class="headerlink" title="现在的"></a>现在的</h3><p>我直接开启 padavan 系统的路由器里面的 ss_server ，之后我在外面要访问内网的设备时，就用 ss 连接我的路由器，这时就相当于把它当 VPN 来使用。我想要管理路由器，可以直接在浏览器输入 <code>192.168.123.1</code> 而不用去输入域名，管理其它设备也一样，直接输入局域网 IP 即可。</p><p>但是，这一切，还是建立在我把防火墙关闭了的情景下，这样我的宽带还是有被封的风险。我想要开启防火墙，但同时我还可以连接到内网的设备。所以，我了解了一下 <code>ip6tables</code> ，这个是管理 ipv6 的防火墙软件，详情可以看这里 <a href="https://man.linuxde.net/ip6tables" target="_blank" rel="noopener">ip6tables详细使用说明</a></p><p>但我用到不多，现在外界访问只通过一个端口，就是 ss_server 开放的那个端口，默认为 8388 ，所以我只需要开放这个端口即可。需要做的，是通过 ssh 连接路由器，或者直接在 高级设置，系统管理，控制台 输入这 3 条命令。</p><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">ip6tables -A FORWARD -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br><span class="line">ip6tables -A INPUT -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br><span class="line">ip6tables -A OUTPUT -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br></pre></td></tr></table></figure><p>这样外网就只能通过 8388 这个端口来访问内网，而且只能用 ss 连接才行，直接在浏览器输入我 IP 加 8388 肯定不行，因为我根本没有开启 web 服务。所以应该是不会有宽带被封的风险。</p>]]></content>
+    <content type="html"><![CDATA[<p>最近看到好多个人，因为开放群晖的端口号，导致宽带被封，运营商给出的原因是：未备案个人宽带不允许提供 web 服务……</p><a id="more"></a><p>这里有一个案例：<a href="https://koolshare.cn/thread-170517-1-1.html" target="_blank" rel="noopener">重要消息：上海电信对于绑定域名用于WEB服务的 直接封宽带</a></p><p>所以现在哪怕我只是开放给自己使用而已，也不行了。其实之前也是不允许的，不过运营商会把 80 端口和 443 端口给封了，这样我们就无法在家里搭建网站了。不过严格来讲还是可以的，只不过得在域名后面加个端口号，例如这样</p><blockquote><p><a href="http://www.baidu.com:12345" target="_blank" rel="noopener">www.baidu.com:12345</a></p></blockquote><p>但是现在这种也不允许了，而且一经发现，直接封了你的宽带。除非你自己去电信询问，否则都不知道为什么封的。没错，现在只有电信会封，而且看网友的讨论，好像只有 <strong>上海、深圳</strong> 这两个地方的<strong>电信宽带</strong>才会。</p><p>那么我是用 移动宽带 的，我需要担心吗？之前我是觉得不需要担心的，毕竟等网上别人出事的时候，我在网上看到别人的帖子，我再来开启防火墙就行了。</p><p>然而，我又一想，我怎么知道我不会是，移动用户中第一批遭殃的呢？所以我赶紧又打开我路由器的防火墙。</p><p>但我还是想享受外网访问的便捷性，所以我得来想想对策。</p><h3 id="之前的"><a href="#之前的" class="headerlink" title="之前的"></a>之前的</h3><p>我之前的话，是直接关闭防火墙，这样我就可以通过 ipv6 ，在外面访问宿舍的设备，主要有：</p><ol><li>进入路由器查看一下情况</li><li>访问刷了小钢炮系统的斐讯 N1 盒子，查看系统的负载，管理里面 qbittorrent 的下载</li><li>有时候电脑用虚拟机开着一台 Ubuntu 服务器，需要外网 ssh 连接</li></ol><p>所以这上面三台主机里面，我都有运行 ddns 脚本，让它们把自身的 ipv6 地址与我在阿里云申请的域名进行绑定。这样我就可以通过三个不同的域名访问这些主机。但是也麻烦，再添加机器我就得再去添加脚本，并且记住域名，所以我更改了方案。</p><h3 id="现在的"><a href="#现在的" class="headerlink" title="现在的"></a>现在的</h3><p>我直接开启 padavan 系统的路由器里面的 ss_server ，之后我在外面要访问内网的设备时，就用 ss 连接我的路由器，这时就相当于把它当 VPN 来使用。我想要管理路由器，可以直接在浏览器输入 <code>192.168.123.1</code> 而不用去输入域名，管理其它设备也一样，直接输入局域网 IP 即可。</p><p>但是，这一切，还是建立在我把防火墙关闭了的情景下，这样我的宽带还是有被封的风险。我想要开启防火墙，但同时我还可以连接到内网的设备。所以，我了解了一下 <code>ip6tables</code> ，这个是管理 ipv6 的防火墙软件，详情可以看这里 <a href="https://man.linuxde.net/ip6tables" target="_blank" rel="noopener">ip6tables详细使用说明</a></p><p>但我用到不多，现在外界访问只通过一个端口，就是 ss_server 开放的那个端口，默认为 8388 ，所以我只需要开放这个端口即可。需要做的，是通过 ssh 连接路由器，或者直接在 高级设置，系统管理，控制台 输入这 3 条命令。</p><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">ip6tables -A FORWARD -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br><span class="line">ip6tables -A INPUT -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br><span class="line">ip6tables -A OUTPUT -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br></pre></td></tr></table></figure><p>这样外网就只能通过 8388 这个端口来访问内网，而且只能用 ss 连接才行，直接在浏览器输入我 IP 加 8388 肯定不行，因为我根本没有开启 web 服务。所以应该是不会有宽带被封的风险。</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;最近看到好多个人，因为开放群辉的端口号，导致宽带被封，运营商给出的原因是：未备案个人宽带不允许提供 web 服务……&lt;/p&gt;
+      &lt;p&gt;最近看到好多个人，因为开放群晖的端口号，导致宽带被封，运营商给出的原因是：未备案个人宽带不允许提供 web 服务……&lt;/p&gt;
     
     </summary>
     
@@ -194,9 +217,9 @@
     
       <category term="下载" scheme="https://powersee.GitHub.io/tags/%E4%B8%8B%E8%BD%BD/"/>
     
-      <category term="BT" scheme="https://powersee.GitHub.io/tags/BT/"/>
-    
       <category term="docker" scheme="https://powersee.GitHub.io/tags/docker/"/>
+    
+      <category term="BT" scheme="https://powersee.GitHub.io/tags/BT/"/>
     
   </entry>
   
@@ -397,26 +420,6 @@
     
     
       <category term="网络" scheme="https://powersee.GitHub.io/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>光之子 去年录制游戏全程</title>
-    <link href="https://powersee.GitHub.io/2018/08/child-of-light/"/>
-    <id>https://powersee.GitHub.io/2018/08/child-of-light/</id>
-    <published>2018-08-05T07:05:43.000Z</published>
-    <updated>2019-10-21T09:56:51.036Z</updated>
-    
-    <content type="html"><![CDATA[<p>这个游戏是去年这个时候录的，是我第一个全程录完的游戏。当时是在 PSV 上先玩一段，再到 PS4 上重玩这一段并录制下来的。<br><a id="more"></a></p><p>下面的视频是用这样的代码的。</p><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">height</span>=<span class="string">315</span> <span class="attr">width</span>=<span class="string">560</span> <span class="attr">src</span>=<span class="string">'https://player.youku.com/embed/视频的ID在这里替换=='</span> <span class="attr">frameborder</span>=<span class="string">0</span> <span class="attr">allowfullscreen</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span></span><br></pre></td></tr></table></figure><h3 id="01"><a href="#01" class="headerlink" title="01"></a>01</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4MjgyMDk3Mg==" frameborder="0" allowfullscreen></iframe><h3 id="02"><a href="#02" class="headerlink" title="02"></a>02</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4Mjg1MDM4NA==" frameborder="0" allowfullscreen></iframe><h3 id="03"><a href="#03" class="headerlink" title="03"></a>03</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4NjMxOTc4NA==" frameborder="0" allowfullscreen></iframe><h3 id="04"><a href="#04" class="headerlink" title="04"></a>04</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4NjQ1NTAwNA==" frameborder="0" allowfullscreen></iframe><h3 id="05"><a href="#05" class="headerlink" title="05"></a>05</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4Nzk4NjU3Mg==" frameborder="0" allowfullscreen></iframe><h3 id="06"><a href="#06" class="headerlink" title="06"></a>06</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4OTI5MzY3Ng==" frameborder="0" allowfullscreen></iframe><h3 id="07"><a href="#07" class="headerlink" title="07"></a>07</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk4OTU4NDgxMg==" frameborder="0" allowfullscreen></iframe><h3 id="08"><a href="#08" class="headerlink" title="08"></a>08</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk5Mjc4ODgyOA==" frameborder="0" allowfullscreen></iframe><h3 id="09"><a href="#09" class="headerlink" title="09"></a>09</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk5NDgwMjQzMg==" frameborder="0" allowfullscreen></iframe><h3 id="10"><a href="#10" class="headerlink" title="10"></a>10</h3><iframe height="315" width="560" src="https://player.youku.com/embed/XMjk5ODgyMTMxMg==" frameborder="0" allowfullscreen></iframe>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;这个游戏是去年这个时候录的，是我第一个全程录完的游戏。当时是在 PSV 上先玩一段，再到 PS4 上重玩这一段并录制下来的。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="游戏" scheme="https://powersee.GitHub.io/tags/%E6%B8%B8%E6%88%8F/"/>
     
   </entry>
   
