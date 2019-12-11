@@ -115,7 +115,7 @@
 <meta property="og:site_name" content="Powersee的博客">
 <meta property="og:description" content="又来折腾 syncthing 了，毕竟买了个 10T 的大硬盘，得好好利用起来才行。  syncthing 是一个跨平台、开源的数据同步工具。它可以让你的文件夹，在多台设备保持同步。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T12:00:29.000Z">
+<meta property="og:updated_time" content="2019-11-30T13:08:37.531Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 syncthing 同步多台设备的文件">
 <meta name="twitter:description" content="又来折腾 syncthing 了，毕竟买了个 10T 的大硬盘，得好好利用起来才行。  syncthing 是一个跨平台、开源的数据同步工具。它可以让你的文件夹，在多台设备保持同步。">
@@ -398,7 +398,7 @@
 <figure class="highlight haml"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">  -<span class="ruby">-name=syncthing \</span></span><br><span class="line"><span class="ruby">  -e PUID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e PGID=<span class="number">1000</span> \</span></span><br><span class="line"><span class="ruby">  -e TZ=Asia/Shanghai \</span></span><br><span class="line"><span class="ruby">  -e UMASK_SET=<span class="number">022</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">8384</span><span class="symbol">:</span><span class="number">8384</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">22000</span><span class="symbol">:</span><span class="number">22000</span> \</span></span><br><span class="line"><span class="ruby">  -p <span class="number">21027</span><span class="symbol">:</span><span class="number">21027</span>/udp \</span></span><br><span class="line"><span class="ruby">  -v /home/syncthing/appdata/<span class="symbol">config:</span>/config \</span></span><br><span class="line"><span class="ruby">  -v /home/syncthing/<span class="symbol">data1:</span>/data1 \</span></span><br><span class="line"><span class="ruby">  -v /home/syncthing/<span class="symbol">data2:</span>/data2 \</span></span><br><span class="line"><span class="ruby">  --restart <span class="keyword">unless</span>-stopped \</span></span><br><span class="line"><span class="ruby">  linuxserver/syncthing</span></span><br></pre></td></tr></table></figure>
 <p>这里开放的 webUI 端口为 8384，所以启动成功后到浏览器输入 <code>IP:8384</code> 即可进入管理界面。因为我们是在服务器上使用，一定要设置用户，不然别人随便输入你的 IP:8384 就可以来管理你的设备了，很不安全。如果是在家里使用的话，例如群晖，或者和我一样使用 小钢炮 ，那不用设置也没多大问题。</p>
 <h2 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h2><p>这里的添加用户，可以理解成和微信的添加好友相似。两台设备需要添加好友了才能互相发送文件，而要添加可以使用 <strong>二维码</strong> ，也可以使用 <strong>ID</strong> 。这里我以服务器作为被添加的设备。</p>
-<p>点击右上角的 操作➡️显示 ID 即可看到。如果手机想添加这台设备，打开应用后，向左滑来到设备这里，点右上角的 ➕ ，然后点击二维码就可以扫码了。如果是电脑，就只能用 ID 的方式来添加了。点右下角的【添加远程设备】然后输入服务器的 ID 即可。</p>
+<p>点击右上角的 【操作】➡️【显示 ID 】即可看到。如果手机想添加这台设备，打开应用后，向左滑来到设备这里，点右上角的 ➕ ，然后点击二维码就可以扫码了。如果是电脑，就只能用 ID 的方式来添加了。点右下角的【添加远程设备】然后输入服务器的 ID 即可。</p>
 <h2 id="同步文件"><a href="#同步文件" class="headerlink" title="同步文件"></a>同步文件</h2><p>这里我以手机文件同步到服务器为例。在手机上向右滑来到左边的 文件夹 这里。点击右上角的 ➕ 。文件夹标签可以随便起，目录选择要同步的文件夹，要同步到哪台设备，就把那台设备的开关打开。这样手机端的设置就完成了。</p>
 <p>然后过一会服务器的就会收到通知，我们可以在浏览器的 webUI 里看到，提示某某人分享一个某某文件夹给你，是否接受。接受时可以设置要把这个文件夹放在哪里。</p>
 <p>这样设置好后，就只需要等待了，手机会慢慢地把文件上传到服务器里。因为这个应用是使用 端–端 加密的，所以不用怕被中间人知道你在传输什么，不过可能也是因为这个原因吧，感觉传输的速度不是那么快，最高好像只能达到 2M/s 。</p>
@@ -455,6 +455,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/N1-armbian/" rel="prev" title="斐讯 N1、P1 安装 armbian 变身电脑主机">
+                斐讯 N1、P1 安装 armbian 变身电脑主机 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -531,7 +535,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

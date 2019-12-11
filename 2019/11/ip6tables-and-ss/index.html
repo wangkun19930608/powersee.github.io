@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="Powersee的博客">
 <meta property="og:description" content="最近看到好多个人，因为开放群晖的端口号，导致宽带被封，运营商给出的原因是：未备案个人宽带不允许提供 web 服务……">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-27T15:48:57.520Z">
+<meta property="og:updated_time" content="2019-12-05T12:21:20.454Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="即使是使用 ipv6 也最好做好防范，ip6tables 与 ss">
 <meta name="twitter:description" content="最近看到好多个人，因为开放群晖的端口号，导致宽带被封，运营商给出的原因是：未备案个人宽带不允许提供 web 服务……">
@@ -394,6 +394,10 @@
 <p>但我用到不多，现在外界访问只通过一个端口，就是 ss_server 开放的那个端口，默认为 8388 ，所以我只需要开放这个端口即可。需要做的，是通过 ssh 连接路由器，或者直接在 高级设置，系统管理，控制台 输入这 3 条命令。</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">ip6tables -A FORWARD -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br><span class="line">ip6tables -A INPUT -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br><span class="line">ip6tables -A OUTPUT -<span class="selector-tag">p</span> tcp --dport <span class="number">8388</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
 <p>这样外网就只能通过 8388 这个端口来访问内网，而且只能用 ss 连接才行，直接在浏览器输入我 IP 加 8388 肯定不行，因为我根本没有开启 web 服务。所以应该是不会有宽带被封的风险。</p>
+<p>但是这样有一个问题，就是当我路由器重启之后，就失效了，只能重新到控制台再输入一次。能否让它开机后自动执行呢？</p>
+<p>可以的，需要到【高级设置】——【自定义设置】——【脚本】里添加。由于我使用的是 hiboy 大佬修改的 padavan 系统，所以里面有好几个脚本。如果是其他人的固件估计没这个功能。</p>
+<p>那么这里我可以把上面的三条命令，放在【在路由器启动后执行】这个脚本里，也可以放在【在防火墙规则启动后执行】里。我个人是选择后者。</p>
+<p>将命令粘贴进去后，点击下方的【应用本页设置】即可。这样以后重启路由器后，就会自动执行这三条命令。</p>
 
       
     </div>
@@ -513,7 +517,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

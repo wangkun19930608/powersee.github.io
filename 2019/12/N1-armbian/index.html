@@ -94,7 +94,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="设备,Linux," />
 
 
 
@@ -107,17 +107,18 @@
 
 
 
-<meta name="description" content="分别讲三种方法">
+<meta name="description" content="斐讯 N1 这台设备，我之前一直是使用小钢炮这个系统。因为它非常强大了，可以下载，可以共享硬盘里的文件，还可以玩 docker。 不过其实这台设备还可以装 Debian 和 Ubuntu 系统的，装好之后就可以变成一台电脑主机了，这想想都兴奋。所以我一直想来尝试一下装 armbian 系统。">
+<meta name="keywords" content="设备,Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="推送到 kindle">
-<meta property="og:url" content="https://powersee.GitHub.io/2019/04/push-to-kindle/index.html">
+<meta property="og:title" content="斐讯 N1、P1 安装 armbian 变身电脑主机">
+<meta property="og:url" content="https://powersee.GitHub.io/2019/12/N1-armbian/index.html">
 <meta property="og:site_name" content="Powersee的博客">
-<meta property="og:description" content="分别讲三种方法">
+<meta property="og:description" content="斐讯 N1 这台设备，我之前一直是使用小钢炮这个系统。因为它非常强大了，可以下载，可以共享硬盘里的文件，还可以玩 docker。 不过其实这台设备还可以装 Debian 和 Ubuntu 系统的，装好之后就可以变成一台电脑主机了，这想想都兴奋。所以我一直想来尝试一下装 armbian 系统。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-21T09:56:51.039Z">
+<meta property="og:updated_time" content="2019-12-11T10:24:02.064Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="推送到 kindle">
-<meta name="twitter:description" content="分别讲三种方法">
+<meta name="twitter:title" content="斐讯 N1、P1 安装 armbian 变身电脑主机">
+<meta name="twitter:description" content="斐讯 N1 这台设备，我之前一直是使用小钢炮这个系统。因为它非常强大了，可以下载，可以共享硬盘里的文件，还可以玩 docker。 不过其实这台设备还可以装 Debian 和 Ubuntu 系统的，装好之后就可以变成一台电脑主机了，这想想都兴奋。所以我一直想来尝试一下装 armbian 系统。">
 
 
 
@@ -147,13 +148,13 @@
 
 
 
-  <link rel="canonical" href="https://powersee.GitHub.io/2019/04/push-to-kindle/"/>
+  <link rel="canonical" href="https://powersee.GitHub.io/2019/12/N1-armbian/"/>
 
 
 
 
 
-  <title>推送到 kindle | Powersee的博客</title>
+  <title>斐讯 N1、P1 安装 armbian 变身电脑主机 | Powersee的博客</title>
   
 
 
@@ -304,7 +305,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://powersee.GitHub.io/2019/04/push-to-kindle/">
+    <link itemprop="mainEntityOfPage" href="https://powersee.GitHub.io/2019/12/N1-armbian/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="powersee">
@@ -321,7 +322,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">推送到 kindle</h1>
+          <h1 class="post-title" itemprop="name headline">斐讯 N1、P1 安装 armbian 变身电脑主机</h1>
         
 
         <div class="post-meta">
@@ -333,8 +334,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-28T22:23:56+08:00">
-                2019-04-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-11T11:44:34+08:00">
+                2019-12-11
               </time>
             
 
@@ -371,16 +372,43 @@
       
 
       
-        <p>分别讲三种方法</p>
+        <p>斐讯 N1 这台设备，我之前一直是使用小钢炮这个系统。因为它非常强大了，可以下载，可以共享硬盘里的文件，还可以玩 docker。</p>
+<p>不过其实这台设备还可以装 Debian 和 Ubuntu 系统的，装好之后就可以变成一台电脑主机了，这想想都兴奋。所以我一直想来尝试一下装 armbian 系统。</p>
 <a id="more"></a>
-<h2 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h2><p>关注微信公众号：cn_Kindle<br>绑定自己的亚马逊账号，即可把微信文章或者其它文章网址发送到这个号，即可把内容推送到 kindle 。</p>
-<h2 id="电脑端"><a href="#电脑端" class="headerlink" title="电脑端"></a>电脑端</h2><p>微信电脑版就不讲了。<br><a href="https://fivefilters.org/kindle-it/" target="_blank" rel="noopener">https://fivefilters.org/kindle-it/</a><br>到这个网址将文章地址粘贴，然后点 preview ，出现预览界面，将其显示的邮箱（例如：<a href="mailto:kindle@fivefilters.org" target="_blank" rel="noopener">kindle@fivefilters.org</a>）添加到</p>
+<p>镜像下载地址：<a href="https://yadi.sk/d/srrtn6kpnsKz2/Linux/ARMBIAN/" target="_blank" rel="noopener">https://yadi.sk/d/srrtn6kpnsKz2/Linux/ARMBIAN/</a></p>
+<p>但是，其实我之前折腾过很久，一直没法进入启动界面，一次又一次的放弃。早上突然想到会不会是我的写入工具有问题？</p>
+<p>所以改用另外一个将镜像写入 U盘的工具，再试一下。</p>
+<p>结果，还是不行……</p>
+<p>然后仔细看看教程，<a href="https://post.smzdm.com/p/aqnl5kz2/" target="_blank" rel="noopener">这篇文章</a>，难不成得先修改 dtb 才可以启动？试一下，果然如此。需要修改 <strong>uEnv.ini</strong> 这个文件。将第一行的dtb_name后面的文字替换成dtb文件夹里斐讯N1的dtb文件名，保存后再来启动就可以了。</p>
+<p>所以跟用什么工具将镜像写入U盘完全没有关系，用</p>
+<ul>
+<li>usb-image-tool</li>
+<li>win32diskimager</li>
+<li>balenaEtcher</li>
+<li>……</li>
+</ul>
+<p>都是可以的，主要是修改那个文件之后再开机就行。</p>
+<p>之后插入 U盘到机器上，启动，正常进入系统。输入账号 root ，密码 1234 。然后需要设置一个新的密码（至少 8 位数）。</p>
+<p>然后需要再建立一个账号，用来登录桌面系统。主要是用户名和密码，其它可以不用填。之后就可以进入桌面。</p>
+<p>进入桌面系统后，这就是一台电脑主机了，可以上网，看视频，听音乐，编程……</p>
+<p>但是想要更好地使用它，我们还得进行一系列的配置。想折腾可以耗费不少的时间。</p>
+<hr>
+<p>不过，后来我发现恩山有位大佬，直接把他自己修改好的系统打包上传上来，这样我们就可以直接使用他的系统，不用自己去配置了。<a href="https://right.com.cn/forum/thread-1380140-1-1.html" target="_blank" rel="noopener">帖子链接</a></p>
+<p>帖子里有百度网盘的链接，里面主要有三个版本，32G 16G 8G ，指的是用这个系统 U盘最少的容量，如果你 U盘大于或等于 32G，那三个版本都可以用。</p>
+<p>16G 镜像下载下来只有八百多兆，因为里面的软件最少，没有 docker 这些软件。8G 的比较好，安装好了 docker，并且容量适中，3G 多。32G 版本我没有下。</p>
+<p>而且，用官方系统会出现没有 WiFi 的问题，<a href="https://right.com.cn/forum/thread-995217-1-1.html" target="_blank" rel="noopener">这个帖子</a> 有讲到，看来用比较老的系统就可以用 WiFi。而使用恩山大佬打包的系统可以使用 WiFi 👍</p>
 <blockquote>
-<p>已认可的发件人电子邮箱列表</p>
+<p> 所以我个人的建议是直接使用打包的系统。</p>
 </blockquote>
-<p>然后填入自己的 kindle 邮箱点 send 。</p>
-<h2 id="多个网页一起推送"><a href="#多个网页一起推送" class="headerlink" title="多个网页一起推送"></a>多个网页一起推送</h2><p>上面的推送都是一次一篇文章的，如果想把多篇文章一起推送到 kindle 可以用这种方法。</p>
-<h3 id="浏览器插件-EpubPress"><a href="#浏览器插件-EpubPress" class="headerlink" title="浏览器插件 EpubPress"></a>浏览器插件 EpubPress</h3><p>这个插件 Chrome 和 Firefox 都有，安装后同时打开多篇文章，再点击这个插件，就可以把这些文章做成 mobi 格式的电子书，可以本地下载，也可以绑定 kindle 邮箱，直接发送到 kindle。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>不管是使用原生的系统，还是打包的系统，都需要进行下面的配置。</p>
+<h3 id="改源"><a href="#改源" class="headerlink" title="改源"></a>改源</h3><p>默认的软件源可以连接到，但是慢到怀疑人生。把它改为国内的源，这样我们安装或更新软件会快很多。</p>
+<p><strong>改软件源</strong> <a href="https://www.jiayie.xyz/2019/06/26/N1刷入Armbian后换软件源、安装Docker并提速/" target="_blank" rel="noopener">文章链接</a></p>
+<p>vim /etc/apt/sources.list</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">deb <span class="string">http:</span><span class="comment">//mirrors.ustc.edu.cn/debian stretch main contrib non-free</span></span><br><span class="line">deb <span class="string">http:</span><span class="comment">//mirrors.ustc.edu.cn/debian stretch-updates main contrib non-free</span></span><br><span class="line">deb <span class="string">http:</span><span class="comment">//mirrors.ustc.edu.cn/debian stretch-backports main contrib non-free</span></span><br><span class="line">deb <span class="string">http:</span><span class="comment">//mirrors.ustc.edu.cn/debian-security/ stretch/updates main contrib non-free</span></span><br></pre></td></tr></table></figure>
+<p><strong>改 armbian 源</strong></p>
+<p>vim /etc/apt/sources.list.d/armbian.list</p>
+<p>将里面的那行注释掉（在前面添加 # ）然后添加这行</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/armbian stretch main stretch-utils stretch-desktop</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -402,6 +430,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/设备/" rel="tag"><i class="fa fa-tag"></i> 设备</a>
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
 
       
       
@@ -411,8 +447,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/Nginx-WordPress-link-error/" rel="next" title="Nginx下修改WordPress固定链接导致无法访问">
-                <i class="fa fa-chevron-left"></i> Nginx下修改WordPress固定链接导致无法访问
+              <a href="/2019/11/syncthing-better/" rel="next" title="使用 syncthing 同步多台设备的文件">
+                <i class="fa fa-chevron-left"></i> 使用 syncthing 同步多台设备的文件
               </a>
             
           </div>
@@ -421,8 +457,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/docker-qb/" rel="prev" title="用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及把文件取回手机">
-                用服务器来离线下载 BT 种子，体验千兆网络的魅力——docker 安装 qBittorrent，以及把文件取回手机 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/12/remove-omv/" rel="prev" title="OMV 安装失败如何卸载">
+                OMV 安装失败如何卸载 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -562,7 +598,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#手机端"><span class="nav-number">1.</span> <span class="nav-text">手机端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电脑端"><span class="nav-number">2.</span> <span class="nav-text">电脑端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多个网页一起推送"><span class="nav-number">3.</span> <span class="nav-text">多个网页一起推送</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器插件-EpubPress"><span class="nav-number">3.1.</span> <span class="nav-text">浏览器插件 EpubPress</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">1.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#改源"><span class="nav-number">1.1.</span> <span class="nav-text">改源</span></a></li></ol></li></ol></div>
             
 
           </div>
